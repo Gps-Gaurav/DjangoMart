@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Toast } from 'react-bootstrap';
 
 const footerStyle = {
-  backgroundColor: '#1a1a1a',
+  backgroundColor: '#2a2a2a',
   color: '#fff',
   padding: '40px 0',
   marginTop: 'auto', // This helps push footer to bottom
   width: '100%'
-};
-
-const subscribeStyle = {
-  backgroundColor: '#2a2a2a',
-  padding: '20px 0'
 };
 
 const socialLink = {
@@ -84,55 +79,17 @@ function Footer() {
         {/* Your main content goes here */}
       </div>
       
-      <div style={subscribeStyle}>
-        <Container>
-          <Form onSubmit={handleSubscribe}>
-            <Row className="align-items-center">
-              <Col md={8}>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email for updates"
-                  aria-label="Email subscription"
-                  style={{ height: '40px' }}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </Col>
-              <Col md={4}>
-                <Button 
-                  type="submit"
-                  variant="primary"
-                  className="w-100"
-                  style={{ height: '40px' }}
-                  disabled={isLoading}
-                >
-                  {isLoading ? 'Subscribing...' : 'Subscribe'}
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
-      </div>
-
       <Toast
+        style={{ position: 'fixed', bottom: '20px', right: '20px' }}
         show={showToast}
         onClose={() => setShowToast(false)}
         delay={3000}
         autohide
-        style={{
-          position: 'fixed',
-          top: 20,
-          right: 20,
-          zIndex: 9999
-        }}
+        bg="info"
       >
-        <Toast.Header>
-          <strong className="me-auto">Newsletter</strong>
-        </Toast.Header>
         <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>
-
+      
       <footer style={footerStyle}>
         <Container>
           <Row>
@@ -203,7 +160,32 @@ function Footer() {
               </div>
             </Col>
           </Row>
-
+          <Form onSubmit={handleSubscribe}>
+            <Row className="align-items-center">
+              <Col md={8}>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter your email for updates"
+                  aria-label="Email subscription"
+                  style={{ height: '40px' }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </Col>
+              <Col md={4}>
+                <Button 
+                  type="submit"
+                  variant="primary"
+                  className="w-100"
+                  style={{ height: '40px' }}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
+                </Button>
+              </Col>
+            </Row>
+          </Form>
           <hr style={{ borderColor: '#333' }} />
           
           <div className="text-center">
