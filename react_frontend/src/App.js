@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container } from "react-bootstrap";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import {HashRouter as Router,Routes,Route} from 'react-router-dom'
+import HomeScreen from "./components/screens/HomeScreen";
+import SignupScreen from "./components/screens/SignupScreen";
+import LoginScreen from "./components/screens/LoginScreen";
+import CartScreen from "./components/screens/CartScreen";
+import ProductScreen from "./components/screens/ProductScreen";
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<HomeScreen/>}></Route>
+      </Routes>
+      <Routes>
+        <Route exact path="/product/:id" element={<ProductScreen/>}></Route>
+      </Routes>
+      <Routes>
+        <Route exact path="/login" element={<LoginScreen/>}></Route>
+      </Routes>
+      <Routes>
+        <Route exact path="/signup" element={<SignupScreen/>}></Route>
+      </Routes>
+      <Routes>
+        <Route exact path="/cart" element={<CartScreen/>}></Route>
+      </Routes>
+    </Router>
+    </>
   );
 }
-
-export default App;
