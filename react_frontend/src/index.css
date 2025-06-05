@@ -5,9 +5,65 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Navbar Styles */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+  color: #007bff;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #333;
+}
+
+/* Search Bar Focus */
+.form-control:focus {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: #007bff !important;
+}
+
+/* Cart Badge Animation */
+.badge {
+  transition: transform 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  border-color: #333;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }

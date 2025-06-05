@@ -20,7 +20,7 @@ function HomeScreen() {
       <br />
       <h1>Products</h1>
       <marquee behavior="" direction="">
-        This Course is free &amp; valid only on ARKPROCODER youtube channel
+        Welcome to DjangoMart Shopping! Get the best deals on all products!
       </marquee>
 
       {loading ? (
