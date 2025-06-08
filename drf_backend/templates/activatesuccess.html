@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Account Activated</title>
+    <meta charset="utf-8">
+    <title>Account Activated - {{ site_name }}</title>
+    <meta http-equiv="refresh" content="5;url={{ frontend_url }}/login">
+    <style>
+        /* Same style as activate.html */
+    </style>
 </head>
 <body>
-    <h2>Account Activated Successfully!</h2>
-    <p>Your account has been activated. You can now login to your account.</p>
-    <a href="http://localhost:3000/login">Go to Login Page</a>
+    <div class="header">
+        <h1>Account Activated!</h1>
+    </div>
+    
+    <div class="content">
+        <h2>Congratulations!</h2>
+        <p>Your account has been successfully activated. You will be redirected to the login page in 5 seconds.</p>
+        <p>If you are not redirected, <a href="{{ frontend_url }}/login">click here</a>.</p>
+    </div>
+    
+    <div class="footer">
+        <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
+        <p>Activated at: {{ timestamp }}</p>
+    </div>
 </body>
 </html>

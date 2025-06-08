@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Activation Failed</title>
+    <meta charset="utf-8">
+    <title>Activation Failed - {{ site_name }}</title>
+    <meta http-equiv="refresh" content="5;url={{ frontend_url }}/register">
+    <style>
+        /* Same style as activate.html */
+    </style>
 </head>
 <body>
-    <h2>Account Activation Failed</h2>
-    <p>Sorry, we couldn't activate your account. The activation link may be invalid or expired.</p>
-    <p>Please try registering again or contact support if the problem persists.</p>
-    <a href="http://localhost:3000/signup">Go to Registration Page</a>
+    <div class="header">
+        <h1>Activation Failed</h1>
+    </div>
+    
+    <div class="content">
+        <h2>Sorry!</h2>
+        <p>The activation link is invalid or has expired. Please try registering again.</p>
+        <p>You will be redirected to the registration page in 5 seconds.</p>
+        <p>If you are not redirected, <a href="{{ frontend_url }}/register">click here</a>.</p>
+    </div>
+    
+    <div class="footer">
+        <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
+        <p>Attempted at: {{ timestamp }}</p>
+    </div>
 </body>
 </html>

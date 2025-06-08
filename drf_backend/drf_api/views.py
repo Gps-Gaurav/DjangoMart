@@ -181,38 +181,55 @@ def registerUser(request):
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = generate_token.make_token(user)
         
-        activation_link = f"http://{settings.DOMAIN}/activate/{uid}/{token}"
+        # Create activation link using settings
+        domain = getattr(settings, 'DOMAIN', 'localhost:8000')
+        frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
         
-        # Prepare and send activation email
-        email_subject = "Activate Your DjangoMart Account"
-        message = render_to_string(
-            "activate.html",
-            {
-                'user': user,
-                'domain': settings.DOMAIN,
-                'uid': uid,
-                'token': token,
-                'activation_link': activation_link,
-                'timestamp': get_current_time()
-            }
-        )
-
-        email_message = EmailMessage(
-            email_subject,
-            message,
-            settings.EMAIL_HOST_USER,
-            [data['email']]
-        )
+        activation_link = f"http://{domain}/activate/{uid}/{token}"
         
-        email_message.send()
+        # Prepare email context
+        context = {
+            'user': user,
+            'domain': domain,
+            'uid': uid,
+            'token': token,
+            'activation_link': activation_link,
+            'site_name': getattr(settings, 'SITE_NAME', 'DjangoMart'),
+            'frontend_url': frontend_url,
+            'timestamp': get_current_time()
+        }
 
-        # Return user data
+        # Render email template
+        email_subject = f"Activate Your {context['site_name']} Account"
+        email_body = render_to_string('activate.html', context)
+
+        # Send activation email
+        try:
+            email = EmailMessage(
+                email_subject,
+                email_body,
+                settings.EMAIL_HOST_USER,
+                [user.email]
+            )
+            email.content_subtype = 'html'
+            email.send(fail_silently=False)
+        except Exception as e:
+            user.delete()  # Delete user if email sending fails
+            return Response(
+                {
+                    'detail': f'Failed to send activation email: {str(e)}',
+                    'timestamp': get_current_time()
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+        # Return success response
         serializer = UserSerializerWithToken(user, many=False)
-        response_data = serializer.data
-        response_data['timestamp'] = get_current_time()
-        response_data['message'] = 'Registration successful. Please check your email to activate your account.'
-        
-        return Response(response_data)
+        return Response({
+            'user': serializer.data,
+            'message': 'Registration successful! Please check your email to activate your account.',
+            'timestamp': get_current_time()
+        })
 
     except KeyError as e:
         return Response(
@@ -230,7 +247,6 @@ def registerUser(request):
             }, 
             status=status.HTTP_400_BAD_REQUEST
         )
-
 class ActivateAccountView(View):
     def get(self, request, uidb64, token):
         try:
