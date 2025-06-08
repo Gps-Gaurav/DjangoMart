@@ -1,36 +1,57 @@
-import {
-    PRODUCT_LIST_REQUEST,
-    PRODUCT_LIST_SUCCESS,
-    PRODUCT_LIST_FAIL,
-    PRODUCT_DETAILS_REQUEST,
-    PRODUCT_DETAILS_SUCCESS,
-    PRODUCT_DETAILS_FAIL
-} from "../constants/productsConstants";
+import { createReducer } from '@reduxjs/toolkit';
+import { APP_CONSTANTS } from '../constants/appConstant';
 
-export const productsListReducers = (state = { products: [] }, action) => {
-    switch (action.type) {
-        case PRODUCT_LIST_REQUEST:
-            return { loading: true, products: [] }
-        case PRODUCT_LIST_SUCCESS:
-            return { loading: false, products: action.payload }
-        case PRODUCT_LIST_FAIL:
-            return { loading: false, error: action.payload }
+const { CURRENT_TIME, DEFAULT_USER } = APP_CONSTANTS;
 
-        default:
-            return state
+const initialState = {
+    products: [],
+    loading: false,
+    error: null,
+    timestamp: CURRENT_TIME,
+    current_user: DEFAULT_USER
+};
+
+export const productsListReducers = createReducer(initialState, (builder) => {
+    builder
+        .addCase('PRODUCT_LIST_REQUEST', (state) => {
+            state.loading = true;
+            state.timestamp = CURRENT_TIME;
+            state.current_user = DEFAULT_USER;
+        })
+        .addCase('PRODUCT_LIST_SUCCESS', (state, action) => {
+            state.loading = false;
+            state.products = action.payload.products || [];
+            state.timestamp = CURRENT_TIME;
+            state.current_user = DEFAULT_USER;
+        })
+        .addCase('PRODUCT_LIST_FAIL', (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+            state.timestamp = CURRENT_TIME;
+            state.current_user = DEFAULT_USER;
+        });
+});
+
+export const productDetailsReducers = createReducer(
+    { ...initialState, product: null },
+    (builder) => {
+        builder
+            .addCase('PRODUCT_DETAILS_REQUEST', (state) => {
+                state.loading = true;
+                state.timestamp = CURRENT_TIME;
+                state.current_user = DEFAULT_USER;
+            })
+            .addCase('PRODUCT_DETAILS_SUCCESS', (state, action) => {
+                state.loading = false;
+                state.product = action.payload;
+                state.timestamp = CURRENT_TIME;
+                state.current_user = DEFAULT_USER;
+            })
+            .addCase('PRODUCT_DETAILS_FAIL', (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+                state.timestamp = CURRENT_TIME;
+                state.current_user = DEFAULT_USER;
+            });
     }
-}
-
-export const productDetailsReducers = (state = { product: [] }, action) => {
-    switch (action.type) {
-        case PRODUCT_DETAILS_REQUEST:
-            return { loading: true, ...state }
-        case PRODUCT_DETAILS_SUCCESS:
-            return { loading: false, product: action.payload }
-        case PRODUCT_DETAILS_FAIL:
-            return { loading: false, error: action.payload }
-
-        default:
-            return state
-    }
-}
+);

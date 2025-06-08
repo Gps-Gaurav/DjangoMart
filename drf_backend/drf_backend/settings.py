@@ -202,8 +202,6 @@ CORS_ALLOWED_HEADERS = [
     'X-CSRFToken',
     'X-Requested-With',
 ]
-# Frontend URL
-FRONTEND_URL = 'http://localhost:3000'  # Add this
 
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -216,7 +214,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 DOMAIN = 'localhost:8000'
 SITE_NAME = 'djangomart'
-FRONTEND_URL = 'http://localhost:3000'
+BACKEND_DOMAIN = 'localhost:8000'
+FRONTEND_DOMAIN = 'localhost:3000'
 
 # Current user and time settings
 CURRENT_USER = 'Gps-Gaurav'

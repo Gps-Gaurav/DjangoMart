@@ -1,12 +1,12 @@
-import React from 'react'
-import { Alert } from 'react-bootstrap'
+import React from 'react';
+import { Alert } from 'react-bootstrap';
 
-function Message({ variant, children }) {
+function Message({ variant = 'info', children }) {
     return (
-        <Alert variant={variant}>
+        <Alert variant={variant} className="text-center">
             {children}
         </Alert>
-    )
+    );
 }
 
-export default Message
+export default Message;

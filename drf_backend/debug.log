@@ -1,0 +1,54 @@
+Watching for file changes with StatReloader
+/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+"GET /api/products/ HTTP/1.1" 200 563
+"GET /api/products/ HTTP/1.1" 200 563
+"GET /api/products/ HTTP/1.1" 200 563
+"GET /api/products/ HTTP/1.1" 200 563
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+Not Found: /logo192.png
+"GET /products HTTP/1.1" 404 2521
+"GET /logo192.png HTTP/1.1" 404 2530
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /products
+"GET /products HTTP/1.1" 404 2521
+Not Found: /logo192.png
+"GET /logo192.png HTTP/1.1" 404 2530
+Watching for file changes with StatReloader
