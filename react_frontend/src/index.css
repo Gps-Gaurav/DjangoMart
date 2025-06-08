@@ -67,3 +67,15 @@ code {
 .navbar-toggler:focus {
   box-shadow: none;
 }
+
+.product-card:hover {
+  transform: translateY(-3px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
