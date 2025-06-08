@@ -1,0 +1,29 @@
+INFO 2025-06-08 23:01:32,637 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:04:34,791 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/utils.py changed, reloading.
+INFO 2025-06-08 23:04:35,174 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:04:36,372 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/utils.py changed, reloading.
+INFO 2025-06-08 23:04:36,575 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:06:13,386 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/serializer.py changed, reloading.
+INFO 2025-06-08 23:06:13,694 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:06:48,811 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/serializer.py changed, reloading.
+INFO 2025-06-08 23:06:49,125 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:07:16,008 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-08 23:07:16,317 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:07:43,151 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-08 23:07:43,444 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:11:35,138 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-08 23:11:35,502 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:12:08,149 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:14:58,053 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-08 23:14:58,481 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:19:28,835 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-08 23:19:29,215 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:23:34,871 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-08 23:23:35,246 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:25:19,080 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-08 23:25:19,451 autoreload Watching for file changes with StatReloader
+INFO 2025-06-08 23:26:07,806 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/serializer.py changed, reloading.
+INFO 2025-06-08 23:26:08,145 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-08 23:26:17,409 log Not Found: /
+WARNING 2025-06-08 23:26:17,410 basehttp "GET / HTTP/1.1" 404 2479
+INFO 2025-06-08 23:26:31,005 basehttp "GET /api/products/ HTTP/1.1" 200 6783
