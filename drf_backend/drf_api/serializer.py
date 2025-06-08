@@ -5,8 +5,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 class ProductsSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Products
-        fields='__all__'
+        model = Products
+        fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
     name=serializers.SerializerMethodField(read_only=True)
