@@ -30,7 +30,9 @@ function SignupScreen() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setMessage(null);
 
+    // Validation
     if (!name || !email || !password || !confirmPassword) {
       setMessage('Please fill in all fields');
       return;
@@ -38,9 +40,22 @@ function SignupScreen() {
 
     if (password !== confirmPassword) {
       setMessage('Passwords do not match');
-    } else {
-      dispatch(register(name, email, password));
+      return;
     }
+
+    if (password.length < 6) {
+      setMessage('Password must be at least 6 characters');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage('Please enter a valid email address');
+      return;
+    }
+
+    dispatch(register(name, email, password));
   };
 
   return (
@@ -58,6 +73,7 @@ function SignupScreen() {
             placeholder='Enter full name'
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </Form.Group>
 
@@ -68,7 +84,11 @@ function SignupScreen() {
             placeholder='Enter email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
         </Form.Group>
 
         <Form.Group controlId='password' className='mb-3'>
@@ -78,6 +98,8 @@ function SignupScreen() {
             placeholder='Enter password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            minLength={6}
           />
         </Form.Group>
 
@@ -88,6 +110,7 @@ function SignupScreen() {
             placeholder='Confirm password'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
         </Form.Group>
 
@@ -97,13 +120,13 @@ function SignupScreen() {
           className='w-100 mb-3'
           disabled={loading}
         >
-          Sign Up
+          {loading ? 'Creating Account...' : 'Sign Up'}
         </Button>
       </Form>
 
       <Row className='py-3'>
         <Col>
-          Have an Account?{' '}
+          Already have an account?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
             Login
           </Link>

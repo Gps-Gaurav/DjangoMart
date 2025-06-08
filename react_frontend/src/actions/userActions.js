@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axiosInstance from '../utils/axios';
 import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -14,43 +14,20 @@ export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
 
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    // Get tokens from login endpoint
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       '/api/users/login/',
-      { email, password },
-      config
-    );
-
-    // Get user profile with access token
-    const { access, refresh } = data;
-    const userConfig = {
-      headers: {
-        'Authorization': `Bearer ${access}`
+      { 
+        username: email, // Django expects username
+        password: password 
       }
-    };
-
-    const { data: userData } = await axios.get('/api/users/profile/', userConfig);
+    );
 
     dispatch({
       type: USER_LOGIN_SUCCESS,
-      payload: {
-        ...userData,
-        token: access,
-        refreshToken: refresh
-      }
+      payload: data
     });
 
-    localStorage.setItem('userInfo', JSON.stringify({
-      ...userData,
-      token: access,
-      refreshToken: refresh
-    }));
+    localStorage.setItem('userInfo', JSON.stringify(data));
 
   } catch (error) {
     dispatch({
@@ -67,16 +44,14 @@ export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_REGISTER_REQUEST });
 
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       '/api/users/register/',
-      { name, email, password },
-      config
+      {
+        name: name,
+        email: email,
+        password: password,
+        username: email // Using email as username
+      }
     );
 
     dispatch({
@@ -84,7 +59,7 @@ export const register = (name, email, password) => async (dispatch) => {
       payload: data
     });
 
-    // Automatically log in after successful registration
+    // Auto login after successful registration
     dispatch({
       type: USER_LOGIN_SUCCESS,
       payload: data
@@ -106,41 +81,4 @@ export const register = (name, email, password) => async (dispatch) => {
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo');
   dispatch({ type: USER_LOGOUT });
-};
-
-// Refresh token action
-export const refreshToken = () => async (dispatch, getState) => {
-  try {
-    const { userLogin: { userInfo } } = getState();
-
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    const { data } = await axios.post(
-      '/api/users/login/refresh/',
-      { refresh: userInfo.refreshToken },
-      config
-    );
-
-    dispatch({
-      type: USER_LOGIN_SUCCESS,
-      payload: {
-        ...userInfo,
-        token: data.access,
-        refreshToken: data.refresh
-      }
-    });
-
-    localStorage.setItem('userInfo', JSON.stringify({
-      ...userInfo,
-      token: data.access,
-      refreshToken: data.refresh
-    }));
-
-  } catch (error) {
-    dispatch(logout());
-  }
 };
