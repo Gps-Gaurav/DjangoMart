@@ -9,8 +9,10 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
+from datetime import datetime
+import pytz
 
-# for sending mails and generate token
+# For sending mails and generate token
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from .utils import TokenGenerator, generate_token
@@ -19,6 +21,9 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import View
 
+# Get current UTC time
+def get_current_time():
+    return datetime.now(pytz.UTC).strftime('%Y-%m-%d %H:%M:%S')
 
 # API Routes
 @api_view(['GET'])
@@ -30,9 +35,13 @@ def getRoutes(request):
         '/api/users/register/',
         '/api/users/profile/',
         '/api/users/login/',
+        '/api/users/login/refresh/',
     ]
-    return Response(routes)
-
+    return Response({
+        'routes': routes,
+        'timestamp': get_current_time(),
+        'current_user': request.user.username if request.user.is_authenticated else None
+    })
 
 # Product Views
 @api_view(['GET'])
@@ -40,36 +49,62 @@ def getProducts(request):
     try:
         products = Products.objects.all()
         serializer = ProductsSerializer(products, many=True)
-        return Response(serializer.data)
+        return Response({
+            'products': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': request.user.username if request.user.is_authenticated else None
+        })
     except Exception as e:
-        return Response({'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+        return Response(
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 @api_view(['GET'])
 def getProduct(request, pk):
     try:
         product = Products.objects.get(_id=pk)
         serializer = ProductsSerializer(product, many=False)
-        return Response(serializer.data)
+        return Response({
+            'product': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': request.user.username if request.user.is_authenticated else None
+        })
     except Products.DoesNotExist:
-        return Response({'detail': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+        return Response(
+            {
+                'detail': 'Product not found',
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_404_NOT_FOUND
+        )
     except Exception as e:
-        return Response({'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+        return Response(
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 # User Authentication Views
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
         serializer = UserSerializerWithToken(self.user).data
-        for k, v in serializer.items():
-            data[k] = v
+        
+        # Add additional data
+        data.update(serializer)
+        data['timestamp'] = get_current_time()
+        data['last_login'] = self.user.last_login.strftime('%Y-%m-%d %H:%M:%S') if self.user.last_login else None
+        
         return data
-
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
-
 
 # User Profile Views
 @api_view(['GET'])
@@ -78,10 +113,19 @@ def getUserProfile(request):
     try:
         user = request.user
         serializer = UserSerializer(user, many=False)
-        return Response(serializer.data)
+        return Response({
+            'user': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': user.username
+        })
     except Exception as e:
-        return Response({'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+        return Response(
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
@@ -89,10 +133,19 @@ def getUsers(request):
     try:
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
+        return Response({
+            'users': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': request.user.username
+        })
     except Exception as e:
-        return Response({'detail': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+        return Response(
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 # User Registration and Activation
 @api_view(['POST'])
@@ -102,27 +155,36 @@ def registerUser(request):
         # Check if user already exists
         if User.objects.filter(email=data['email']).exists():
             return Response(
-                {'detail': 'User with this email already exists'}, 
+                {
+                    'detail': 'User with this email already exists',
+                    'timestamp': get_current_time()
+                }, 
                 status=status.HTTP_400_BAD_REQUEST
             )
 
+        # Split name into first and last name
+        name_parts = data['name'].split(' ', 1)
+        first_name = name_parts[0]
+        last_name = name_parts[1] if len(name_parts) > 1 else ''
+
         # Create user
         user = User.objects.create(
-            first_name=data['fname'],
-            last_name=data['lname'],
+            first_name=first_name,
+            last_name=last_name,
             username=data['email'],
             email=data['email'],
             password=make_password(data['password']),
             is_active=False
         )
 
-        # Generate activation token and send email
+        # Generate activation token
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = generate_token.make_token(user)
         
         activation_link = f"http://{settings.DOMAIN}/activate/{uid}/{token}"
         
-        email_subject = "Activate Your Account"
+        # Prepare and send activation email
+        email_subject = "Activate Your DjangoMart Account"
         message = render_to_string(
             "activate.html",
             {
@@ -130,7 +192,8 @@ def registerUser(request):
                 'domain': settings.DOMAIN,
                 'uid': uid,
                 'token': token,
-                'activation_link': activation_link
+                'activation_link': activation_link,
+                'timestamp': get_current_time()
             }
         )
 
@@ -143,20 +206,30 @@ def registerUser(request):
         
         email_message.send()
 
+        # Return user data
         serializer = UserSerializerWithToken(user, many=False)
-        return Response(serializer.data)
+        response_data = serializer.data
+        response_data['timestamp'] = get_current_time()
+        response_data['message'] = 'Registration successful. Please check your email to activate your account.'
+        
+        return Response(response_data)
 
     except KeyError as e:
         return Response(
-            {'detail': f'Missing required field: {str(e)}'}, 
+            {
+                'detail': f'Missing required field: {str(e)}',
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
     except Exception as e:
         return Response(
-            {'detail': str(e)}, 
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
-
 
 class ActivateAccountView(View):
     def get(self, request, uidb64, token):
@@ -167,13 +240,29 @@ class ActivateAccountView(View):
             if user and generate_token.check_token(user, token):
                 user.is_active = True
                 user.save()
-                return render(request, "activatesuccess.html")
+                
+                context = {
+                    'success': True,
+                    'message': 'Account activated successfully!',
+                    'timestamp': get_current_time(),
+                    'username': user.username
+                }
+                return render(request, "activatesuccess.html", context)
             else:
-                return render(request, "activatefail.html")
+                context = {
+                    'success': False,
+                    'message': 'Activation link is invalid!',
+                    'timestamp': get_current_time()
+                }
+                return render(request, "activatefail.html", context)
                 
         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-            return render(request, "activatefail.html")
-
+            context = {
+                'success': False,
+                'message': 'Activation failed!',
+                'timestamp': get_current_time()
+            }
+            return render(request, "activatefail.html", context)
 
 # Product Management Views (Admin Only)
 @api_view(['POST'])
@@ -194,19 +283,28 @@ def createProduct(request):
         )
 
         serializer = ProductsSerializer(product, many=False)
-        return Response(serializer.data)
+        return Response({
+            'product': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': user.username
+        })
     
     except KeyError as e:
         return Response(
-            {'detail': f'Missing required field: {str(e)}'}, 
+            {
+                'detail': f'Missing required field: {str(e)}',
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
     except Exception as e:
         return Response(
-            {'detail': str(e)}, 
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
-
 
 @api_view(['PUT'])
 @permission_classes([IsAdminUser])
@@ -225,19 +323,28 @@ def updateProduct(request, pk):
         product.save()
         
         serializer = ProductsSerializer(product, many=False)
-        return Response(serializer.data)
+        return Response({
+            'product': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': request.user.username
+        })
     
     except Products.DoesNotExist:
         return Response(
-            {'detail': 'Product not found'}, 
+            {
+                'detail': 'Product not found',
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_404_NOT_FOUND
         )
     except Exception as e:
         return Response(
-            {'detail': str(e)}, 
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
-
 
 @api_view(['DELETE'])
 @permission_classes([IsAdminUser])
@@ -245,15 +352,25 @@ def deleteProduct(request, pk):
     try:
         product = Products.objects.get(_id=pk)
         product.delete()
-        return Response({'detail': 'Product deleted successfully'})
+        return Response({
+            'detail': 'Product deleted successfully',
+            'timestamp': get_current_time(),
+            'current_user': request.user.username
+        })
     
     except Products.DoesNotExist:
         return Response(
-            {'detail': 'Product not found'}, 
+            {
+                'detail': 'Product not found',
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_404_NOT_FOUND
         )
     except Exception as e:
         return Response(
-            {'detail': str(e)}, 
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
             status=status.HTTP_400_BAD_REQUEST
         )
