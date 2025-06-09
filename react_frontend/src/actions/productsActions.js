@@ -62,24 +62,23 @@ export const listProducts = () => async (dispatch) => {
 // Action to get single product details
 export const listProductDetails = (id) => async (dispatch) => {
     try {
-        dispatch({ 
-            type: PRODUCT_DETAILS_REQUEST 
-        });
+        dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        if (!id) {
-            throw new Error('Product ID is required');
+        const response = await fetch(`/api/product/${id}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.detail || 'Failed to fetch product');
         }
-        
-        const data = await fetchApi(`/products/${id}/`);
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
-            payload: data
+            payload: data,
         });
     } catch (error) {
         dispatch({
             type: PRODUCT_DETAILS_FAIL,
-            payload: handleApiError(error)
+            payload: error.message,
         });
     }
 };

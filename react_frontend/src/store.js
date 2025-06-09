@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { productDetailsReducers, productsListReducers } from './reducers/productsReducers';
-import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
+import { userLoginReducer, userRegisterReducer, userVerifyReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { userVerifyReducer } from './reducers/userReducers';
 
+// Get user info from localStorage
 const userInfoFromStorage = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))
     : null;
 
-// Get cart items from storage
+// Get cart and shipping from localStorage
 const cartItemsFromStorage = localStorage.getItem('cartItems')
     ? JSON.parse(localStorage.getItem('cartItems'))
     : [];
@@ -17,7 +17,7 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
     ? JSON.parse(localStorage.getItem('shippingAddress'))
     : {};
 
-// Initial state with NO default user
+// Initial state
 const initialState = {
     userLogin: {
         userInfo: userInfoFromStorage,
@@ -40,18 +40,18 @@ const initialState = {
     }
 };
 
-
+// Create store
 const store = configureStore({
-    userVerify: userVerifyReducer,
     reducer: {
         productsList: productsListReducers,
         productDetails: productDetailsReducers,
         userLogin: userLoginReducer,
         userRegister: userRegisterReducer,
+        userVerify: userVerifyReducer, // ✅ Correct position
         cart: cartReducer,
     },
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => 
+    middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
             immutableCheck: false,
@@ -59,19 +59,18 @@ const store = configureStore({
     devTools: process.env.NODE_ENV !== 'production',
 });
 
-// Subscribe to store changes
+// Persist store changes
 store.subscribe(() => {
     const state = store.getState();
-    
-    // Only save userInfo if it's from a legitimate login/register
+
     if (state.userLogin.userInfo && state.userLogin.userInfo.token) {
         localStorage.setItem('userInfo', JSON.stringify(state.userLogin.userInfo));
     }
-    
+
     if (state.cart.cartItems) {
         localStorage.setItem('cartItems', JSON.stringify(state.cart.cartItems));
     }
-    
+
     if (state.cart.shippingAddress) {
         localStorage.setItem('shippingAddress', JSON.stringify(state.cart.shippingAddress));
     }

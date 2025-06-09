@@ -12,6 +12,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.product-image-wrapper:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 
 .App-header {
   background-color: #282c34;
