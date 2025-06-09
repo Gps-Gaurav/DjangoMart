@@ -21,6 +21,8 @@ urlpatterns = [
     path('users/profile/', views.getUserProfile, name="getUserProfile"),  # Changed from getUserProfiles to getUserProfile
     path('users/', views.getUsers, name="getUsers"),
     path('users/register/', views.registerUser, name="register"),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
     # Account Activation Route
     path('activate/<str:uidb64>/<str:token>/', views.ActivateAccountView.as_view(), name='activate'),  # Added str: prefix and trailing slash

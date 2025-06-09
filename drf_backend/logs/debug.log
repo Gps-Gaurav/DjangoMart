@@ -27,3 +27,120 @@ INFO 2025-06-08 23:26:08,145 autoreload Watching for file changes with StatReloa
 WARNING 2025-06-08 23:26:17,409 log Not Found: /
 WARNING 2025-06-08 23:26:17,410 basehttp "GET / HTTP/1.1" 404 2479
 INFO 2025-06-08 23:26:31,005 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+WARNING 2025-06-08 23:29:13,085 log Not Found: /products
+WARNING 2025-06-08 23:29:13,090 log Not Found: /logo192.png
+WARNING 2025-06-08 23:29:13,090 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-08 23:29:13,090 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-08 23:29:13,110 log Not Found: /products
+WARNING 2025-06-08 23:29:13,110 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-08 23:29:14,885 log Not Found: /products
+WARNING 2025-06-08 23:29:14,886 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-08 23:29:14,912 log Not Found: /products
+WARNING 2025-06-08 23:29:14,914 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-08 23:29:14,917 log Not Found: /logo192.png
+WARNING 2025-06-08 23:29:14,917 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-08 23:35:42,923 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-06-08 23:35:42,950 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-06-08 23:35:42,980 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:42,980 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:42,981 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:42,981 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:42,981 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:42,981 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:43,196 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:56,041 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-06-08 23:35:56,049 basehttp "GET /admin/ HTTP/1.1" 200 8337
+INFO 2025-06-08 23:35:56,071 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:56,158 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:56,158 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:35:56,158 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,402 basehttp "GET /admin/auth/user/add/ HTTP/1.1" 200 12488
+INFO 2025-06-08 23:40:07,420 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,422 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,422 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,423 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,423 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,427 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,427 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,428 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,428 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,429 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,430 basehttp "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-06-08 23:40:07,431 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-08 23:40:07,547 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,548 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:40:07,549 basehttp "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+WARNING 2025-06-08 23:40:27,383 log Unauthorized: /api/users/register/
+WARNING 2025-06-08 23:40:27,384 basehttp "POST /api/users/register/ HTTP/1.1" 401 172
+WARNING 2025-06-08 23:41:16,302 log Not Found: /api/admin
+WARNING 2025-06-08 23:41:16,303 basehttp "POST /api/admin HTTP/1.1" 404 4835
+INFO 2025-06-08 23:41:26,048 basehttp "GET /admin/ HTTP/1.1" 200 8337
+INFO 2025-06-08 23:41:29,049 basehttp "GET /admin/auth/user/add/ HTTP/1.1" 200 12488
+INFO 2025-06-08 23:41:30,023 basehttp "GET /admin/ HTTP/1.1" 200 8337
+INFO 2025-06-08 23:41:33,186 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-06-08 23:41:33,199 basehttp "GET /admin/ HTTP/1.1" 200 8337
+INFO 2025-06-08 23:41:34,255 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-08 23:41:42,968 basehttp "GET /admin/ HTTP/1.1" 200 8337
+INFO 2025-06-08 23:41:46,538 basehttp "POST /admin/logout/ HTTP/1.1" 200 3568
+INFO 2025-06-08 23:41:51,945 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-06-08 23:41:51,954 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+WARNING 2025-06-08 23:42:05,908 log Forbidden (CSRF cookie not set.): /admin/login/
+WARNING 2025-06-08 23:42:05,909 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2855
+INFO 2025-06-08 23:42:19,773 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-06-08 23:42:19,781 basehttp "GET /admin/ HTTP/1.1" 200 8337
+WARNING 2025-06-08 23:43:38,027 log Unauthorized: /api/users/register/
+WARNING 2025-06-08 23:43:38,028 basehttp "POST /api/users/register/ HTTP/1.1" 401 172
+WARNING 2025-06-08 23:45:43,826 log Not Found: /api/token
+WARNING 2025-06-08 23:45:43,827 basehttp "GET /api/token HTTP/1.1" 404 4834
+INFO 2025-06-08 23:46:28,304 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-08 23:46:28,825 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-08 23:46:39,798 log Not Found: /api/token
+WARNING 2025-06-08 23:46:39,798 basehttp "GET /api/token HTTP/1.1" 404 5384
+WARNING 2025-06-08 23:46:43,868 log Not Found: /api/token
+WARNING 2025-06-08 23:46:43,868 basehttp "POST /api/token HTTP/1.1" 404 5385
+WARNING 2025-06-08 23:46:44,651 log Not Found: /api/token
+WARNING 2025-06-08 23:46:44,651 basehttp "POST /api/token HTTP/1.1" 404 5385
+INFO 2025-06-08 23:47:21,603 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 13218
+INFO 2025-06-08 23:47:21,619 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,619 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,620 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,621 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-08 23:47:21,735 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,737 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,760 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,760 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:47:21,760 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:48:44,207 basehttp "GET /admin/auth/user/2/change/ HTTP/1.1" 200 22141
+INFO 2025-06-08 23:48:44,231 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:48:44,231 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-06-08 23:48:44,234 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-06-08 23:48:44,235 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-06-08 23:48:44,235 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-08 23:48:44,321 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:48:44,322 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-06-08 23:48:44,322 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-06-08 23:48:53,051 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 13218
+WARNING 2025-06-08 23:49:20,959 log Not Found: /api/token
+WARNING 2025-06-08 23:49:20,960 basehttp "POST /api/token HTTP/1.1" 404 5385
+WARNING 2025-06-08 23:49:22,148 log Not Found: /api/token
+WARNING 2025-06-08 23:49:22,148 basehttp "POST /api/token HTTP/1.1" 404 5385
+INFO 2025-06-08 23:51:17,987 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-08 23:51:18,002 log Unauthorized: /api/products/
+WARNING 2025-06-08 23:51:18,002 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-08 23:51:40,888 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+WARNING 2025-06-08 23:53:33,401 log Not Found: /api/login/
+WARNING 2025-06-08 23:53:33,402 basehttp "GET /api/login/ HTTP/1.1" 404 5387
+WARNING 2025-06-08 23:53:53,313 log Method Not Allowed: /api/users/register/
+WARNING 2025-06-08 23:53:53,313 basehttp "GET /api/users/register/ HTTP/1.1" 405 5648
+WARNING 2025-06-08 23:54:06,222 log Method Not Allowed: /api/users/login/
+WARNING 2025-06-08 23:54:06,223 basehttp "GET /api/users/login/ HTTP/1.1" 405 5753
+WARNING 2025-06-08 23:55:18,585 log Bad Request: /api/users/register/
+WARNING 2025-06-08 23:55:18,586 basehttp "POST /api/users/register/ HTTP/1.1" 400 5705
+WARNING 2025-06-08 23:55:37,986 log Bad Request: /api/users/register/
+WARNING 2025-06-08 23:55:37,988 basehttp "POST /api/users/register/ HTTP/1.1" 400 5700
+INFO 2025-06-08 23:55:40,674 basehttp "POST /api/users/register/ HTTP/1.1" 200 6369
+ERROR 2025-06-08 23:58:16,531 log Internal Server Error: /api/users/register/
+ERROR 2025-06-08 23:58:16,532 basehttp "POST /api/users/register/ HTTP/1.1" 500 5758
+WARNING 2025-06-08 23:59:35,785 log Bad Request: /api/users/register/
+WARNING 2025-06-08 23:59:35,785 basehttp "POST /api/users/register/ HTTP/1.1" 400 5700
+INFO 2025-06-08 23:59:44,242 basehttp "POST /api/users/register/ HTTP/1.1" 200 6403
