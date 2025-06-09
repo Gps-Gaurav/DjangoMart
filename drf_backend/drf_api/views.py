@@ -184,7 +184,7 @@ def registerUser(request):
         # Create activation link using settings
         domain = getattr(settings, 'DOMAIN', 'localhost:8000')
         frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
-        
+        site_name = getattr(settings, 'SITE_NAME', 'DjangoMart')
         activation_link = f"http://{domain}/api/activate/{uid}/{token}"
         
         # Prepare email context
@@ -194,7 +194,7 @@ def registerUser(request):
             'uid': uid,
             'token': token,
             'activation_link': activation_link,
-            'site_name': getattr(settings, 'SITE_NAME', 'DjangoMart'),
+            'site_name': site_name,
             'frontend_url': frontend_url,
             'timestamp': get_current_time()
         }
@@ -249,10 +249,12 @@ def registerUser(request):
         )
 class ActivateAccountView(View):
     def get(self, request, uidb64, token):
+        frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
+        site_name = getattr(settings, 'SITE_NAME', 'DjangoMart')
         try:
             uid = force_str(urlsafe_base64_decode(uidb64))
             user = User.objects.get(pk=uid)
-            
+           
             if user and generate_token.check_token(user, token):
                 user.is_active = True
                 user.save()
@@ -261,14 +263,18 @@ class ActivateAccountView(View):
                     'success': True,
                     'message': 'Account activated successfully!',
                     'timestamp': get_current_time(),
-                    'username': user.username
+                    'username': user.username,
+                    'site_name': site_name,
+                    'frontend_url': frontend_url,  # 👈 passed to template
                 }
                 return render(request, "activatesuccess.html", context)
             else:
                 context = {
                     'success': False,
                     'message': 'Activation link is invalid!',
-                    'timestamp': get_current_time()
+                    'timestamp': get_current_time(),
+                    'site_name': site_name,
+                    'frontend_url': frontend_url,
                 }
                 return render(request, "activatefail.html", context)
                 
@@ -276,7 +282,9 @@ class ActivateAccountView(View):
             context = {
                 'success': False,
                 'message': 'Activation failed!',
-                'timestamp': get_current_time()
+                'timestamp': get_current_time(),
+                'site_name': site_name,
+                'frontend_url': frontend_url
             }
             return render(request, "activatefail.html", context)
 

@@ -666,3 +666,142 @@ WARNING 2025-06-09 14:14:40,559 log Not Found: /logo192.png
 WARNING 2025-06-09 14:14:40,560 basehttp "GET /logo192.png HTTP/1.1" 404 2530
 WARNING 2025-06-09 14:19:49,300 log Not Found: /logo192.png
 WARNING 2025-06-09 14:19:49,300 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 17:53:20,299 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:53:21,493 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:53:21,708 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:54:12,242 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:54:12,549 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:54:22,893 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:54:23,190 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:57:52,175 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:57:52,557 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:57:54,745 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:57:54,956 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:57:59,221 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:57:59,481 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:58:08,824 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:58:09,030 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 17:58:11,195 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 17:58:11,392 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:00:25,189 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 18:00:25,526 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:00:51,357 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 18:00:51,763 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:00:52,950 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 18:00:53,144 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:00:55,329 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 18:00:55,531 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:01:01,495 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 18:01:12,648 log Not Found: /logo192.png
+WARNING 2025-06-09 18:01:12,648 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:01:36,387 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14256
+INFO 2025-06-09 18:01:36,400 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 18:01:38,509 basehttp "GET /admin/auth/user/14/change/ HTTP/1.1" 200 22281
+INFO 2025-06-09 18:01:38,524 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 18:01:44,646 basehttp "GET /api/activate/MTM/cr52gk-86032003f6bcbb8b358d11e0b0a06e0f HTTP/1.1" 301 0
+ERROR 2025-06-09 18:01:44,672 log Internal Server Error: /api/activate/MTM/cr52gk-86032003f6bcbb8b358d11e0b0a06e0f/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py", line 254, in get
+    user = User.objects.get(pk=uid)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+django.contrib.auth.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py", line 286, in get
+    'frontend_url': frontend_url
+                    ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'frontend_url' where it is not associated with a value
+ERROR 2025-06-09 18:01:44,675 basehttp "GET /api/activate/MTM/cr52gk-86032003f6bcbb8b358d11e0b0a06e0f/ HTTP/1.1" 500 94377
+INFO 2025-06-09 18:04:42,100 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:04:42,547 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:04:43,761 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:04:43,954 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:04:51,260 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:04:51,484 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:05:16,317 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:05:16,620 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:05:31,177 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:05:31,475 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:05:36,739 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:05:37,026 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:05:42,261 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:05:42,456 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:06:08,308 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:06:08,611 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:13,530 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:13,852 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:29,291 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:29,564 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:41,032 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:41,323 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:47,616 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:47,862 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:56,139 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:56,374 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:57,467 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:07:57,659 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:07:59,849 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 18:08:00,075 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 18:08:20,948 basehttp "GET /api/activate/MTM/cr52gk-86032003f6bcbb8b358d11e0b0a06e0f/ HTTP/1.1" 200 2295
+WARNING 2025-06-09 18:08:26,458 log Not Found: /logo192.png
+WARNING 2025-06-09 18:08:26,458 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:09:10,807 log Not Found: /logo192.png
+WARNING 2025-06-09 18:09:10,808 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:07,591 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:07,593 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:10:24,069 basehttp "GET /admin/auth/user/14/change/ HTTP/1.1" 200 22281
+INFO 2025-06-09 18:10:24,087 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 18:10:30,553 basehttp "POST /admin/auth/user/14/change/ HTTP/1.1" 302 0
+INFO 2025-06-09 18:10:30,567 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14470
+INFO 2025-06-09 18:10:30,584 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 18:10:33,942 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:33,942 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:34,664 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:34,664 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:34,866 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:34,866 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:34,976 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:34,976 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:35,104 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:35,104 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:35,297 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:35,297 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:35,406 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:35,406 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:35,564 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:35,565 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:10:35,706 log Not Found: /logo192.png
+WARNING 2025-06-09 18:10:35,707 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:11:16,159 basehttp "POST /admin/auth/user/ HTTP/1.1" 200 7988
+INFO 2025-06-09 18:11:17,190 basehttp "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-06-09 18:11:17,204 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 13868
+INFO 2025-06-09 18:11:17,218 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 18:11:40,665 basehttp "POST /api/users/register/ HTTP/1.1" 200 508
+INFO 2025-06-09 18:11:59,833 basehttp "GET /api/activate/MTU/cr56jb-d022efe87a071b108643503e08299a66 HTTP/1.1" 301 0
+INFO 2025-06-09 18:11:59,840 basehttp "GET /api/activate/MTU/cr56jb-d022efe87a071b108643503e08299a66/ HTTP/1.1" 200 2196
+WARNING 2025-06-09 18:12:05,190 log Not Found: /logo192.png
+WARNING 2025-06-09 18:12:05,190 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:12:14,706 basehttp "POST /api/users/login/ HTTP/1.1" 200 915
+INFO 2025-06-09 18:12:14,736 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:12:14,741 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:12:21,105 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14256
+INFO 2025-06-09 18:12:21,114 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 18:12:23,879 basehttp "GET /admin/auth/user/15/change/ HTTP/1.1" 200 22289
+INFO 2025-06-09 18:12:23,898 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

@@ -20,7 +20,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Domain settings
 DOMAIN = 'localhost:8000'
-SITE_NAME = 'DjangoMart'
+FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
+SITE_NAME = "DjangoMart"
 
 # Application definition
 INSTALLED_APPS = [
