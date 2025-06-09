@@ -850,3 +850,32 @@ WARNING 2025-06-09 18:44:08,910 log Not Found: /logo192.png
 WARNING 2025-06-09 18:44:08,911 basehttp "GET /logo192.png HTTP/1.1" 404 2530
 WARNING 2025-06-09 18:44:14,267 log Not Found: /main.570e1f98aac53ab1c56b.hot-update.json
 WARNING 2025-06-09 18:44:14,268 basehttp "GET /main.570e1f98aac53ab1c56b.hot-update.json HTTP/1.1" 404 2620
+WARNING 2025-06-09 18:53:14,218 log Not Found: /logo192.png
+WARNING 2025-06-09 18:53:14,219 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:53:14,224 log Not Found: /logo192.png
+WARNING 2025-06-09 18:53:14,224 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:54:25,564 log Not Found: /logo192.png
+WARNING 2025-06-09 18:54:25,564 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:54:25,648 log Not Found: /logo192.png
+WARNING 2025-06-09 18:54:25,648 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:55:14,073 log Not Found: /logo192.png
+WARNING 2025-06-09 18:55:14,074 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:55:26,085 basehttp "POST /api/users/login/ HTTP/1.1" 200 909
+INFO 2025-06-09 18:55:26,114 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:55:26,118 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 18:55:29,105 log Not Found: /logo192.png
+WARNING 2025-06-09 18:55:29,106 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:55:29,106 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:55:29,110 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:55:29,798 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 18:55:29,809 log Not Found: /logo192.png
+INFO 2025-06-09 18:55:29,809 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 18:55:29,809 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:55:40,134 log Not Found: /logo192.png
+WARNING 2025-06-09 18:55:40,134 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 18:55:48,466 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 18:55:48,473 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 18:55:49,924 log Not Found: /logo192.png
+WARNING 2025-06-09 18:55:49,924 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 18:55:54,553 log Not Found: /logo192.png
+WARNING 2025-06-09 18:55:54,554 basehttp "GET /logo192.png HTTP/1.1" 404 2530

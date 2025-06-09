@@ -4,8 +4,9 @@ import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { userVerifyReducer } from './reducers/userReducers';
 
-// Clear any potentially corrupted user data
-localStorage.removeItem('userInfo');
+const userInfoFromStorage = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null;
 
 // Get cart items from storage
 const cartItemsFromStorage = localStorage.getItem('cartItems')
@@ -19,7 +20,7 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
 // Initial state with NO default user
 const initialState = {
     userLogin: {
-        userInfo: null,
+        userInfo: userInfoFromStorage,
         loading: false,
         error: null
     },
@@ -38,6 +39,7 @@ const initialState = {
         error: null
     }
 };
+
 
 const store = configureStore({
     userVerify: userVerifyReducer,
