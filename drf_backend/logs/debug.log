@@ -1093,3 +1093,290 @@ INFO 2025-06-09 19:58:21,704 basehttp "GET /api/products/ HTTP/1.1" 200 631
 INFO 2025-06-09 19:58:21,710 basehttp "GET /api/products/ HTTP/1.1" 200 631
 INFO 2025-06-09 19:58:22,730 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
 INFO 2025-06-09 19:58:22,737 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 20:13:26,859 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14769
+INFO 2025-06-09 20:13:26,876 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 20:13:30,962 basehttp "GET /admin/drf_api/products/ HTTP/1.1" 200 11687
+INFO 2025-06-09 20:13:30,977 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 20:13:34,137 basehttp "GET /admin/drf_api/products/3/change/ HTTP/1.1" 200 18718
+INFO 2025-06-09 20:13:34,146 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 20:13:34,248 basehttp "GET /static/admin/img/tooltag-arrowright.svg HTTP/1.1" 200 280
+INFO 2025-06-09 20:22:01,222 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:01,714 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:04,967 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:05,176 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:38,760 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:39,034 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:47,271 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:47,529 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:50,695 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:50,890 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:54,069 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:54,267 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:55,415 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:55,656 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:22:57,805 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:22:58,011 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:23:08,415 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:23:08,718 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:23:09,894 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/models.py changed, reloading.
+INFO 2025-06-09 20:23:10,090 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:33:11,037 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:34:44,736 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 20:34:45,051 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 20:36:28,463 log Not Found: /orders/add/
+WARNING 2025-06-09 20:36:28,465 basehttp "GET /orders/add/ HTTP/1.1" 404 2530
+WARNING 2025-06-09 20:36:40,308 log Unauthorized: /api/orders/add/
+WARNING 2025-06-09 20:36:40,308 basehttp "GET /api/orders/add/ HTTP/1.1" 401 3876
+INFO 2025-06-09 20:38:42,056 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-09 20:41:48,545 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:41:48,912 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:41:50,110 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:41:50,308 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:42:04,828 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:42:05,122 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:42:23,757 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:42:24,060 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:42:25,211 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:42:25,401 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:42:31,341 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-09 20:42:32,253 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-09 20:42:33,001 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-09 20:43:14,006 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 20:43:14,323 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:43:28,699 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 20:43:28,997 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:43:35,286 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+INFO 2025-06-09 20:44:18,199 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:44:25,948 basehttp "GET /api/products/ HTTP/1.1" 200 6783
+WARNING 2025-06-09 20:44:46,071 log Not Found: /api/login
+WARNING 2025-06-09 20:44:46,072 basehttp "GET /api/login HTTP/1.1" 404 6466
+INFO 2025-06-09 20:45:02,716 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 20:45:03,091 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:45:05,640 basehttp "GET /api/login HTTP/1.1" 301 0
+WARNING 2025-06-09 20:45:05,667 log Method Not Allowed: /api/login/
+WARNING 2025-06-09 20:45:05,668 basehttp "GET /api/login/ HTTP/1.1" 405 5468
+INFO 2025-06-09 20:45:41,380 basehttp "GET /admin/drf_api/products/ HTTP/1.1" 200 11687
+INFO 2025-06-09 20:45:45,482 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14769
+INFO 2025-06-09 20:45:45,501 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-06-09 20:46:11,776 log Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py", line 38, in post
+    user = authenticate(username=username, password=password)
+           ^^^^^^^^^^^^
+NameError: name 'authenticate' is not defined. Did you mean: 'IsAuthenticated'?
+ERROR 2025-06-09 20:46:11,780 basehttp "POST /api/login/ HTTP/1.1" 500 96503
+INFO 2025-06-09 20:46:56,609 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:46:56,994 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:46:58,198 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:46:58,389 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 20:47:06,065 log Method Not Allowed: /api/login/
+WARNING 2025-06-09 20:47:06,066 basehttp "GET /api/login/ HTTP/1.1" 405 5468
+ERROR 2025-06-09 20:47:37,516 log Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py", line 44, in post
+    token, created = Token.objects.get_or_create(user=user)
+                     ^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'objects'
+ERROR 2025-06-09 20:47:37,517 basehttp "POST /api/login/ HTTP/1.1" 500 96779
+INFO 2025-06-09 20:48:38,420 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:48:38,754 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:48:56,370 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:48:56,666 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:50:37,639 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:50:37,989 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 20:50:47,381 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 20:50:47,674 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 20:50:53,212 log Method Not Allowed: /api/login/
+WARNING 2025-06-09 20:50:53,212 basehttp "GET /api/login/ HTTP/1.1" 405 5468
+INFO 2025-06-09 20:51:56,232 basehttp "POST /api/login/ HTTP/1.1" 200 6050
+WARNING 2025-06-09 20:52:58,006 log Unauthorized: /api/orders/add/
+WARNING 2025-06-09 20:52:58,008 basehttp "GET /api/orders/add/ HTTP/1.1" 401 3876
+WARNING 2025-06-09 20:54:00,461 log Method Not Allowed: /api/login/
+WARNING 2025-06-09 20:54:00,463 basehttp "GET /api/login/ HTTP/1.1" 405 5468
+INFO 2025-06-09 20:55:03,462 basehttp "POST /api/login/ HTTP/1.1" 200 6050
+WARNING 2025-06-09 20:56:08,425 log Bad Request: /api/login/
+WARNING 2025-06-09 20:56:08,427 basehttp "POST /api/login/ HTTP/1.1" 400 5466
+INFO 2025-06-09 20:57:08,613 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:57:08,621 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:57:08,621 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-09 20:58:03,169 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:58:03,174 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:58:03,175 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-09 20:58:04,094 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:58:04,097 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:58:04,097 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-09 20:58:51,462 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:58:51,467 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:58:51,467 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-09 20:58:55,389 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:58:55,392 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:58:55,392 basehttp "GET /api/products/ HTTP/1.1" 401 172
+INFO 2025-06-09 20:58:56,381 basehttp "GET /api/products HTTP/1.1" 301 0
+WARNING 2025-06-09 20:58:56,383 log Unauthorized: /api/products/
+WARNING 2025-06-09 20:58:56,384 basehttp "GET /api/products/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:02:03,859 log Unauthorized: /api/orders/add/
+WARNING 2025-06-09 21:02:03,861 basehttp "POST /api/orders/add/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:03:06,297 log Not Found: /api/token/
+WARNING 2025-06-09 21:03:06,298 basehttp "GET /api/token/ HTTP/1.1" 404 6465
+WARNING 2025-06-09 21:05:09,395 log Not Found: /api/token/
+WARNING 2025-06-09 21:05:09,397 basehttp "GET /api/token/ HTTP/1.1" 404 6465
+WARNING 2025-06-09 21:05:26,825 log Method Not Allowed: /api/api/token/
+WARNING 2025-06-09 21:05:26,825 basehttp "GET /api/api/token/ HTTP/1.1" 405 5768
+INFO 2025-06-09 21:05:46,334 basehttp "POST /api/api/token/ HTTP/1.1" 200 6215
+WARNING 2025-06-09 21:06:09,510 log Unauthorized: /api/orders/add/
+WARNING 2025-06-09 21:06:09,511 basehttp "POST /api/orders/add/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:13:22,088 log Bad Request: /api/api/token/
+WARNING 2025-06-09 21:13:22,089 basehttp "POST /api/api/token/ HTTP/1.1" 400 79
+WARNING 2025-06-09 21:14:40,556 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:14:40,557 basehttp "POST /api/api/token/ HTTP/1.1" 401 63
+INFO 2025-06-09 21:14:50,586 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:14:50,629 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 21:15:13,737 log Not Found: /logo192.png
+WARNING 2025-06-09 21:15:13,738 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:15:15,024 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:15:15,029 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:15:19,193 log Not Found: /logo192.png
+WARNING 2025-06-09 21:15:19,194 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:15:37,301 basehttp "POST /api/users/login/ HTTP/1.1" 200 909
+INFO 2025-06-09 21:15:37,337 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:15:37,342 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:23:10,914 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:23:10,914 basehttp "POST /api/api/token/ HTTP/1.1" 401 63
+WARNING 2025-06-09 21:23:45,786 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:23:45,787 basehttp "POST /api/api/token/ HTTP/1.1" 401 5713
+INFO 2025-06-09 21:23:58,052 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:58,076 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:58,904 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:58,917 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,064 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,073 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,233 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,242 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,384 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,394 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,514 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,524 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,685 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,695 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:23:59,853 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:23:59,864 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:00,040 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:24:00,050 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:01,117 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:24:01,131 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:01,256 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:24:01,265 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:08,281 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14769
+INFO 2025-06-09 21:24:08,297 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:11,998 basehttp "GET /admin/auth/user/16/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:24:12,019 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:24:22,180 basehttp "POST /admin/auth/user/16/change/ HTTP/1.1" 302 0
+INFO 2025-06-09 21:24:22,195 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14980
+INFO 2025-06-09 21:24:22,211 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 21:24:30,814 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:24:30,815 basehttp "POST /api/api/token/ HTTP/1.1" 401 5713
+WARNING 2025-06-09 21:24:31,508 log Bad Request: /api/api/token/
+WARNING 2025-06-09 21:24:31,509 basehttp "POST /api/api/token/ HTTP/1.1" 400 5855
+WARNING 2025-06-09 21:24:37,394 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:24:37,394 basehttp "POST /api/api/token/ HTTP/1.1" 401 5713
+INFO 2025-06-09 21:24:58,198 basehttp "POST /admin/auth/user/ HTTP/1.1" 200 7985
+INFO 2025-06-09 21:24:59,414 basehttp "POST /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-06-09 21:24:59,427 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14390
+INFO 2025-06-09 21:24:59,442 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:25:03,228 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:25:03,253 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:25:03,254 basehttp "GET /images/adove.png HTTP/1.1" 304 0
+INFO 2025-06-09 21:25:03,254 basehttp "GET /images/amazon.jpg HTTP/1.1" 304 0
+WARNING 2025-06-09 21:25:03,270 log Not Found: /logo192.png
+WARNING 2025-06-09 21:25:03,271 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:25:04,541 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:25:04,572 log Not Found: /logo192.png
+WARNING 2025-06-09 21:25:04,573 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:25:04,573 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:25:07,254 log Not Found: /logo192.png
+WARNING 2025-06-09 21:25:07,255 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:25:19,952 log Unauthorized: /api/users/login/
+WARNING 2025-06-09 21:25:19,954 basehttp "POST /api/users/login/ HTTP/1.1" 401 63
+INFO 2025-06-09 21:25:47,241 basehttp "POST /api/users/register/ HTTP/1.1" 200 502
+INFO 2025-06-09 21:26:01,220 basehttp "GET /api/activate/MTc/cr5fit-75a75b5aa48202ba0f9ff8991e82144c HTTP/1.1" 301 0
+INFO 2025-06-09 21:26:01,230 basehttp "GET /api/activate/MTc/cr5fit-75a75b5aa48202ba0f9ff8991e82144c/ HTTP/1.1" 200 2196
+WARNING 2025-06-09 21:26:06,598 log Not Found: /logo192.png
+WARNING 2025-06-09 21:26:06,599 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:26:23,594 log Unauthorized: /api/api/token/
+WARNING 2025-06-09 21:26:23,594 basehttp "POST /api/api/token/ HTTP/1.1" 401 5713
+WARNING 2025-06-09 21:26:29,384 log Not Found: /logo192.png
+WARNING 2025-06-09 21:26:29,384 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:26:44,707 basehttp "POST /api/users/login/ HTTP/1.1" 200 909
+INFO 2025-06-09 21:26:44,730 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:26:44,736 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:26:55,785 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14769
+INFO 2025-06-09 21:26:55,800 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:26:58,068 basehttp "GET /admin/auth/user/17/change/ HTTP/1.1" 200 22832
+INFO 2025-06-09 21:26:58,085 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:27:01,756 basehttp "POST /admin/auth/user/17/change/ HTTP/1.1" 302 0
+INFO 2025-06-09 21:27:01,768 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14980
+INFO 2025-06-09 21:27:01,782 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 21:27:05,749 log Not Found: /logo192.png
+WARNING 2025-06-09 21:27:05,749 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:27:16,641 log Unauthorized: /api/users/login/
+WARNING 2025-06-09 21:27:16,642 basehttp "POST /api/users/login/ HTTP/1.1" 401 63
+INFO 2025-06-09 21:27:30,670 basehttp "GET /admin/auth/user/17/change/ HTTP/1.1" 200 22824
+INFO 2025-06-09 21:27:30,689 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:27:37,235 basehttp "POST /admin/auth/user/17/change/ HTTP/1.1" 302 0
+INFO 2025-06-09 21:27:37,248 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14980
+INFO 2025-06-09 21:27:37,263 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 21:27:40,691 basehttp "POST /api/users/login/ HTTP/1.1" 200 909
+INFO 2025-06-09 21:27:40,724 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:27:40,731 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:27:48,307 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 21:27:48,314 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 21:27:49,904 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:27:49,911 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:27:50,710 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 21:27:50,717 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 21:27:57,261 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:27:57,280 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:28:00,846 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 21:28:00,855 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 21:28:05,311 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:28:05,319 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:28:07,629 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 21:28:07,638 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 21:28:09,224 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:28:09,244 basehttp "GET /api/products/ HTTP/1.1" 200 631
