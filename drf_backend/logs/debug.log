@@ -251,3 +251,174 @@ WARNING 2025-06-09 03:27:10,784 log Not Found: /login
 WARNING 2025-06-09 03:27:10,785 basehttp "GET /login HTTP/1.1" 404 2512
 INFO 2025-06-09 03:27:22,239 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22307
 INFO 2025-06-09 03:27:22,253 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 11:08:32,812 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 11:08:40,555 log Not Found: /products
+WARNING 2025-06-09 11:08:40,555 log Not Found: /shopping-cart.png
+WARNING 2025-06-09 11:08:40,555 log Not Found: /logo192.png
+WARNING 2025-06-09 11:08:40,555 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:08:40,556 basehttp "GET /shopping-cart.png HTTP/1.1" 404 2548
+WARNING 2025-06-09 11:08:40,556 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:08:40,568 log Not Found: /products
+WARNING 2025-06-09 11:08:40,568 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:08:44,898 log Not Found: /products
+WARNING 2025-06-09 11:08:44,899 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:08:44,916 log Not Found: /products
+WARNING 2025-06-09 11:08:44,917 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:08:44,920 log Not Found: /logo192.png
+WARNING 2025-06-09 11:08:44,920 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:10:35,341 log Not Found: /products
+WARNING 2025-06-09 11:10:35,342 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:35,345 log Not Found: /logo192.png
+WARNING 2025-06-09 11:10:35,346 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:10:35,354 log Not Found: /products
+WARNING 2025-06-09 11:10:35,354 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:48,737 log Not Found: /products
+WARNING 2025-06-09 11:10:48,738 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:48,748 log Not Found: /products
+WARNING 2025-06-09 11:10:48,749 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:48,912 log Not Found: /products
+WARNING 2025-06-09 11:10:48,913 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:48,918 log Not Found: /logo192.png
+WARNING 2025-06-09 11:10:48,919 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:10:48,921 log Not Found: /products
+WARNING 2025-06-09 11:10:48,921 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:54,817 log Not Found: /products
+WARNING 2025-06-09 11:10:54,818 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:54,828 log Not Found: /products
+WARNING 2025-06-09 11:10:54,828 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:10:55,685 log Not Found: /logo192.png
+WARNING 2025-06-09 11:10:55,685 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:12:08,292 log Not Found: /products
+WARNING 2025-06-09 11:12:08,293 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:12:08,298 log Not Found: /products
+WARNING 2025-06-09 11:12:08,298 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:12:14,626 log Not Found: /products
+WARNING 2025-06-09 11:12:14,627 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:12:14,629 log Not Found: /logo192.png
+WARNING 2025-06-09 11:12:14,629 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:12:14,631 log Not Found: /products
+WARNING 2025-06-09 11:12:14,632 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 11:12:43,419 log Not Found: /logo192.png
+WARNING 2025-06-09 11:12:43,420 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 11:15:34,607 log Not Found: /shopping-cart.png
+WARNING 2025-06-09 11:15:34,608 basehttp "GET /shopping-cart.png HTTP/1.1" 404 2548
+WARNING 2025-06-09 12:13:14,588 log Not Found: /logo192.png
+WARNING 2025-06-09 12:13:14,588 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:13:19,528 log Not Found: /logo192.png
+WARNING 2025-06-09 12:13:19,529 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:14:24,646 log Not Found: /logo192.png
+WARNING 2025-06-09 12:14:24,647 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:16:45,249 log Not Found: /products
+WARNING 2025-06-09 12:16:45,249 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:16:45,257 log Not Found: /products
+WARNING 2025-06-09 12:16:45,257 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:16:45,276 log Not Found: /logo192.png
+WARNING 2025-06-09 12:16:45,276 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:19:45,570 log Not Found: /products
+WARNING 2025-06-09 12:19:45,570 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:19:45,574 log Not Found: /products
+WARNING 2025-06-09 12:19:45,574 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:19:45,593 log Not Found: /logo192.png
+WARNING 2025-06-09 12:19:45,593 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:19:53,782 log Not Found: /products
+WARNING 2025-06-09 12:19:53,783 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:19:53,789 log Not Found: /products
+WARNING 2025-06-09 12:19:53,789 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:19:53,798 log Not Found: /logo192.png
+WARNING 2025-06-09 12:19:53,798 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:20:05,122 log Not Found: /products
+WARNING 2025-06-09 12:20:05,122 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:05,130 log Not Found: /products
+WARNING 2025-06-09 12:20:05,130 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:05,136 log Not Found: /logo192.png
+WARNING 2025-06-09 12:20:05,136 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:20:19,149 log Not Found: /products
+WARNING 2025-06-09 12:20:19,150 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:19,160 log Not Found: /products
+WARNING 2025-06-09 12:20:19,160 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:19,165 log Not Found: /logo192.png
+WARNING 2025-06-09 12:20:19,166 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:20:30,953 log Not Found: /products
+WARNING 2025-06-09 12:20:30,954 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:30,962 log Not Found: /products
+WARNING 2025-06-09 12:20:30,964 log Not Found: /logo192.png
+WARNING 2025-06-09 12:20:30,964 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:20:30,965 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:21:39,488 log Not Found: /products
+WARNING 2025-06-09 12:21:39,489 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:39,498 log Not Found: /products
+WARNING 2025-06-09 12:21:39,498 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:39,504 log Not Found: /logo192.png
+WARNING 2025-06-09 12:21:39,504 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:21:44,259 log Not Found: /products
+WARNING 2025-06-09 12:21:44,259 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:44,273 log Not Found: /products
+WARNING 2025-06-09 12:21:44,274 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:44,275 log Not Found: /logo192.png
+WARNING 2025-06-09 12:21:44,276 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:21:50,362 log Not Found: /products
+WARNING 2025-06-09 12:21:50,363 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:50,371 log Not Found: /products
+WARNING 2025-06-09 12:21:50,371 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:50,833 log Not Found: /logo192.png
+WARNING 2025-06-09 12:21:50,833 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:21:56,077 log Not Found: /products
+WARNING 2025-06-09 12:21:56,078 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:56,087 log Not Found: /products
+WARNING 2025-06-09 12:21:56,088 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:21:56,468 log Not Found: /logo192.png
+WARNING 2025-06-09 12:21:56,468 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:22:38,158 log Not Found: /products
+WARNING 2025-06-09 12:22:38,158 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:22:38,176 log Not Found: /logo192.png
+WARNING 2025-06-09 12:22:38,178 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:22:38,183 log Not Found: /products
+WARNING 2025-06-09 12:22:38,184 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:22:47,415 log Not Found: /products
+WARNING 2025-06-09 12:22:47,415 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:22:47,422 log Not Found: /products
+WARNING 2025-06-09 12:22:47,422 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:22:49,637 log Not Found: /logo192.png
+WARNING 2025-06-09 12:22:49,637 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:28:47,215 log Not Found: /products
+WARNING 2025-06-09 12:28:47,217 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:18,161 log Not Found: /products
+WARNING 2025-06-09 12:32:18,162 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:33,167 log Not Found: /products
+WARNING 2025-06-09 12:32:33,168 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:33,177 log Not Found: /products
+WARNING 2025-06-09 12:32:33,177 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:40,495 log Not Found: /products
+WARNING 2025-06-09 12:32:40,495 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:40,509 log Not Found: /products
+WARNING 2025-06-09 12:32:40,510 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:40,512 log Not Found: /logo192.png
+WARNING 2025-06-09 12:32:40,512 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:32:41,404 log Not Found: /products
+WARNING 2025-06-09 12:32:41,404 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:41,415 log Not Found: /products
+WARNING 2025-06-09 12:32:41,415 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:41,420 log Not Found: /logo192.png
+WARNING 2025-06-09 12:32:41,420 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:32:45,347 log Not Found: /products
+WARNING 2025-06-09 12:32:45,347 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:45,355 log Not Found: /products
+WARNING 2025-06-09 12:32:45,355 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:47,035 log Not Found: /products
+WARNING 2025-06-09 12:32:47,036 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:47,044 log Not Found: /products
+WARNING 2025-06-09 12:32:47,045 basehttp "GET /products HTTP/1.1" 404 2521
+WARNING 2025-06-09 12:32:47,564 log Not Found: /logo192.png
+WARNING 2025-06-09 12:32:47,564 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 12:43:30,871 log Not Found: /logo192.png
+WARNING 2025-06-09 12:43:30,871 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:02:32,037 log Not Found: /logo192.png
+WARNING 2025-06-09 13:02:32,039 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:02:32,048 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:02:32,052 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:02:32,067 basehttp "GET /images/adove.png HTTP/1.1" 304 0
+INFO 2025-06-09 13:02:32,067 basehttp "GET /images/amazon.jpg HTTP/1.1" 304 0
+INFO 2025-06-09 13:02:38,498 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:02:38,508 log Not Found: /logo192.png
+WARNING 2025-06-09 13:02:38,508 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:02:38,509 basehttp "GET /api/products/ HTTP/1.1" 200 631

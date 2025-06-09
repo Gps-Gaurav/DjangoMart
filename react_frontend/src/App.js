@@ -2,18 +2,18 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomeScreen from "./components/screens/HomeScreen";
-import ProductScreen from "./components/screens/ProductScreen";
-import LoginScreen from "./components/screens/LoginScreen";
-import SignupScreen from "./components/screens/SignupScreen";
-import CartScreen from "./components/screens/CartScreen";
-import NotFoundScreen from "./components/screens/NotFoundScreen";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import CartScreen from "./screens/CartScreen";
+import NotFoundScreen from "./screens/NotFoundScreen";
 
 function App() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
-      <main className="py-3">
+      <main className="py-3 flex-grow-1">
         <Routes>
           <Route path="/" element={<HomeScreen />} exact />
           <Route path="/product/:id" element={<ProductScreen />} />
@@ -24,7 +24,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

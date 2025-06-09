@@ -1,7 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS,
+  USER_REGISTER_FAIL,
+} from "../constants/userConstants";
 
 const userLoginSlice = createSlice({
-  name: 'userLogin',
+  name: "userLogin",
   initialState: {
     userInfo: null,
     loading: false,
@@ -28,41 +33,28 @@ const userLoginSlice = createSlice({
   },
 });
 
-const userRegisterSlice = createSlice({
-  name: 'userRegister',
-  initialState: {
-    userInfo: null,
-    loading: false,
-    error: null,
-  },
-  reducers: {
-    userRegisterRequest: (state) => {
-      state.loading = true;
-    },
-    userRegisterSuccess: (state, action) => {
-      state.loading = false;
-      state.userInfo = action.payload;
-      state.error = null;
-    },
-    userRegisterFail: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
-  },
-});
+export const { userLoginRequest, userLoginSuccess, userLoginFail, userLogout } =
+  userLoginSlice.actions;
 
-export const { 
-  userLoginRequest, 
-  userLoginSuccess, 
-  userLoginFail, 
-  userLogout 
-} = userLoginSlice.actions;
+export const userRegisterReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_REGISTER_REQUEST:
+      return { loading: true };
 
-export const { 
-  userRegisterRequest, 
-  userRegisterSuccess, 
-  userRegisterFail 
-} = userRegisterSlice.actions;
+    case USER_REGISTER_SUCCESS:
+      return {
+        loading: false,
+        userInfo: action.payload,
+      };
 
+    case USER_REGISTER_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
 export const userLoginReducer = userLoginSlice.reducer;
-export const userRegisterReducer = userRegisterSlice.reducer;

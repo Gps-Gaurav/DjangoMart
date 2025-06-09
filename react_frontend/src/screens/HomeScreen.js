@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { listProducts } from "../../actions/productsActions";
-import Product from "../../components/Product";
-import Loader from "../../components/Loader";
-import Message from "../../components/Message";
-import { APP_CONSTANTS } from "../../constants/appConstant";
-
-const { CURRENT_TIME, DEFAULT_USER } = APP_CONSTANTS;
+import { listProducts } from "../actions/productsActions";
+import Product from "../components/Product";
+import Loader from "../components/Loader";
 
 function HomeScreen() {
     const dispatch = useDispatch();
@@ -30,7 +26,9 @@ function HomeScreen() {
             {loading ? (
                 <Loader />
             ) : error ? (
-                <Message variant="danger">{error}</Message>
+                <Alert variant="danger" className="text-center">
+                    {error}
+                </Alert>
             ) : (
                 <>
                     <Row className="g-4">
@@ -42,13 +40,15 @@ function HomeScreen() {
                             ))
                         ) : (
                             <Col className="text-center">
-                                <Message variant="info">No products found.</Message>
+                                <Alert variant="warning">
+                                    No products found. Please check back later!
+                                </Alert>
                             </Col>
                         )}
                     </Row>
                     <div className="text-center mt-3">
                         <small className="text-muted">
-                            Last updated: {CURRENT_TIME} | User: {DEFAULT_USER}
+                          
                         </small>
                     </div>
                 </>
