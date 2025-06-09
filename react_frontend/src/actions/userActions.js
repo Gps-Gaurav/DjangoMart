@@ -6,6 +6,9 @@ import {
     USER_REGISTER_REQUEST,
     USER_REGISTER_SUCCESS,
     USER_REGISTER_FAIL,
+    USER_VERIFY_REQUEST,
+    USER_VERIFY_SUCCESS,
+    USER_VERIFY_FAIL
 } from '../constants/userConstants';
 
 // Login action
@@ -19,7 +22,7 @@ export const login = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: email,  // Changed from email to username
+                username: email,
                 password: password
             })
         });
@@ -52,7 +55,7 @@ export const login = (email, password) => async (dispatch) => {
     }
 };
 
-// Register action remains the same
+// Register action
 export const register = (name, email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_REGISTER_REQUEST });
@@ -75,28 +78,49 @@ export const register = (name, email, password) => async (dispatch) => {
             throw new Error(data.detail || 'Registration failed');
         }
 
-        const userInfo = {
-            ...data,
-            name: name,
-            email: email,
-            token: data.token
-        };
-
         dispatch({
             type: USER_REGISTER_SUCCESS,
-            payload: userInfo
+            payload: {
+                email: email,
+                name: name,
+                needsVerification: true
+            }
         });
-
-        dispatch({
-            type: USER_LOGIN_SUCCESS,
-            payload: userInfo
-        });
-
-        localStorage.setItem('userInfo', JSON.stringify(userInfo));
 
     } catch (error) {
         dispatch({
             type: USER_REGISTER_FAIL,
+            payload: error.message
+        });
+    }
+};
+
+// Verify email action
+export const verifyEmail = (token) => async (dispatch) => {
+    try {
+        dispatch({ type: USER_VERIFY_REQUEST });
+
+        const response = await fetch(`/api/users/activate/${token}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.detail || 'Verification failed');
+        }
+
+        dispatch({
+            type: USER_VERIFY_SUCCESS,
+            payload: data
+        });
+
+    } catch (error) {
+        dispatch({
+            type: USER_VERIFY_FAIL,
             payload: error.message
         });
     }
@@ -111,4 +135,11 @@ export const logout = () => (dispatch) => {
     dispatch({ type: USER_LOGOUT });
     
     window.location.href = '/login';
+};
+
+export default {
+    login,
+    logout,
+    register,
+    verifyEmail
 };
