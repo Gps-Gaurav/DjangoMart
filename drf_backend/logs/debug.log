@@ -1039,3 +1039,53 @@ INFO 2025-06-09 19:27:17,334 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
 INFO 2025-06-09 19:30:13,763 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
 INFO 2025-06-09 19:31:38,723 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
 INFO 2025-06-09 19:34:57,755 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:40:21,001 log Not Found: /logo192.png
+WARNING 2025-06-09 19:40:21,002 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:40:21,010 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:40:21,013 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:40:21,756 log Not Found: /logo192.png
+WARNING 2025-06-09 19:40:21,757 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:40:21,758 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:40:21,761 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:41:19,819 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:41:19,824 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:43:34,783 log Not Found: /images/placeholder1.jpg
+WARNING 2025-06-09 19:43:34,786 log Not Found: /images/placeholder2.jpg
+WARNING 2025-06-09 19:43:34,786 basehttp "GET /images/placeholder2.jpg HTTP/1.1" 404 2818
+WARNING 2025-06-09 19:43:34,787 basehttp "GET /images/placeholder1.jpg HTTP/1.1" 404 2818
+WARNING 2025-06-09 19:43:34,789 log Not Found: /images/placeholder3.jpg
+INFO 2025-06-09 19:43:34,791 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:43:34,791 basehttp "GET /images/placeholder3.jpg HTTP/1.1" 404 2818
+INFO 2025-06-09 19:43:34,795 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:47:36,830 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:47:36,839 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:47:43,654 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:47:43,661 log Not Found: /logo192.png
+WARNING 2025-06-09 19:47:43,661 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:47:43,662 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:09,796 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:09,802 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:13,299 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:50:13,305 log Not Found: /logo192.png
+WARNING 2025-06-09 19:50:13,308 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:50:13,310 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:37,827 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:37,834 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:44,146 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:44,152 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:49,708 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:50:49,715 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:51:33,752 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:51:36,759 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:51:50,766 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:51:57,991 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:51:58,000 log Not Found: /logo192.png
+WARNING 2025-06-09 19:51:58,001 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:51:58,002 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:52:07,764 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:52:09,757 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:52:29,760 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:52:32,807 log Not Found: /logo192.png
+INFO 2025-06-09 19:52:32,809 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+WARNING 2025-06-09 19:52:32,809 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 19:52:32,814 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
