@@ -1416,3 +1416,95 @@ WARNING 2025-06-09 21:38:47,367 basehttp "GET /logo192.png HTTP/1.1" 404 2530
 INFO 2025-06-09 21:39:54,472 basehttp "GET /api/products/ HTTP/1.1" 200 631
 INFO 2025-06-09 21:40:18,304 basehttp "GET /api/products/ HTTP/1.1" 200 631
 INFO 2025-06-09 21:40:18,309 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:41:35,449 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:41:35,450 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:41:35,453 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:41:35,453 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:41:39,798 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:41:39,799 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:41:39,815 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:41:39,816 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:41:39,826 log Not Found: /logo192.png
+WARNING 2025-06-09 21:41:39,826 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:42:06,113 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:42:06,115 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:42:06,133 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:42:06,133 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:42:06,142 log Not Found: /logo192.png
+WARNING 2025-06-09 21:42:06,143 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:42:52,308 basehttp "GET /api/users/profile HTTP/1.1" 301 0
+WARNING 2025-06-09 21:42:52,317 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:42:52,317 basehttp "GET /api/users/profile/ HTTP/1.1" 401 5324
+WARNING 2025-06-09 21:48:48,107 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:48:48,113 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:48:48,139 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:48:48,155 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:48:48,162 log Not Found: /logo192.png
+WARNING 2025-06-09 21:48:48,163 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 21:48:48,175 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 21:48:48,181 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 21:48:48,215 log Not Found: /logo192.png
+WARNING 2025-06-09 21:48:48,215 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:48:55,414 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:48:55,429 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:48:55,457 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:48:55,459 basehttp "GET /api/users/profile/ HTTP/1.1" 401 58
+WARNING 2025-06-09 21:48:55,467 log Not Found: /logo192.png
+WARNING 2025-06-09 21:48:55,468 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:55:54,421 log Not Found: /logo192.png
+WARNING 2025-06-09 21:55:54,422 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 21:57:29,511 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:57:29,512 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:57:29,515 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:57:29,515 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:57:33,643 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:57:33,646 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:57:33,657 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 21:57:33,660 log Not Found: /logo192.png
+WARNING 2025-06-09 21:57:33,660 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 21:57:33,660 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 22:00:19,810 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 22:00:20,260 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 22:00:26,499 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 22:00:26,786 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 22:00:56,678 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 22:00:56,981 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 22:01:00,178 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-09 22:01:00,408 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 22:01:06,069 log Not Found: /logo192.png
+WARNING 2025-06-09 22:01:06,070 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 22:01:06,094 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 22:01:06,095 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 22:01:06,101 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 22:01:06,101 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 22:01:06,965 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 22:01:06,966 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 22:01:06,978 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 22:01:06,978 basehttp "GET /api/users/profile/ HTTP/1.1" 401 172
+WARNING 2025-06-09 22:01:06,988 log Not Found: /logo192.png
+WARNING 2025-06-09 22:01:06,989 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 22:01:16,737 log Unauthorized: /api/users/profile/
+WARNING 2025-06-09 22:01:16,738 basehttp "GET /api/users/profile/ HTTP/1.1" 401 5324
+WARNING 2025-06-09 22:01:29,578 log Not Found: /logo192.png
+WARNING 2025-06-09 22:01:29,579 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 22:01:37,610 basehttp "POST /api/users/login/ HTTP/1.1" 200 909
+INFO 2025-06-09 22:01:37,642 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 22:01:37,646 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 22:01:49,153 log Not Found: /logo192.png
+WARNING 2025-06-09 22:01:49,154 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 22:01:59,953 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14769
+INFO 2025-06-09 22:01:59,970 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 22:02:05,195 basehttp "GET /admin/auth/user/15/change/ HTTP/1.1" 200 22847
+INFO 2025-06-09 22:02:05,222 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 22:02:09,100 basehttp "GET /admin/auth/user/15/delete/ HTTP/1.1" 200 7874
+INFO 2025-06-09 22:02:10,588 basehttp "POST /admin/auth/user/15/delete/ HTTP/1.1" 302 0
+INFO 2025-06-09 22:02:10,595 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14419
+INFO 2025-06-09 22:02:10,607 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 22:02:32,940 basehttp "POST /api/users/register/ HTTP/1.1" 200 508
+INFO 2025-06-09 22:02:44,685 basehttp "GET /api/activate/MTg/cr5h82-50400b576ef97389547aa0831489b1cd HTTP/1.1" 301 0
+INFO 2025-06-09 22:02:44,701 basehttp "GET /api/activate/MTg/cr5h82-50400b576ef97389547aa0831489b1cd/ HTTP/1.1" 200 2196
+WARNING 2025-06-09 22:02:47,616 log Not Found: /logo192.png
+WARNING 2025-06-09 22:02:47,616 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 22:02:55,078 basehttp "POST /api/users/login/ HTTP/1.1" 200 915
+INFO 2025-06-09 22:02:55,130 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 22:02:55,134 basehttp "GET /api/products/ HTTP/1.1" 200 631

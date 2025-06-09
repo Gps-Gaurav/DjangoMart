@@ -8,7 +8,10 @@ import {
     USER_REGISTER_FAIL,
     USER_VERIFY_REQUEST,
     USER_VERIFY_SUCCESS,
-    USER_VERIFY_FAIL
+    USER_VERIFY_FAIL,
+    USER_PROFILE_REQUEST,
+    USER_PROFILE_SUCCESS,
+    USER_PROFILE_FAIL,
 } from '../constants/userConstants';
 
 // Login action
@@ -170,5 +173,39 @@ export const logout = () => (dispatch) => {
     
     window.location.href = '/login';
 };
+export const getUserProfile = () => async (dispatch, getState) => {
+    try {
+      dispatch({ type: USER_PROFILE_REQUEST });
+  
+      const token =
+        getState().userLogin?.payload?.access || localStorage.getItem('token');
+  
+      const response = await fetch('/api/users/profile/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || 'Failed to fetch profile');
+      }
+  
+      const data = await response.json();
+  
+      dispatch({
+        type: USER_PROFILE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: USER_PROFILE_FAIL,
+        payload: error.message,
+      });
+    }
+  };
+  
 
 export default {login,logout,register,verifyEmail, activateAccount};
