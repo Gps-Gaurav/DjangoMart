@@ -185,7 +185,7 @@ def registerUser(request):
         domain = getattr(settings, 'DOMAIN', 'localhost:8000')
         frontend_url = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
         
-        activation_link = f"http://{domain}/activate/{uid}/{token}"
+        activation_link = f"http://{domain}/api/activate/{uid}/{token}"
         
         # Prepare email context
         context = {

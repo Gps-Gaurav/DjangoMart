@@ -144,3 +144,110 @@ ERROR 2025-06-08 23:58:16,532 basehttp "POST /api/users/register/ HTTP/1.1" 500 
 WARNING 2025-06-08 23:59:35,785 log Bad Request: /api/users/register/
 WARNING 2025-06-08 23:59:35,785 basehttp "POST /api/users/register/ HTTP/1.1" 400 5700
 INFO 2025-06-08 23:59:44,242 basehttp "POST /api/users/register/ HTTP/1.1" 200 6403
+INFO 2025-06-09 03:01:32,108 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14220
+INFO 2025-06-09 03:01:32,134 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:01:42,075 basehttp "GET /admin/auth/user/7/change/ HTTP/1.1" 200 22223
+INFO 2025-06-09 03:01:42,099 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:01:54,517 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14220
+INFO 2025-06-09 03:01:56,960 basehttp "GET /admin/auth/user/1/change/ HTTP/1.1" 200 22189
+INFO 2025-06-09 03:01:56,977 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:01:58,853 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14220
+INFO 2025-06-09 03:02:01,296 basehttp "GET /admin/auth/user/2/change/ HTTP/1.1" 200 22141
+INFO 2025-06-09 03:02:01,310 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:02:04,110 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14220
+INFO 2025-06-09 03:02:18,764 basehttp "GET /admin/auth/user/3/change/ HTTP/1.1" 200 22219
+INFO 2025-06-09 03:02:18,782 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:02:27,233 basehttp "POST /admin/auth/user/3/change/ HTTP/1.1" 302 0
+INFO 2025-06-09 03:02:27,251 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14421
+INFO 2025-06-09 03:02:27,269 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:02:33,375 basehttp "GET /admin/auth/user/3/change/ HTTP/1.1" 200 22227
+INFO 2025-06-09 03:02:33,393 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:04:22,111 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 03:04:22,538 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:05:20,221 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 03:05:20,579 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:05:28,962 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 03:05:29,256 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:05:34,561 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 03:05:34,753 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:05:35,897 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-09 03:05:36,092 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 03:07:00,986 log Not Found: /activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377
+WARNING 2025-06-09 03:07:00,987 basehttp "GET /activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377 HTTP/1.1" 404 2650
+WARNING 2025-06-09 03:07:01,013 log Not Found: /favicon.ico
+WARNING 2025-06-09 03:07:01,013 basehttp "GET /favicon.ico HTTP/1.1" 404 2530
+INFO 2025-06-09 03:07:39,080 basehttp "GET /api/activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377 HTTP/1.1" 301 0
+INFO 2025-06-09 03:07:39,110 basehttp "GET /api/activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377/ HTTP/1.1" 200 724
+WARNING 2025-06-09 03:07:44,163 log Not Found: /login
+WARNING 2025-06-09 03:07:44,164 basehttp "GET /login HTTP/1.1" 404 2512
+INFO 2025-06-09 03:08:03,457 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14220
+INFO 2025-06-09 03:08:05,961 basehttp "GET /admin/auth/user/9/change/ HTTP/1.1" 200 22281
+INFO 2025-06-09 03:08:05,983 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:08:52,098 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 03:08:52,491 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:09:18,412 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 03:09:18,711 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-09 03:11:37,966 log Bad Request: /api/users/register/
+WARNING 2025-06-09 03:11:37,966 basehttp "POST /api/users/register/ HTTP/1.1" 400 5695
+WARNING 2025-06-09 03:13:12,133 log Bad Request: /api/users/register/
+WARNING 2025-06-09 03:13:12,133 basehttp "POST /api/users/register/ HTTP/1.1" 400 5740
+INFO 2025-06-09 03:13:31,180 basehttp "GET /admin/auth/user/9/change/ HTTP/1.1" 200 22281
+INFO 2025-06-09 03:13:31,206 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:13:32,411 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14748
+INFO 2025-06-09 03:13:37,663 basehttp "GET /admin/auth/user/10/change/ HTTP/1.1" 200 22287
+INFO 2025-06-09 03:13:37,682 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:13:40,167 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14748
+INFO 2025-06-09 03:13:41,623 basehttp "GET /admin/auth/user/3/change/ HTTP/1.1" 200 22227
+INFO 2025-06-09 03:16:19,351 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 03:16:19,787 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:16:25,136 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 03:16:25,489 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:16:40,953 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14748
+INFO 2025-06-09 03:16:41,043 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:16:47,687 basehttp "GET /admin/auth/user/4/change/ HTTP/1.1" 200 22249
+INFO 2025-06-09 03:16:47,713 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:16:53,182 basehttp "GET /admin/auth/user/4/delete/ HTTP/1.1" 200 7854
+INFO 2025-06-09 03:16:53,198 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-06-09 03:16:54,774 basehttp "POST /admin/auth/user/4/delete/ HTTP/1.1" 302 0
+INFO 2025-06-09 03:16:54,789 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14412
+INFO 2025-06-09 03:16:54,805 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:17:03,050 basehttp "GET /admin/auth/user/9/change/ HTTP/1.1" 200 22281
+INFO 2025-06-09 03:17:03,076 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:17:09,266 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14246
+INFO 2025-06-09 03:17:10,945 basehttp "GET /admin/auth/user/10/change/ HTTP/1.1" 200 22287
+INFO 2025-06-09 03:17:10,958 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:17:15,777 basehttp "GET /admin/auth/user/10/delete/ HTTP/1.1" 200 7889
+INFO 2025-06-09 03:17:17,419 basehttp "POST /admin/auth/user/10/delete/ HTTP/1.1" 302 0
+INFO 2025-06-09 03:17:17,431 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 13895
+INFO 2025-06-09 03:17:17,443 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 03:17:24,264 log Method Not Allowed: /api/users/register/
+WARNING 2025-06-09 03:17:24,265 basehttp "GET /api/users/register/ HTTP/1.1" 405 5648
+INFO 2025-06-09 03:18:52,236 basehttp "POST /api/users/register/ HTTP/1.1" 200 6425
+INFO 2025-06-09 03:19:32,297 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14248
+INFO 2025-06-09 03:19:32,318 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:19:33,793 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22299
+INFO 2025-06-09 03:19:33,810 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:21:57,796 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22299
+INFO 2025-06-09 03:21:57,835 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:21:58,712 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22299
+INFO 2025-06-09 03:21:58,724 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:22:00,053 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14248
+INFO 2025-06-09 03:22:02,680 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14248
+INFO 2025-06-09 03:22:02,697 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 03:22:04,016 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22299
+INFO 2025-06-09 03:22:05,686 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14248
+INFO 2025-06-09 03:22:21,280 basehttp "GET /admin/ HTTP/1.1" 200 9328
+WARNING 2025-06-09 03:24:32,050 log Not Found: /activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377
+WARNING 2025-06-09 03:24:32,052 basehttp "GET /activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377 HTTP/1.1" 404 2650
+INFO 2025-06-09 03:24:46,277 basehttp "GET /api/activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377 HTTP/1.1" 301 0
+INFO 2025-06-09 03:24:46,293 basehttp "GET /api/activate/OQ/cr3rz8-18191c1729e658e60ab7710ad6584377/ HTTP/1.1" 200 772
+WARNING 2025-06-09 03:24:51,386 log Not Found: /register
+WARNING 2025-06-09 03:24:51,390 basehttp "GET /register HTTP/1.1" 404 2521
+INFO 2025-06-09 03:26:01,628 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-09 03:26:02,168 autoreload Watching for file changes with StatReloader
+INFO 2025-06-09 03:27:05,519 basehttp "GET ///api/activate/MTE/cr417b-90bce48d70144de6b04cf29577ef2bf6 HTTP/1.1" 301 0
+INFO 2025-06-09 03:27:05,554 basehttp "GET /api/activate/MTE/cr417b-90bce48d70144de6b04cf29577ef2bf6/ HTTP/1.1" 200 724
+WARNING 2025-06-09 03:27:10,784 log Not Found: /login
+WARNING 2025-06-09 03:27:10,785 basehttp "GET /login HTTP/1.1" 404 2512
+INFO 2025-06-09 03:27:22,239 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22307
+INFO 2025-06-09 03:27:22,253 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

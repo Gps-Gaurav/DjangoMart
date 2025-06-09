@@ -21,8 +21,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Domain settings
 DOMAIN = 'localhost:8000'
 SITE_NAME = 'DjangoMart'
-BACKEND_DOMAIN = 'localhost:8000'
-FRONTEND_DOMAIN = 'localhost:3000'
 
 # Application definition
 INSTALLED_APPS = [
@@ -154,6 +152,8 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000"
+    
 ]
 
 CORS_ALLOWED_METHODS = [
