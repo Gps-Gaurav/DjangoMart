@@ -1089,3 +1089,7 @@ WARNING 2025-06-09 19:52:32,807 log Not Found: /logo192.png
 INFO 2025-06-09 19:52:32,809 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
 WARNING 2025-06-09 19:52:32,809 basehttp "GET /logo192.png HTTP/1.1" 404 2530
 INFO 2025-06-09 19:52:32,814 basehttp "GET /api/product/2/ HTTP/1.1" 200 341
+INFO 2025-06-09 19:58:21,704 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 19:58:21,710 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 19:58:22,730 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
+INFO 2025-06-09 19:58:22,737 basehttp "GET /api/product/3/ HTTP/1.1" 200 352
