@@ -422,3 +422,245 @@ INFO 2025-06-09 13:02:38,498 basehttp "GET /api/products/ HTTP/1.1" 200 631
 WARNING 2025-06-09 13:02:38,508 log Not Found: /logo192.png
 WARNING 2025-06-09 13:02:38,508 basehttp "GET /logo192.png HTTP/1.1" 404 2530
 INFO 2025-06-09 13:02:38,509 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:25:11,196 log Not Found: /logo192.png
+WARNING 2025-06-09 13:25:11,198 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:25:11,206 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:25:11,211 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:35:24,052 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:35:24,059 log Not Found: /logo192.png
+WARNING 2025-06-09 13:35:24,060 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:35:24,062 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:43:04,145 log Not Found: /logo192.png
+WARNING 2025-06-09 13:43:04,145 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:43:09,090 log Not Found: /logo192.png
+WARNING 2025-06-09 13:43:09,090 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:43:15,034 log Not Found: /logo192.png
+WARNING 2025-06-09 13:43:15,035 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:47:19,191 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:47:19,197 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:50:28,387 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:50:28,391 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:50:30,039 log Not Found: /logo192.png
+WARNING 2025-06-09 13:50:30,040 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:50:37,884 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:50:37,887 log Not Found: /logo192.png
+WARNING 2025-06-09 13:50:37,888 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:50:37,890 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:50:41,701 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:50:41,705 log Not Found: /logo192.png
+WARNING 2025-06-09 13:50:41,707 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:50:41,709 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:50:53,043 log Not Found: /logo192.png
+WARNING 2025-06-09 13:50:53,044 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:50:53,052 log Not Found: /logo512.png
+WARNING 2025-06-09 13:50:53,052 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:19,340 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:19,345 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:19,448 log Not Found: /logo512.png
+WARNING 2025-06-09 13:51:19,448 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:20,459 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:20,459 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:20,469 log Not Found: /logo512.png
+WARNING 2025-06-09 13:51:20,469 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:51:23,468 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:51:23,476 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:51:23,486 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:23,486 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:32,077 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:32,077 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:32,082 log Not Found: /logo512.png
+WARNING 2025-06-09 13:51:32,082 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:51:55,699 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:51:55,722 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:51:55,731 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:55,732 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:55,758 log Not Found: /logo192.png
+WARNING 2025-06-09 13:51:55,758 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:51:55,762 log Not Found: /logo512.png
+WARNING 2025-06-09 13:51:55,762 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:54:03,117 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:54:03,131 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:54:03,140 log Not Found: /logo192.png
+WARNING 2025-06-09 13:54:03,140 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:54:26,186 log Not Found: /logo192.png
+WARNING 2025-06-09 13:54:26,188 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:54:26,195 log Not Found: /logo512.png
+WARNING 2025-06-09 13:54:26,195 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:06,381 log Not Found: /logo192.png
+WARNING 2025-06-09 13:55:06,382 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:06,386 log Not Found: /logo512.png
+WARNING 2025-06-09 13:55:06,387 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:07,865 log Not Found: /logo192.png
+WARNING 2025-06-09 13:55:07,866 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:07,878 log Not Found: /logo512.png
+WARNING 2025-06-09 13:55:07,878 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:36,530 log Not Found: /logo192.png
+WARNING 2025-06-09 13:55:36,531 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:36,539 log Not Found: /logo512.png
+WARNING 2025-06-09 13:55:36,539 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:37,858 log Not Found: /logo192.png
+WARNING 2025-06-09 13:55:37,858 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:55:37,872 log Not Found: /logo512.png
+WARNING 2025-06-09 13:55:37,872 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:06,533 log Not Found: /logo192.png
+WARNING 2025-06-09 13:56:06,534 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:06,539 log Not Found: /logo512.png
+WARNING 2025-06-09 13:56:06,540 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:07,864 log Not Found: /logo192.png
+WARNING 2025-06-09 13:56:07,865 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:07,877 log Not Found: /logo512.png
+WARNING 2025-06-09 13:56:07,878 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:36,539 log Not Found: /logo192.png
+WARNING 2025-06-09 13:56:36,540 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:36,547 log Not Found: /logo512.png
+WARNING 2025-06-09 13:56:36,547 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:37,864 log Not Found: /logo192.png
+WARNING 2025-06-09 13:56:37,865 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:56:37,876 log Not Found: /logo512.png
+WARNING 2025-06-09 13:56:37,877 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:06,556 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:06,556 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:06,563 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:06,563 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:07,852 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:07,853 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:07,858 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:07,858 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:36,577 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:36,579 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:36,586 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:36,586 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:37,862 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:37,862 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:37,873 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:37,874 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:57:42,334 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:57:42,339 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:57:42,358 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:42,358 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:42,442 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:42,442 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:42,450 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:42,450 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:57:48,340 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:57:48,370 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:48,371 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:57:48,372 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:57:48,387 log Not Found: /logo192.png
+WARNING 2025-06-09 13:57:48,387 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:57:48,391 log Not Found: /logo512.png
+WARNING 2025-06-09 13:57:48,391 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:58:19,899 log Not Found: /logo192.png
+WARNING 2025-06-09 13:58:19,900 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:58:19,911 log Not Found: /logo512.png
+WARNING 2025-06-09 13:58:19,911 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:58:21,592 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:58:21,603 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:58:21,616 log Not Found: /logo192.png
+WARNING 2025-06-09 13:58:21,616 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:58:21,633 log Not Found: /logo192.png
+WARNING 2025-06-09 13:58:21,633 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:58:21,638 log Not Found: /logo512.png
+WARNING 2025-06-09 13:58:21,638 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:58:44,057 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:58:44,070 log Not Found: /logo192.png
+WARNING 2025-06-09 13:58:44,072 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:58:44,077 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:58:44,084 log Not Found: /logo192.png
+WARNING 2025-06-09 13:58:44,084 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:58:44,092 log Not Found: /logo512.png
+WARNING 2025-06-09 13:58:44,092 basehttp "GET /logo512.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 13:59:02,959 log Not Found: /logo192.png
+WARNING 2025-06-09 13:59:02,960 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 13:59:06,125 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 13:59:06,132 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 13:59:07,229 log Not Found: /logo192.png
+WARNING 2025-06-09 13:59:07,229 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 14:01:54,784 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 14:01:54,788 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 14:01:56,099 log Not Found: /logo192.png
+WARNING 2025-06-09 14:01:56,099 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 14:03:28,082 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 14:03:28,090 log Not Found: /logo192.png
+WARNING 2025-06-09 14:03:28,091 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 14:03:28,092 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 14:03:37,900 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 14:03:37,905 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 14:03:39,460 log Not Found: /logo192.png
+WARNING 2025-06-09 14:03:39,460 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-09 14:05:40,764 basehttp "GET /api/products/ HTTP/1.1" 200 631
+INFO 2025-06-09 14:05:40,770 basehttp "GET /api/products/ HTTP/1.1" 200 631
+WARNING 2025-06-09 14:05:41,316 log Not Found: /logo192.png
+WARNING 2025-06-09 14:05:41,316 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:06:31,809 log Not Found: /logo192.png
+WARNING 2025-06-09 14:06:31,810 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:08:29,303 log Not Found: /logo192.png
+WARNING 2025-06-09 14:08:29,304 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:09:04,320 log Bad Request: /api/users/login/
+WARNING 2025-06-09 14:09:04,320 basehttp "POST /api/users/login/ HTTP/1.1" 400 40
+WARNING 2025-06-09 14:09:27,152 log Bad Request: /api/users/login/
+WARNING 2025-06-09 14:09:27,152 basehttp "POST /api/users/login/ HTTP/1.1" 400 40
+INFO 2025-06-09 14:09:46,239 basehttp "GET /admin/ HTTP/1.1" 200 9328
+INFO 2025-06-09 14:09:46,538 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,539 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,539 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,540 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,540 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,541 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,668 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,672 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,672 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:46,672 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+WARNING 2025-06-09 14:09:46,697 log Not Found: /favicon.ico
+WARNING 2025-06-09 14:09:46,697 basehttp "GET /favicon.ico HTTP/1.1" 404 2530
+INFO 2025-06-09 14:09:49,409 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 14248
+INFO 2025-06-09 14:09:49,428 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,429 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,429 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,431 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,432 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,434 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,434 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,436 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,437 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,437 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,438 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,440 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 14:09:49,498 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,499 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,512 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,512 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:09:49,512 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,320 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22307
+INFO 2025-06-09 14:10:13,333 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,339 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,340 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,340 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,341 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,342 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,345 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-09 14:10:13,412 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,412 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,435 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,436 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:13,436 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+WARNING 2025-06-09 14:10:23,604 log Bad Request: /api/users/login/
+WARNING 2025-06-09 14:10:23,605 basehttp "POST /api/users/login/ HTTP/1.1" 400 40
+INFO 2025-06-09 14:10:31,991 basehttp "GET /admin/auth/user/11/password/ HTTP/1.1" 200 9497
+INFO 2025-06-09 14:10:32,009 basehttp "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:32,009 basehttp "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 304 0
+INFO 2025-06-09 14:10:58,113 basehttp "POST /admin/auth/user/11/password/ HTTP/1.1" 200 9721
+INFO 2025-06-09 14:11:15,838 basehttp "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-06-09 14:11:43,019 basehttp "POST /admin/auth/user/11/password/ HTTP/1.1" 302 0
+INFO 2025-06-09 14:11:43,035 basehttp "GET /admin/auth/user/11/change/ HTTP/1.1" 200 22443
+INFO 2025-06-09 14:11:43,055 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-09 14:12:04,471 log Bad Request: /api/users/login/
+WARNING 2025-06-09 14:12:04,472 basehttp "POST /api/users/login/ HTTP/1.1" 400 40
+WARNING 2025-06-09 14:13:48,978 log Not Found: /logo192.png
+WARNING 2025-06-09 14:13:48,979 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:13:55,345 log Not Found: /logo192.png
+WARNING 2025-06-09 14:13:55,346 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:14:33,839 log Not Found: /logo192.png
+WARNING 2025-06-09 14:14:33,839 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+WARNING 2025-06-09 14:14:40,559 log Not Found: /logo192.png
+WARNING 2025-06-09 14:14:40,560 basehttp "GET /logo192.png HTTP/1.1" 404 2530
