@@ -56,6 +56,7 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 // Register action
+// Register action
 export const register = (name, email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_REGISTER_REQUEST });
@@ -78,6 +79,7 @@ export const register = (name, email, password) => async (dispatch) => {
             throw new Error(data.detail || 'Registration failed');
         }
 
+        // Dispatch success with minimal data
         dispatch({
             type: USER_REGISTER_SUCCESS,
             payload: {
@@ -169,9 +171,4 @@ export const logout = () => (dispatch) => {
     window.location.href = '/login';
 };
 
-export default {
-    login,
-    logout,
-    register,
-    verifyEmail
-};
+export default {login,logout,register,verifyEmail, activateAccount};

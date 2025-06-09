@@ -24,16 +24,17 @@ function SignupScreen() {
     const navigate = useNavigate();
 
     const userRegister = useSelector(state => state.userRegister);
-    const { loading, error, userInfo } = userRegister;
+    const { loading, error, success } = userRegister;
 
     useEffect(() => {
-        if (userInfo) {
-            navigate('/');
+        if (success) {
+            navigate('/verify-email');
         }
-    }, [navigate, userInfo]);
+    }, [success, navigate]);
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setMessage('');
 
         if (password !== confirmPassword) {
             setMessage('Passwords do not match');
@@ -74,6 +75,9 @@ function SignupScreen() {
                                 className="bg-dark text-light"
                                 required
                             />
+                            <Form.Text className="text-muted">
+                                You'll need to verify this email
+                            </Form.Text>
                         </Form.Group>
 
                         <Form.Group controlId='password' className='mb-3'>

@@ -13,7 +13,7 @@ export const USER_REGISTER_FAIL = 'USER_REGISTER_FAIL';
 export const USER_VERIFY_REQUEST = 'USER_VERIFY_REQUEST';
 export const USER_VERIFY_SUCCESS = 'USER_VERIFY_SUCCESS';
 export const USER_VERIFY_FAIL = 'USER_VERIFY_FAIL';
-
+export const USER_VERIFY_RESET = 'USER_VERIFY_RESET';
 // User Session Info
 export const CURRENT_USER = 'Gps-Gaurav';
 export const CURRENT_UTC_TIME = '2025-06-09 16:06:19';
