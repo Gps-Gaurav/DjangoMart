@@ -16,7 +16,15 @@ function WaitingScreen() {
 
     const userVerify = useSelector((state) => state.userVerify) || {};
     const { loading = false, error, success } = userVerify;
-
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin || {};
+    
+    useEffect(() => {
+        if (userInfo) {
+            // ✅ Redirect if already logged in
+            navigate('/');
+        }
+    }, [userInfo, navigate]);
     // Update current time every second
     useEffect(() => {
         const timer = setInterval(() => {

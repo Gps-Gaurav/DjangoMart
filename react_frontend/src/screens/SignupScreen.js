@@ -42,7 +42,16 @@ function SignupScreen() {
             dispatch(register(name, email, password));
         }
     };
-
+    
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin || {};
+    
+    useEffect(() => {
+        if (userInfo) {
+            // ✅ Redirect if already logged in
+            navigate('/');
+        }
+    }, [userInfo, navigate]);
     return (
         <Row className="justify-content-md-center mt-5">
             <Col md={6}>
