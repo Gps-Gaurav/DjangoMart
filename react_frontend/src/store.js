@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { productDetailsReducers, productsListReducers } from './reducers/productsReducers';
 import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
+import { userVerifyReducer } from './reducers/userReducers';
 
 // Clear any potentially corrupted user data
 localStorage.removeItem('userInfo');
@@ -39,6 +40,7 @@ const initialState = {
 };
 
 const store = configureStore({
+    userVerify: userVerifyReducer,
     reducer: {
         productsList: productsListReducers,
         productDetails: productDetailsReducers,

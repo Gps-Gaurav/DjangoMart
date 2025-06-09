@@ -28,6 +28,9 @@ function App() {
                         {/* Auth Routes */}
                         <Route path="/login" element={<LoginScreen />} />
                         <Route path="/signup" element={<SignupScreen />} />
+                        
+                        {/* Waiting Routes */}
+                        
                         <Route path="/verify-email" element={<WaitingScreen />} />
                         <Route path="/activate/:uid/:token" element={<WaitingScreen />} />
                         

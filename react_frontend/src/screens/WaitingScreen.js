@@ -1,28 +1,65 @@
-import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
+import { activateAccount } from '../actions/userActions';
+import Message from '../components/Message';
 
 function WaitingScreen() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { uid, token } = useParams();
+
+    const userVerify = useSelector(state => state.userVerify);
+    const { loading, error, success } = userVerify;
+
+    useEffect(() => {
+        if (uid && token) {
+            // If we have uid and token, activate the account
+            dispatch(activateAccount(uid, token));
+        }
+    }, [dispatch, uid, token]);
+
+    useEffect(() => {
+        if (success) {
+            // Redirect to login after 3 seconds on success
+            const timer = setTimeout(() => {
+                navigate('/login');
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [success, navigate]);
+
     return (
-        <Container className="mt-5">
+        <Container>
             <Row className="justify-content-md-center">
                 <Col md={6}>
-                    <Card className="bg-dark text-white p-4">
+                    <Card className="p-4 my-5 bg-dark text-white">
                         <Card.Body className="text-center">
-                            <i className="fas fa-envelope-open-text fa-4x mb-3"></i>
-                            <h2>Please Verify Your Email</h2>
-                            <p className="lead">
-                                We've sent a verification link to your email address.
-                                Please check your inbox and click the link to activate your account.
-                            </p>
-                            <hr />
-                            <div className="mt-3">
-                                <p className="mb-0">
+                            {loading ? (
+                                <>
+                                    <Spinner animation="border" role="status" className="mb-3" />
+                                    <h3>Verifying your account...</h3>
+                                </>
+                            ) : error ? (
+                                <Message variant="danger">{error}</Message>
+                            ) : uid && token ? (
+                                <>
+                                    <i className="fas fa-check-circle fa-4x text-success mb-3"></i>
+                                    <h3>Account Activated!</h3>
+                                    <p>Redirecting to login page...</p>
+                                </>
+                            ) : (
+                                <>
+                                    <i className="fas fa-envelope fa-4x mb-3"></i>
+                                    <h3>Please Verify Your Email</h3>
+                                    <p>We've sent you an activation link.</p>
+                                    <p>Please check your email and click the link to activate your account.</p>
                                     <small>
-                                        Don't see the email? Check your spam folder or
-                                        <br />contact support if you need assistance.
+                                        Current Time (UTC): {new Date().toISOString().replace('T', ' ').slice(0, 19)}
                                     </small>
-                                </p>
-                            </div>
+                                </>
+                            )}
                         </Card.Body>
                     </Card>
                 </Col>

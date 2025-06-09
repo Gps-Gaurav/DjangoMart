@@ -125,7 +125,39 @@ export const verifyEmail = (token) => async (dispatch) => {
         });
     }
 };
+// Add this to your existing userActions.js
+export const activateAccount = (uid, token) => async (dispatch) => {
+    try {
+        dispatch({ type: USER_VERIFY_REQUEST });
 
+        const response = await fetch(`/api/users/activate/${uid}/${token}/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.detail || 'Activation failed');
+        }
+
+        dispatch({
+            type: USER_VERIFY_SUCCESS,
+            payload: data
+        });
+
+        // Redirect to login after successful activation
+        window.location.href = '/login';
+
+    } catch (error) {
+        dispatch({
+            type: USER_VERIFY_FAIL,
+            payload: error.message
+        });
+    }
+};
 // Logout action
 export const logout = () => (dispatch) => {
     localStorage.removeItem('userInfo');
