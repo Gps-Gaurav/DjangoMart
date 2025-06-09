@@ -5,23 +5,87 @@
     <title>Account Activated - {{ site_name }}</title>
     <meta http-equiv="refresh" content="5;url={{ frontend_url }}/login">
     <style>
-        /* Same style as activate.html */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .header {
+            background-color: #4CAF50;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            color: white;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 30px 10px;
+        }
+
+        .content h2 {
+            font-size: 22px;
+            color: #2e7d32;
+        }
+
+        .content p {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .content a {
+            color: #4CAF50;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .footer p {
+            margin: 4px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Account Activated!</h1>
-    </div>
-    
-    <div class="content">
-        <h2>Congratulations!</h2>
-        <p>Your account has been successfully activated. You will be redirected to the login page in 5 seconds.</p>
-        <p>If you are not redirected, <a href="{{ frontend_url }}/login">click here</a>.</p>
-    </div>
-    
-    <div class="footer">
-        <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
-        <p>Activated at: {{ timestamp }}</p>
+    <div class="container">
+        <div class="header">
+            <h1>Account Activated!</h1>
+        </div>
+
+        <div class="content">
+            <h2>Congratulations, your account is now active.</h2>
+            <p>You will be redirected to the login page in <strong>5 seconds</strong>.</p>
+            <p>If you're not redirected automatically, <a href="{{ frontend_url }}/login">click here</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
+            <p>Activated at: {{ timestamp }}</p>
+        </div>
     </div>
 </body>
 </html>

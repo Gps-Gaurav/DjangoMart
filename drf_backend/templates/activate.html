@@ -4,68 +4,107 @@
     <title>Activate Your {{ site_name }} Account</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             max-width: 600px;
             margin: 0 auto;
+            background-color: #f4f6f8;
             padding: 20px;
         }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
         .header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
-            border-radius: 5px;
         }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
         .content {
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            margin-top: 20px;
+            padding: 30px 20px;
         }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: bold;
+            border-radius: 6px;
             margin: 20px 0;
+            transition: background-color 0.3s ease;
         }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .link-box {
+            word-wrap: break-word;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #444;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #666;
+            padding: 20px;
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome to {{ site_name }}!</h1>
-    </div>
-    
-    <div class="content">
-        <h2>Hello {{ user.first_name }},</h2>
-        <p>Thank you for registering with {{ site_name }}. To activate your account, please click the button below:</p>
-        
-        <center>
-            <a href="{{ activation_link }}" class="button">Activate Account</a>
-        </center>
-        
-        <p>Or copy and paste this link in your browser:</p>
-        <p>{{ activation_link }}</p>
-        
-        <p>This activation link will expire in 24 hours.</p>
-        
-        <p>If you didn't create an account on {{ site_name }}, you can safely ignore this email.</p>
-    </div>
-    
-    <div class="footer">
-        <p>This is an automated email. Please do not reply.</p>
-        <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
-        <p>Sent at: {{ timestamp }}</p>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to {{ site_name }}!</h1>
+        </div>
+
+        <div class="content">
+            <h2>Hello {{ user.first_name }},</h2>
+            <p>Thank you for registering with <strong>{{ site_name }}</strong>. To activate your account, please click the button below:</p>
+
+            <center>
+                <a href="{{ activation_link }}" class="button">Activate Account</a>
+            </center>
+
+            <p>If the button doesn't work, copy and paste the following link into your browser:</p>
+            <div class="link-box">{{ activation_link }}</div>
+
+            <p>This activation link is valid for <strong>24 hours</strong>.</p>
+
+            <p>If you did not sign up for a {{ site_name }} account, please ignore this email.</p>
+        </div>
+
+        <div class="footer">
+            <p>This is an automated message, please do not reply.</p>
+            <p>© {{ site_name }} {% now "Y" %}. All rights reserved.</p>
+            <p>Sent at: {{ timestamp }}</p>
+        </div>
     </div>
 </body>
 </html>
