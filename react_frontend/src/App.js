@@ -12,6 +12,7 @@ import NotFoundScreen from "./screens/NotFoundScreen";
 import WaitingScreen from './screens/WaitingScreen';
 import ProfileScreen from "./screens/ProfileScreen";
 import AllProductsScreen from "./screens/AllProductsScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                         <Route path="/" element={<HomeScreen />} />
 
                         <Route path="/profile" element={<ProfileScreen/>} />
+                        <Route path="/orders" element={<OrderScreen/>} />
                         
                         {/* Product Routes */}
                         <Route path="/product/:id" element={<ProductScreen />} />

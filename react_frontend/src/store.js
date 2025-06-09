@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { productDetailsReducers, productsListReducers } from './reducers/productsReducers';
 import { userLoginReducer, userRegisterReducer, userVerifyReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
+import { orderDetailsReducer } from './reducers/orderReducer';
 
 // Get user info from localStorage
 const userInfoFromStorage = localStorage.getItem('userInfo')
@@ -43,6 +44,7 @@ const initialState = {
 // Create store
 const store = configureStore({
     reducer: {
+        orderDetails: orderDetailsReducer,
         productsList: productsListReducers,
         productDetails: productDetailsReducers,
         userLogin: userLoginReducer,
