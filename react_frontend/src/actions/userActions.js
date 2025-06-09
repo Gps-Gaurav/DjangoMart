@@ -8,48 +8,41 @@ import {
     USER_REGISTER_FAIL,
 } from '../constants/userConstants';
 
-// Helper to get current formatted datetime
-const getCurrentDateTime = () => {
-    const now = new Date();
-    return now.toISOString().slice(0, 19).replace('T', ' ');
-};
-
 // Login action
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_LOGIN_REQUEST });
 
-        // Clear any existing user data
-        localStorage.removeItem('userInfo');
-
         const response = await fetch('/api/users/login/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({
+                username: email,  // Changed from email to username
+                password: password
+            })
         });
 
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.detail || 'Invalid credentials');
+            throw new Error(data.detail || (data.username && data.username[0]) || 'Invalid credentials');
         }
 
-        // Create user info with required fields
         const userInfo = {
             ...data,
-            token: data.token,
-            name: data.name || email.split('@')[0],
             email: email,
-            lastLogin: getCurrentDateTime(),
-            isAdmin: data.isAdmin || false
+            name: data.name || email.split('@')[0],
+            token: data.token
         };
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: userInfo
         });
+
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
 
     } catch (error) {
         dispatch({
@@ -59,20 +52,21 @@ export const login = (email, password) => async (dispatch) => {
     }
 };
 
-// Register action
+// Register action remains the same
 export const register = (name, email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_REGISTER_REQUEST });
 
-        // Clear any existing user data
-        localStorage.removeItem('userInfo');
-
         const response = await fetch('/api/users/register/', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, email, password })
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password
+            })
         });
 
         const data = await response.json();
@@ -81,17 +75,13 @@ export const register = (name, email, password) => async (dispatch) => {
             throw new Error(data.detail || 'Registration failed');
         }
 
-        // Create user info with required fields
         const userInfo = {
             ...data,
-            token: data.token,
             name: name,
             email: email,
-            lastLogin: getCurrentDateTime(),
-            isAdmin: false
+            token: data.token
         };
 
-        // Register success also logs the user in
         dispatch({
             type: USER_REGISTER_SUCCESS,
             payload: userInfo
@@ -101,6 +91,8 @@ export const register = (name, email, password) => async (dispatch) => {
             type: USER_LOGIN_SUCCESS,
             payload: userInfo
         });
+
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
 
     } catch (error) {
         dispatch({
@@ -112,13 +104,11 @@ export const register = (name, email, password) => async (dispatch) => {
 
 // Logout action
 export const logout = () => (dispatch) => {
-    // Clear all storage
-    localStorage.clear();
-    sessionStorage.clear();
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('shippingAddress');
     
     dispatch({ type: USER_LOGOUT });
-    dispatch({ type: 'CART_CLEAR_ITEMS' });
     
-    // Redirect to login
     window.location.href = '/login';
 };
