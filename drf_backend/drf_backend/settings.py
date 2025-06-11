@@ -2,6 +2,8 @@ from pathlib import Path
 from datetime import timedelta, datetime
 import os
 import pytz
+from decouple import Csv
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,7 +18,7 @@ SECRET_KEY = 'django-insecure-yh4c(0zq3-f0lm4aeon%de)ko&ea)cm_bk1-(g*f+du6e8o*=a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','https://djangomart-w4j9.onrender.com']
+ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1']
 
 # Domain settings
 DOMAIN = 'localhost:8000'
