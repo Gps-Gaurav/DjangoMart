@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-yh4c(0zq3-f0lm4aeon%de)ko&ea)cm_bk1-(g*f+du6e8o*=a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','https://djangomart-w4j9.onrender.com']
 
 # Domain settings
 DOMAIN = 'localhost:8000'
