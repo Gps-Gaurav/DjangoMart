@@ -15,3 +15,5 @@ django-storages
 six
 PyJWT
 pytz
+dj-database-url
+python-decouple
