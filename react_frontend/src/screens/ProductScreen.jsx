@@ -47,7 +47,7 @@ const ProductScreen = () => {
             style={{ minHeight: "400px" }}
           >
             <img
-              src={images[mainImage]}
+              src={images[mainImage]} alt="img"
               className="img-fluid rounded"
               style={{ maxHeight: "400px", objectFit: "contain" }}
             />

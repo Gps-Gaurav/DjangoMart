@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
@@ -19,15 +19,11 @@ function LoginScreen() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const location = useLocation();
-
+ 
     // Get user login state
     const userLogin = useSelector(state => state.userLogin);
     const { loading, error, userInfo } = userLogin || {};
 
-    // First, check if there's a redirect in the URL
-    const searchParams = new URLSearchParams(location.search);
-    const redirect = searchParams.get('redirect') || '/';
 
     useEffect(() => {
         // If userInfo exists and has required fields, redirect
