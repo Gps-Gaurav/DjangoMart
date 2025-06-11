@@ -17,3 +17,6 @@ PyJWT
 pytz
 dj-database-url
 python-decouple
+dj-rest-auth
+django-allauth
+social-auth-app-django

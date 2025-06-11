@@ -1564,3 +1564,494 @@ WARNING 2025-06-09 22:16:37,542 log Not Found: /logo192.png
 WARNING 2025-06-09 22:16:37,546 log Not Found: /api/orders/undefined/
 WARNING 2025-06-09 22:16:37,546 basehttp "GET /api/orders/undefined/ HTTP/1.1" 404 6490
 WARNING 2025-06-09 22:16:37,546 basehttp "GET /logo192.png HTTP/1.1" 404 2530
+INFO 2025-06-11 19:16:25,414 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:17:57,835 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 19:18:12,224 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:19:00,898 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:19:14,623 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:21:35,571 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 19:21:35,950 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:21:44,243 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:22:43,434 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 19:22:43,751 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:22:44,995 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 19:22:45,868 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:22:48,193 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 19:22:48,453 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-11 19:22:58,897 log Not Found: /
+WARNING 2025-06-11 19:22:58,897 basehttp "GET / HTTP/1.1" 404 2948
+WARNING 2025-06-11 19:22:59,054 log Not Found: /favicon.ico
+WARNING 2025-06-11 19:22:59,054 basehttp "GET /favicon.ico HTTP/1.1" 404 2999
+INFO 2025-06-11 19:23:06,373 basehttp "GET /api/products/ HTTP/1.1" 200 6962
+INFO 2025-06-11 19:23:06,385 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,385 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,386 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,386 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,387 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,387 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,387 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,388 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,389 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,389 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,390 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:23:06,443 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-06-11 19:24:41,764 basehttp "GET /api/products/ HTTP/1.1" 200 6962
+INFO 2025-06-11 19:24:46,236 basehttp "GET /api/auth HTTP/1.1" 301 0
+ERROR 2025-06-11 19:24:46,276 log Internal Server Error: /api/auth/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: socialaccount_socialaccount
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 398, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: socialaccount_socialaccount
+ERROR 2025-06-11 19:24:46,282 basehttp "GET /api/auth/ HTTP/1.1" 500 256987
+INFO 2025-06-11 19:26:04,588 basehttp "GET /admin/ HTTP/1.1" 200 15771
+INFO 2025-06-11 19:26:04,601 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-06-11 19:26:04,602 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-06-11 19:26:04,602 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-06-11 19:26:04,742 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-06-11 19:26:04,743 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-06-11 19:26:04,743 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-06-11 19:26:04,745 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-06-11 19:26:04,753 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-06-11 19:26:04,753 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-06-11 19:26:04,753 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+ERROR 2025-06-11 19:26:11,697 log Internal Server Error: /admin/socialaccount/socialaccount/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: socialaccount_socialaccount
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2024, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 867, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/views/main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/admin/views/main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/paginator.py", line 110, in count
+    return c()
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: socialaccount_socialaccount
+ERROR 2025-06-11 19:26:11,702 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 500 198544
+INFO 2025-06-11 19:27:23,506 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:27:23,950 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:27:26,171 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:27:26,446 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:27:28,687 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:27:28,965 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:27:55,111 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:27:55,514 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:27:58,832 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:27:59,139 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:28:00,339 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:28:00,617 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:28:01,804 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:28:02,068 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 19:28:06,377 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/urls.py changed, reloading.
+INFO 2025-06-11 19:28:06,696 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-11 19:28:29,675 log Method Not Allowed: /api/auth/google/
+WARNING 2025-06-11 19:28:29,676 basehttp "GET /api/auth/google/ HTTP/1.1" 405 5649
+ERROR 2025-06-11 19:31:34,830 log Internal Server Error: /api/auth/google/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: django_site
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 48, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 125, in post
+    self.serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 447, in run_validation
+    value = self.validate(value)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/registration/serializers.py", line 95, in validate
+    app = adapter.get_provider().app
+          ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 48, in get_provider
+    return get_adapter(self.request).get_provider(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.request, provider=self.provider_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 213, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 296, in get_app
+    apps = self.list_apps(request, provider=provider, client_id=client_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 241, in list_apps
+    db_apps = SocialApp.objects.on_site(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/models.py", line 34, in on_site
+    site = get_current_site(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/sites/shortcuts.py", line 16, in get_current_site
+    return Site.objects.get_current(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/sites/models.py", line 59, in get_current
+    return self._get_site_by_id(site_id)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/contrib/sites/models.py", line 30, in _get_site_by_id
+    site = self.get(pk=site_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 629, in get
+    num = len(clone)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: django_site
+ERROR 2025-06-11 19:31:34,834 basehttp "POST /api/auth/google/ HTTP/1.1" 500 228419
+INFO 2025-06-11 19:33:17,765 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-11 19:33:21,358 log Method Not Allowed: /api/auth/google/
+WARNING 2025-06-11 19:33:21,358 basehttp "GET /api/auth/google/ HTTP/1.1" 405 5649
+ERROR 2025-06-11 19:33:26,252 log Internal Server Error: /api/auth/google/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 48, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 125, in post
+    self.serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 447, in run_validation
+    value = self.validate(value)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/registration/serializers.py", line 95, in validate
+    app = adapter.get_provider().app
+          ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 48, in get_provider
+    return get_adapter(self.request).get_provider(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.request, provider=self.provider_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 213, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 303, in get_app
+    raise SocialApp.DoesNotExist()
+allauth.socialaccount.models.SocialApp.DoesNotExist
+ERROR 2025-06-11 19:33:26,255 basehttp "POST /api/auth/google/ HTTP/1.1" 500 138819
+INFO 2025-06-11 19:38:05,756 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-06-11 19:38:05,789 basehttp "GET /admin/ HTTP/1.1" 200 15771
+INFO 2025-06-11 19:38:05,801 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,801 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,802 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,802 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,803 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,803 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,926 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,930 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,930 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:05,930 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-06-11 19:38:11,483 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 15482
+INFO 2025-06-11 19:38:11,513 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-06-11 19:38:11,513 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-06-11 19:38:11,515 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-11 19:38:11,515 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-06-11 19:38:11,518 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-06-11 19:38:11,518 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-06-11 19:38:11,519 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-06-11 19:38:11,519 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-06-11 19:38:11,522 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-06-11 19:38:11,523 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-06-11 19:38:11,523 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-06-11 19:38:11,563 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-06-11 19:38:11,564 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-06-11 19:38:11,576 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-06-11 19:38:22,094 basehttp "GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 14147
+INFO 2025-06-11 19:38:22,107 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-06-11 19:38:22,109 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-11 19:38:22,170 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-06-11 19:38:22,176 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-06-11 19:38:22,177 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-06-11 19:38:25,682 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 12632
+INFO 2025-06-11 19:38:25,700 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-11 19:38:28,844 basehttp "GET /admin/socialaccount/socialapp/add/ HTTP/1.1" 200 19317
+INFO 2025-06-11 19:38:28,860 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-06-11 19:38:28,862 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-06-11 19:38:28,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-11 19:38:28,938 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291

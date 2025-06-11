@@ -5,6 +5,18 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView  # Added for token refresh functionality
 )
 from .views import addOrderItems, getMyOrders, getOrderById, LoginView
+
+from dj_rest_auth.registration.views import SocialLoginView
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
+from dj_rest_auth.registration.views import SocialLoginView
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+
+class GitHubLogin(SocialLoginView):
+    adapter_class = GitHubOAuth2Adapter
+
 urlpatterns = [
     # Basic Routes
     path('', views.getRoutes, name="getRoutes"),
@@ -30,4 +42,8 @@ urlpatterns = [
     path('orders/add/', addOrderItems, name='order-add'),
     path('orders/myorders/', getMyOrders, name='my-orders'),
     path('orders/<int:pk>/', getOrderById, name='order-detail'),
+    
+    # Social Login Routes
+    path('auth/google/', GoogleLogin.as_view(), name='google_login'),
+    path('auth/github/', GitHubLogin.as_view(), name='github_login'),
 ]
