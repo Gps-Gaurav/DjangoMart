@@ -77,7 +77,7 @@ def getRoutes(request):
 def getProducts(request):
     try:
         products = Products.objects.all()
-        serializer = ProductsSerializer(products, many=True)
+        serializer = ProductsSerializer(products, many=True, context={'request': request})
         return Response({
             'products': serializer.data,
             'timestamp': get_current_time(),
@@ -91,7 +91,6 @@ def getProducts(request):
             }, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-
 @api_view(['GET'])
 def getProduct(request, pk):
     try:
