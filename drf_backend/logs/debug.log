@@ -2118,3 +2118,9 @@ INFO 2025-06-11 21:56:51,662 autoreload /Users/gaurav/Desktop/Python Project/Dja
 INFO 2025-06-11 21:56:52,086 autoreload Watching for file changes with StatReloader
 INFO 2025-06-11 21:57:21,343 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
 INFO 2025-06-11 21:58:53,881 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:03:46,403 basehttp "GET /api/products/ HTTP/1.1" 200 7009
+INFO 2025-06-11 22:11:12,658 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:11:13,177 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:11:14,446 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:11:14,726 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:13:53,873 autoreload Watching for file changes with StatReloader

@@ -177,6 +177,7 @@ def getUsers(request):
 
 # User Registration and Activation
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def registerUser(request):
     data = request.data
     try:
