@@ -2155,3 +2155,7 @@ INFO 2025-06-11 22:38:41,495 autoreload Watching for file changes with StatReloa
 INFO 2025-06-11 22:38:59,075 autoreload Watching for file changes with StatReloader
 INFO 2025-06-11 22:39:01,321 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
 INFO 2025-06-11 22:39:01,616 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:52:01,712 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:52:02,239 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:52:06,584 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:52:06,857 autoreload Watching for file changes with StatReloader
