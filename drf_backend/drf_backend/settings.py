@@ -5,6 +5,9 @@ import os
 GOOGLE_CLIENT_ID = "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET = "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"
 
+GITHUB_CLIENT_ID="Ov23liIr3kxBgSmCLRwF"
+GITHUB_CLIENT_SECRET="6fc5ce6f527848fd77042a396768a2b9be8652e1"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

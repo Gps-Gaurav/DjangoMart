@@ -346,7 +346,52 @@ def google_auth(request):
     except Exception as e:
         return Response({'error': str(e)}, status=500)
     
+
+@api_view(['POST'])
+def github_auth(request):
+    code = request.data.get('code')
+    if not code:
+        return Response({'error': 'Missing code'}, status=400)
+
+    try:
+        # Exchange code for access token
+        token_response = requests.post(
+            'https://github.com/login/oauth/access_token',
+            data={
+                'client_id': settings.GITHUB_CLIENT_ID,
+                'client_secret': settings.GITHUB_CLIENT_SECRET,
+                'code': code,
+            },
+            headers={'Accept': 'application/json'}
+        )
+        token_data = token_response.json()
+        access_token = token_data.get('access_token')
+
+        if not access_token:
+            return Response({'error': 'Token fetch failed'}, status=400)
+
+        # Use access token to get user info
+        user_response = requests.get(
+            'https://api.github.com/user',
+            headers={'Authorization': f'token {access_token}'}
+        )
+        user_data = user_response.json()
+        email_response = requests.get(
+            'https://api.github.com/user/emails',
+            headers={'Authorization': f'token {access_token}'}
+        )
+        email_data = email_response.json()
+        primary_email = next((e["email"] for e in email_data if e["primary"]), None)
+
+        # Your logic to create/get user
+        return Response({
+            'username': user_data.get("login"),
+            'email': primary_email,
+        })
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
     
+        
 # Product Management Views (Admin Only)
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
