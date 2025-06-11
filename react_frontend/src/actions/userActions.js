@@ -208,4 +208,5 @@ export const getUserProfile = () => async (dispatch, getState) => {
   };
   
 
-export default {login,logout,register,verifyEmail, activateAccount};
+const userActions = {login,logout,register,verifyEmail, activateAccount};
+export default userActions;
