@@ -2,8 +2,6 @@ from pathlib import Path
 from datetime import timedelta, datetime
 import os
 import pytz
-from decouple import Csv
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +19,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1']
 
 # Domain settings
-DOMAIN = 'localhost:8000'
+DOMAIN = 'djangomart-w4j9.onrender.com'
 FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
 SITE_NAME = "DjangoMart"
 
