@@ -20,7 +20,7 @@ ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1']
 
 # Domain settings
 DOMAIN = 'djangomart-w4j9.onrender.com'
-FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
+FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
 SITE_NAME = "DjangoMart"
 
 # Application definition
@@ -151,9 +151,11 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
+    
+    "https://djangomart.netlify.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://127.0.0.1:8000"
+    "http://127.0.0.1:8000",
     
 ]
 
