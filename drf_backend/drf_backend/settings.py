@@ -1,7 +1,9 @@
 from pathlib import Path
 from datetime import timedelta, datetime
 import os
-import pytz
+
+GOOGLE_CLIENT_ID = "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET = "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"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

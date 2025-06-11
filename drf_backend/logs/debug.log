@@ -2085,3 +2085,16 @@ WARNING 2025-06-11 21:07:59,417 basehttp "GET /favicon.ico HTTP/1.1" 404 3151
 INFO 2025-06-11 21:08:05,635 basehttp "GET /api/products/ HTTP/1.1" 200 7009
 INFO 2025-06-11 21:08:25,168 basehttp "GET /api/products/ HTTP/1.1" 200 7009
 INFO 2025-06-11 21:08:26,233 basehttp "GET /api/ HTTP/1.1" 200 5543
+INFO 2025-06-11 21:48:37,307 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:48:37,933 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:48:39,211 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:48:39,467 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:48:40,664 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:48:40,950 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:48:43,152 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:48:43,428 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:49:13,760 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:49:14,161 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:50:04,292 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-11 21:50:04,738 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:50:12,320 autoreload Watching for file changes with StatReloader
