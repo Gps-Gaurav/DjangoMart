@@ -26,6 +26,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken  # ✅ JWT tokens
 import requests
 from django.conf import settings
+import traceback
 
 
 class LoginView(APIView):
@@ -373,6 +374,7 @@ def google_auth(request):
         return Response({'error': 'Something went wrong on server', 'detail': str(e)}, status=500)
 
 
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def github_auth(request):
@@ -381,7 +383,7 @@ def github_auth(request):
         if not code:
             return Response({'error': 'Missing authorization code'}, status=400)
 
-        # Step 1: Exchange code for access token
+        # Step 1: Exchange code for token
         token_response = requests.post(
             'https://github.com/login/oauth/access_token',
             headers={'Accept': 'application/json'},
@@ -391,31 +393,30 @@ def github_auth(request):
                 'code': code,
             }
         )
-
         token_data = token_response.json()
+        if token_response.status_code != 200:
+            return Response({'error': 'GitHub token fetch failed', 'detail': token_data}, status=token_response.status_code)
+
         access_token = token_data.get('access_token')
-
         if not access_token:
-            return Response({'error': 'GitHub token fetch failed', 'detail': token_data}, status=400)
+            return Response({'error': 'No access token returned', 'detail': token_data}, status=400)
 
-        # Step 2: Use token to fetch user data
+        # Step 2: Get user info
         user_response = requests.get(
             'https://api.github.com/user',
             headers={'Authorization': f'token {access_token}'}
         )
         user_data = user_response.json()
-
         if user_response.status_code != 200:
-            return Response({'error': 'GitHub user fetch failed', 'detail': user_data}, status=400)
+            return Response({'error': 'GitHub user fetch failed', 'detail': user_data}, status=user_response.status_code)
 
-        # Optional: fetch primary email
+        # Step 3: Get email
         email_response = requests.get(
             'https://api.github.com/user/emails',
             headers={'Authorization': f'token {access_token}'}
         )
         email_data = email_response.json()
 
-        # Try to find primary verified email
         email = None
         if isinstance(email_data, list):
             for item in email_data:
@@ -423,16 +424,15 @@ def github_auth(request):
                     email = item.get('email')
                     break
 
-        # Fallback if no verified email found
         if not email:
             email = user_data.get('email') or f"{user_data.get('login')}@github.com"
 
-        # Create or get user
-        user, created = User.objects.get_or_create(username=email, defaults={'email': email})
+        # Step 4: Create user
+        user = User.objects.filter(email=email).first()
+        if not user:
+            user = User.objects.create_user(username=email, email=email)
 
-        # Generate JWT tokens
         refresh = RefreshToken.for_user(user)
-
         return Response({
             'refresh': str(refresh),
             'access': str(refresh.access_token),
@@ -441,7 +441,9 @@ def github_auth(request):
         })
 
     except Exception as e:
-        return Response({'error': 'Server error', 'detail': str(e)}, status=500)  
+        return Response({'error': 'Server error', 'trace': traceback.format_exc()}, status=500)
+
+
         
 # Product Management Views (Admin Only)
 @api_view(['POST'])

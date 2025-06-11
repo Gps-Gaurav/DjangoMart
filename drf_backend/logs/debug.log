@@ -2159,3 +2159,35 @@ INFO 2025-06-11 22:52:01,712 autoreload /Users/gaurav/Desktop/Python Project/Dja
 INFO 2025-06-11 22:52:02,239 autoreload Watching for file changes with StatReloader
 INFO 2025-06-11 22:52:06,584 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
 INFO 2025-06-11 22:52:06,857 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-11 22:54:35,452 log Method Not Allowed: /api/login/
+WARNING 2025-06-11 22:54:35,453 basehttp "GET /api/login/ HTTP/1.1" 405 5468
+INFO 2025-06-11 22:54:35,478 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,478 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,478 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,479 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,479 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,479 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,480 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,480 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,480 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,480 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,480 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-06-11 22:54:35,603 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2025-06-11 22:54:35,642 log Not Found: /favicon.ico
+WARNING 2025-06-11 22:54:35,642 basehttp "GET /favicon.ico HTTP/1.1" 404 3151
+INFO 2025-06-11 22:56:37,285 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:56:37,812 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:58:12,316 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:58:12,724 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:59:17,259 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:59:17,702 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:59:33,451 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:59:33,855 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:59:40,220 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:59:40,493 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:59:44,806 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:59:45,109 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 22:59:56,670 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 22:59:57,109 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 23:00:06,609 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-11 23:00:07,008 autoreload Watching for file changes with StatReloader
