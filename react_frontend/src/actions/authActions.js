@@ -1,38 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const register = createAsyncThunk(
-  'auth/register',
-  async ({ firstName, lastName, email, password }, { rejectWithValue }) => {
-    try {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      };
-
-      const { data } = await axios.post(
-        '/api/users/register/',
-        {
-          'first_name': firstName,
-          'last_name': lastName,
-          'email': email,
-          'password': password
-        },
-        config
-      );
-
-      return data;
-    } catch (error) {
-      return rejectWithValue(
-        error.response && error.response.data.detail
-          ? error.response.data.detail
-          : error.message
-      );
-    }
-  }
-);
-
+// 🔹 GOOGLE AUTH ACTION
 export const googleAuth = createAsyncThunk(
   'auth/googleAuth',
   async (tokenId, { rejectWithValue }) => {
@@ -44,22 +13,21 @@ export const googleAuth = createAsyncThunk(
       };
 
       const { data } = await axios.post(
-        '/api/users/google/',
-        { token_id: tokenId },
+        '/api/auth/google/',
+        { id_token: tokenId },
         config
       );
 
-      return data;
+      return data; // this will be your userInfo object
     } catch (error) {
       return rejectWithValue(
-        error.response && error.response.data.detail
-          ? error.response.data.detail
-          : error.message
+        error.response?.data?.detail || error.message
       );
     }
   }
 );
 
+// 🔹 GITHUB AUTH ACTION
 export const githubAuth = createAsyncThunk(
   'auth/githubAuth',
   async (code, { rejectWithValue }) => {
@@ -71,17 +39,15 @@ export const githubAuth = createAsyncThunk(
       };
 
       const { data } = await axios.post(
-        '/api/users/github/',
+        '/api/auth/github/',
         { code },
         config
       );
 
-      return data;
+      return data; // this will be your userInfo object
     } catch (error) {
       return rejectWithValue(
-        error.response && error.response.data.detail
-          ? error.response.data.detail
-          : error.message
+        error.response?.data?.detail || error.message
       );
     }
   }
