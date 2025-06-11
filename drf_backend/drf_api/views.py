@@ -24,6 +24,9 @@ from django.views.generic import View
 from django.contrib.auth import authenticate
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken  # ✅ JWT tokens
+import requests
+from django.conf import settings
+
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
@@ -317,81 +320,126 @@ class ActivateAccountView(View):
             }
             return render(request, "activatefail.html", context)
 
+
+
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def google_auth(request):
-    token = request.data.get('access_token')
-    if not token:
-        return Response({'error': 'Missing access_token'}, status=400)
-
     try:
-        # Verify token with Google
-        response = requests.get(
-            f"https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={token}"
-        )
-        data = response.json()
-        if "error" in data:
-            return Response({'error': data["error"]}, status=400)
+        token = request.data.get('access_token')
+        if not token:
+            return Response({'error': 'Missing access token'}, status=400)
 
-        # Optionally check audience
-        if data["audience"] != settings.GOOGLE_CLIENT_ID:
-            return Response({'error': 'Invalid audience'}, status=400)
+        # Validate token with Google
+        google_url = f"https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={token}"
+        google_response = requests.get(google_url)
+        data = google_response.json()
 
-        # ✅ Extract user info
-        email = data.get("email")
-        name = data.get("name", email.split('@')[0])
+        if 'error' in data:
+            return Response({'error': data['error']}, status=400)
 
-        # Create or get user
-        # Your logic to return JWT token or session
-        return Response({"email": email, "name": name})
-    
+        # Debug: Log Google's response (remove in production)
+        print("Google tokeninfo response:", data)
+
+        # Validate audience
+        client_id = getattr(settings, 'GOOGLE_CLIENT_ID', None)
+        if not client_id:
+            return Response({'error': 'GOOGLE_CLIENT_ID not set in settings.py'}, status=500)
+
+        if data.get('audience') != client_id:
+            return Response({'error': 'Invalid client ID (audience mismatch)'}, status=400)
+
+        email = data.get('email')
+        if not email:
+            return Response({'error': 'Email not found in token info'}, status=400)
+
+        # Create user if doesn't exist
+        user, created = User.objects.get_or_create(username=email, defaults={'email': email})
+
+        # Issue tokens
+        refresh = RefreshToken.for_user(user)
+
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+            'email': email,
+        })
+
     except Exception as e:
-        return Response({'error': str(e)}, status=500)
-    
+        # Log the real error
+        print("Google Auth Error:", str(e))  # Use logging in prod
+        return Response({'error': 'Something went wrong on server', 'detail': str(e)}, status=500)
+
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def github_auth(request):
-    code = request.data.get('code')
-    if not code:
-        return Response({'error': 'Missing code'}, status=400)
-
     try:
-        # Exchange code for access token
+        code = request.data.get('code')
+        if not code:
+            return Response({'error': 'Missing authorization code'}, status=400)
+
+        # Step 1: Exchange code for access token
         token_response = requests.post(
             'https://github.com/login/oauth/access_token',
+            headers={'Accept': 'application/json'},
             data={
                 'client_id': settings.GITHUB_CLIENT_ID,
                 'client_secret': settings.GITHUB_CLIENT_SECRET,
                 'code': code,
-            },
-            headers={'Accept': 'application/json'}
+            }
         )
+
         token_data = token_response.json()
         access_token = token_data.get('access_token')
 
         if not access_token:
-            return Response({'error': 'Token fetch failed'}, status=400)
+            return Response({'error': 'GitHub token fetch failed', 'detail': token_data}, status=400)
 
-        # Use access token to get user info
+        # Step 2: Use token to fetch user data
         user_response = requests.get(
             'https://api.github.com/user',
             headers={'Authorization': f'token {access_token}'}
         )
         user_data = user_response.json()
+
+        if user_response.status_code != 200:
+            return Response({'error': 'GitHub user fetch failed', 'detail': user_data}, status=400)
+
+        # Optional: fetch primary email
         email_response = requests.get(
             'https://api.github.com/user/emails',
             headers={'Authorization': f'token {access_token}'}
         )
         email_data = email_response.json()
-        primary_email = next((e["email"] for e in email_data if e["primary"]), None)
 
-        # Your logic to create/get user
+        # Try to find primary verified email
+        email = None
+        if isinstance(email_data, list):
+            for item in email_data:
+                if item.get('primary') and item.get('verified'):
+                    email = item.get('email')
+                    break
+
+        # Fallback if no verified email found
+        if not email:
+            email = user_data.get('email') or f"{user_data.get('login')}@github.com"
+
+        # Create or get user
+        user, created = User.objects.get_or_create(username=email, defaults={'email': email})
+
+        # Generate JWT tokens
+        refresh = RefreshToken.for_user(user)
+
         return Response({
-            'username': user_data.get("login"),
-            'email': primary_email,
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+            'email': email,
+            'username': user.username,
         })
+
     except Exception as e:
-        return Response({'error': str(e)}, status=500)
-    
+        return Response({'error': 'Server error', 'detail': str(e)}, status=500)  
         
 # Product Management Views (Admin Only)
 @api_view(['POST'])

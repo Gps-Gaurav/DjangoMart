@@ -23,6 +23,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1']
 
+
 # Domain settings
 DOMAIN = 'djangomart-w4j9.onrender.com'
 FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
