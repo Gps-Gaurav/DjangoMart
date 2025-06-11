@@ -316,6 +316,37 @@ class ActivateAccountView(View):
             }
             return render(request, "activatefail.html", context)
 
+@api_view(['POST'])
+def google_auth(request):
+    token = request.data.get('access_token')
+    if not token:
+        return Response({'error': 'Missing access_token'}, status=400)
+
+    try:
+        # Verify token with Google
+        response = requests.get(
+            f"https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={token}"
+        )
+        data = response.json()
+        if "error" in data:
+            return Response({'error': data["error"]}, status=400)
+
+        # Optionally check audience
+        if data["audience"] != settings.GOOGLE_CLIENT_ID:
+            return Response({'error': 'Invalid audience'}, status=400)
+
+        # ✅ Extract user info
+        email = data.get("email")
+        name = data.get("name", email.split('@')[0])
+
+        # Create or get user
+        # Your logic to return JWT token or session
+        return Response({"email": email, "name": name})
+    
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
+    
+    
 # Product Management Views (Admin Only)
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
