@@ -2077,3 +2077,11 @@ INFO 2025-06-11 19:51:55,271 autoreload /Users/gaurav/Desktop/Python Project/Dja
 INFO 2025-06-11 19:51:55,531 autoreload Watching for file changes with StatReloader
 INFO 2025-06-11 19:51:58,782 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
 INFO 2025-06-11 19:51:59,059 autoreload Watching for file changes with StatReloader
+INFO 2025-06-11 21:07:49,165 autoreload Watching for file changes with StatReloader
+WARNING 2025-06-11 21:07:59,246 log Not Found: /
+WARNING 2025-06-11 21:07:59,246 basehttp "GET / HTTP/1.1" 404 3100
+WARNING 2025-06-11 21:07:59,417 log Not Found: /favicon.ico
+WARNING 2025-06-11 21:07:59,417 basehttp "GET /favicon.ico HTTP/1.1" 404 3151
+INFO 2025-06-11 21:08:05,635 basehttp "GET /api/products/ HTTP/1.1" 200 7009
+INFO 2025-06-11 21:08:25,168 basehttp "GET /api/products/ HTTP/1.1" 200 7009
+INFO 2025-06-11 21:08:26,233 basehttp "GET /api/ HTTP/1.1" 200 5543
