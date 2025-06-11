@@ -19,6 +19,7 @@ urlpatterns = [
     
     # django-allauth social login (Google, GitHub, etc.)
     path('api/auth/', include('allauth.socialaccount.urls')),
+    path('accounts/', include('allauth.urls')), 
 ]
 
 # For serving media files
