@@ -7,7 +7,7 @@ import {
     userDetailsReducer,
     userUpdateProfileReducer,
   } from './reducers/userReducers';
-  
+
 // Get user info from localStorage
 const userInfoFromStorage = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))
@@ -21,6 +21,7 @@ const cartItemsFromStorage = localStorage.getItem('cartItems')
 const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
     ? JSON.parse(localStorage.getItem('shippingAddress'))
     : {};
+
 
 // Initial state
 const initialState = {
