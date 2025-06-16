@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import datetime
 
 class Products(models.Model):
     # Basic Fields
@@ -175,20 +176,61 @@ class Review(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    paymentMethod = models.CharField(max_length=100, null=True, blank=True)
-    taxPrice = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    shippingPrice = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    totalPrice = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    paymentMethod = models.CharField(max_length=200, null=True, blank=True)
+    taxPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    shippingPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    totalPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     isPaid = models.BooleanField(default=False)
     paidAt = models.DateTimeField(null=True, blank=True)
     isDelivered = models.BooleanField(default=False)
     deliveredAt = models.DateTimeField(null=True, blank=True)
-    createdAt = models.DateTimeField(auto_now_add=True)
+    createdAt = models.DateTimeField(default=datetime(2025, 6, 16, 20, 24, 49))
+    updatedAt = models.DateTimeField(auto_now=True)
+    createdBy = models.CharField(max_length=200, default="gps-rajput")
+    updatedBy = models.CharField(max_length=200, default="gps-rajput")
 
     def __str__(self):
-        return f"Order {self.id} by {self.user.username}"
+        return f"Order {self.id}"
+
+    class Meta:
+        ordering = ['-createdAt']
 
 class OrderItem(models.Model):
+    product = models.ForeignKey('Products', on_delete=models.SET_NULL, null=True)
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, related_name='items')
+    productname = models.CharField(max_length=200, null=True, blank=True)
+    qty = models.IntegerField(null=True, blank=True, default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    image = models.CharField(max_length=200, null=True, blank=True)
+    createdAt = models.DateTimeField(default=datetime(2025, 6, 16, 20, 24, 49))
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.qty} x {self.productname}"
+
+class ShippingAddress(models.Model):
+    order = models.OneToOneField(Order, on_delete=models.CASCADE, null=True, blank=True, related_name='shipping')
+    address = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=200, null=True, blank=True)
+    postalCode = models.CharField(max_length=200, null=True, blank=True)
+    country = models.CharField(max_length=200, null=True, blank=True)
+    shippingPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    createdAt = models.DateTimeField(default=datetime(2025, 6, 16, 20, 24, 49))
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.address}, {self.city}"
+    order = models.OneToOneField(Order, on_delete=models.CASCADE, null=True, blank=True)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=200, null=True, blank=True)
+    postalCode = models.CharField(max_length=200, null=True, blank=True)
+    country = models.CharField(max_length=200, null=True, blank=True)
+    shippingPrice = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.address)
     product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orderItems')
     name = models.CharField(max_length=200)

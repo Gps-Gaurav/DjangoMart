@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Products,Order, OrderItem
+from .models import Order, OrderItem, ShippingAddress, Products
 from .serializer import ProductsSerializer, UserSerializer, UserSerializerWithToken,OrderSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -520,7 +520,97 @@ def getProduct(request, pk):
             }, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+                
         
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def addOrderItems(request):
+    user = request.user
+    data = request.data
+    
+    orderItems = data['orderItems']
+
+    if not orderItems or len(orderItems) == 0:
+        return Response({'detail': 'No Order Items'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Create order
+    order = Order.objects.create(
+        user=user,
+        paymentMethod=data['paymentMethod'],
+        taxPrice=data['taxPrice'],
+        shippingPrice=data['shippingPrice'],
+        totalPrice=data['totalPrice'],
+        createdBy=data.get('createdBy', 'gps-rajput'),
+        updatedBy=data.get('updatedBy', 'gps-rajput')
+    )
+
+    # Create shipping address
+    shipping = ShippingAddress.objects.create(
+        order=order,
+        address=data['shippingAddress']['address'],
+        city=data['shippingAddress']['city'],
+        postalCode=data['shippingAddress']['postalCode'],
+        country=data['shippingAddress']['country'],
+    )
+
+    # Create order items
+    for item in orderItems:
+        product = Products.objects.get(_id=item['product'])
+        
+        item = OrderItem.objects.create(
+            product=product,
+            order=order,
+            productname=item['productname'],
+            qty=item['qty'],
+            price=item['price'],
+            image=item['image']
+        )
+
+        # Update stock
+        product.stockcount -= item.qty
+        product.save()
+
+    serializer = OrderSerializer(order, many=False)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getOrderById(request, pk):
+    try:
+        order = Order.objects.get(_id=pk)
+        
+        if order.user == request.user:
+            serializer = OrderSerializer(order, many=False)
+            return Response({
+                'order': serializer.data,
+                'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
+                'current_user': request.user.username
+            })
+        else:
+            return Response({
+                'detail': 'Not authorized to view this order',
+                'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Order.DoesNotExist:
+        return Response({
+            'detail': 'Order does not exist',
+            'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+        }, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def updateOrderToPaid(request, pk):
+    order = Order.objects.get(_id=pk)
+
+    order.isPaid = True
+    order.paidAt = datetime.utcnow()
+    order.updatedBy = request.user.username
+    order.save()
+
+    return Response('Order was paid')
+
+
 # Product Management Views (Admin Only)
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
@@ -631,59 +721,7 @@ def deleteProduct(request, pk):
             }, 
             status=status.HTTP_400_BAD_REQUEST
         )
-        
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def addOrderItems(request):
-    user = request.user
-    data = request.data
-
-    orderItems = data.get('orderItems', [])
-    if not orderItems:
-        return Response({'detail': 'No order items'}, status=status.HTTP_400_BAD_REQUEST)
-
-    # Create order
-    order = Order.objects.create(
-        user=user,
-        paymentMethod=data.get('paymentMethod', ''),
-        taxPrice=data.get('taxPrice', 0),
-        shippingPrice=data.get('shippingPrice', 0),
-        totalPrice=data.get('totalPrice', 0),
-    )
-
-    # Create order items and link to order
-    for item in orderItems:
-        product = Products.objects.get(_id=item['product'])
-        
-        # Reduce stockcount
-        if product.stockcount < item['qty']:
-            return Response({'detail': f'Not enough stock for {product.productname}'}, status=status.HTTP_400_BAD_REQUEST)
-        product.stockcount -= item['qty']
-        product.save()
-
-        OrderItem.objects.create(
-            product=product,
-            order=order,
-            name=product.productname,
-            qty=item['qty'],
-            price=item['price'],
-            image=product.image_url,
-        )
-
-    serializer = OrderSerializer(order, many=False)
-    return Response(serializer.data)
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def getMyOrders(request):
-    user = request.user
-    orders = Order.objects.filter(user=user)
-    serializer = OrderSerializer(orders, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def getOrderById(request, pk):
+     
     user = request.user
     try:
         order = Order.objects.get(id=pk)

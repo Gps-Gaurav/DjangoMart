@@ -5,7 +5,11 @@ from .models import Products
 
 # Unregister all default models except User
 admin.site.unregister(Group)
+from .models import Order, OrderItem, ShippingAddress
 
+admin.site.register(Order)
+admin.site.register(OrderItem)
+admin.site.register(ShippingAddress)
 @admin.register(Products)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('productname', 'productbrand', 'productcategory', 'price', 'stockcount')

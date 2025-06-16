@@ -4,7 +4,8 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView  # Added for token refresh functionality
 )
-from .views import addOrderItems, getMyOrders, getOrderById, LoginView
+from .views import LoginView
+from . import views
 
 from dj_rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -34,13 +35,14 @@ urlpatterns = [
     # Account Activation Route
     path('activate/<str:uidb64>/<str:token>/', views.ActivateAccountView.as_view(), name='activate'),  # Added str: prefix and trailing slash
     
-    path('orders/add/', addOrderItems, name='order-add'),
-    path('orders/myorders/', getMyOrders, name='my-orders'),
-    path('orders/<int:pk>/', getOrderById, name='order-detail'),
+    # Order Routes
+    path('orders/', views.addOrderItems, name='orders-add'),
+    path('orders/<str:pk>/', views.getOrderById, name='user-order'),
+    path('orders/<str:pk>/pay/', views.updateOrderToPaid, name='pay-order'),
     
     # Social Login Routes
     path('auth/google/', google_auth, name='google_auth'),
     path('auth/google/test/', test_google_token, name='test_google_token'),
-    path('auth/google/callback/', google_auth_callback, name='google_callback'),
+    path('auth/google/callback/', google_auth_callback, name='google_callback')
     
 ]
