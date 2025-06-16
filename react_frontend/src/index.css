@@ -148,3 +148,56 @@ code {
   font-weight: bold;
   margin-left: 0.5rem;
 }
+/* Product Screen Styles */
+.product-main-image {
+  transition: transform 0.3s ease;
+}
+
+.product-main-image:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.thumbnail.active {
+  border-color: #007bff;
+}
+
+.thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rounded-circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.rounded-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Stock Badge Styles */
+.badge {
+  padding: 0.5em 1em;
+  font-size: 0.875rem;
+}
+
+.form-control[type="number"]::-webkit-outer-spin-button,
+.form-control[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
