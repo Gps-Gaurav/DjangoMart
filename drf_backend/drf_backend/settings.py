@@ -167,13 +167,25 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_AUTH = {
     'SIGNUP_FIELDS': {
         'username': {
-            'required': True
+            'required': True,
+            'min_length': 4,
+            'max_length': 150,
         },
         'email': {
-            'required': True
+            'required': True,
+            'min_length': 5,
+            'max_length': 254,
+        },
+        'password': {
+            'required': True,
+            'min_length': 8,
         }
-    }
+    },
+    'USER_DETAILS_SERIALIZER': 'drf_api.serializer.UserSerializer',
+    'TOKEN_MODEL': None,  # Using JWT tokens
+    'USE_JWT': True,
 }
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
