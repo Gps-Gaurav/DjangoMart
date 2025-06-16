@@ -21,12 +21,13 @@ SECRET_KEY = 'django-insecure-yh4c(0zq3-f0lm4aeon%de)ko&ea)cm_bk1-(g*f+du6e8o*=a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1','http://localhost:3000']
 
 
 # Domain settings
 DOMAIN = 'djangomart-w4j9.onrender.com'
-FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
+FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
+# FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
 SITE_NAME = "DjangoMart"
 
 # Application definition
@@ -84,6 +85,7 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),

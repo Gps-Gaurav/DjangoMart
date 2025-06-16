@@ -2271,3 +2271,161 @@ INFO 2025-06-16 10:21:02,460 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-06-16 10:21:29,818 basehttp "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
 INFO 2025-06-16 10:21:29,831 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17658
 INFO 2025-06-16 10:21:29,847 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-06-16 10:27:48,710 log Not Found: /
+WARNING 2025-06-16 10:27:48,711 basehttp "GET / HTTP/1.1" 404 3100
+INFO 2025-06-16 10:27:54,359 basehttp "GET /admin/ HTTP/1.1" 200 15698
+INFO 2025-06-16 10:28:00,131 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17465
+INFO 2025-06-16 10:28:00,144 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:28:03,779 basehttp "GET /admin/auth/user/19/change/ HTTP/1.1" 200 30134
+INFO 2025-06-16 10:28:03,793 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:28:05,743 basehttp "GET /admin/auth/user/19/password/ HTTP/1.1" 200 14078
+INFO 2025-06-16 10:28:07,570 basehttp "GET /static/admin/img/icon-alert.svg HTTP/1.1" 304 0
+INFO 2025-06-16 10:28:14,176 basehttp "POST /admin/auth/user/19/password/ HTTP/1.1" 302 0
+INFO 2025-06-16 10:28:14,204 basehttp "GET /admin/auth/user/19/change/ HTTP/1.1" 200 30046
+INFO 2025-06-16 10:28:14,220 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:28:29,139 basehttp "GET /admin/auth/user/19/change/ HTTP/1.1" 200 29897
+INFO 2025-06-16 10:28:29,158 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-06-16 10:29:13,129 log Internal Server Error: /api/products/
+ERROR 2025-06-16 10:29:13,129 basehttp "GET /api/products/ HTTP/1.1" 500 100
+ERROR 2025-06-16 10:29:13,136 log Internal Server Error: /api/products/
+ERROR 2025-06-16 10:29:13,137 basehttp "GET /api/products/ HTTP/1.1" 500 100
+WARNING 2025-06-16 10:29:30,308 log Unauthorized: /api/users/login/
+WARNING 2025-06-16 10:29:30,309 basehttp "POST /api/users/login/ HTTP/1.1" 401 63
+WARNING 2025-06-16 10:29:42,076 log Unauthorized: /api/users/login/
+WARNING 2025-06-16 10:29:42,076 basehttp "POST /api/users/login/ HTTP/1.1" 401 63
+ERROR 2025-06-16 10:30:52,335 log Internal Server Error: /api/auth/google/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 48, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 125, in post
+    self.serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 447, in run_validation
+    value = self.validate(value)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/registration/serializers.py", line 95, in validate
+    app = adapter.get_provider().app
+          ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 48, in get_provider
+    return get_adapter(self.request).get_provider(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.request, provider=self.provider_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 213, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 303, in get_app
+    raise SocialApp.DoesNotExist()
+allauth.socialaccount.models.SocialApp.DoesNotExist
+ERROR 2025-06-16 10:30:52,340 basehttp "POST /api/auth/google/ HTTP/1.1" 500 140984
+INFO 2025-06-16 10:30:59,504 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17465
+INFO 2025-06-16 10:30:59,522 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:31:02,639 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17465
+INFO 2025-06-16 10:31:02,656 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:31:06,381 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17465
+INFO 2025-06-16 10:31:06,389 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:31:07,899 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17465
+INFO 2025-06-16 10:31:07,907 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-06-16 10:37:40,530 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-16 10:37:41,094 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:37:42,349 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-16 10:37:42,614 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:39:10,462 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-16 10:39:10,880 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:39:21,281 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_api/views.py changed, reloading.
+INFO 2025-06-16 10:39:21,679 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:40:54,437 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-16 10:40:54,837 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:40:56,065 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-16 10:42:26,414 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 10:42:40,234 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:42:40,239 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:42:40,261 basehttp "GET /images/amazon.jpg HTTP/1.1" 200 11024
+INFO 2025-06-16 10:42:40,262 basehttp "GET /images/adove.png HTTP/1.1" 200 85099
+ERROR 2025-06-16 10:42:59,209 log Internal Server Error: /api/auth/google/
+Traceback (most recent call last):
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 48, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/views.py", line 125, in post
+    self.serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/rest_framework/serializers.py", line 447, in run_validation
+    value = self.validate(value)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/dj_rest_auth/registration/serializers.py", line 95, in validate
+    app = adapter.get_provider().app
+          ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/providers/oauth2/views.py", line 48, in get_provider
+    return get_adapter(self.request).get_provider(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.request, provider=self.provider_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 213, in get_provider
+    app = self.get_app(request, provider=provider, client_id=client_id)
+  File "/Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/.venv/lib/python3.13/site-packages/allauth/socialaccount/adapter.py", line 303, in get_app
+    raise SocialApp.DoesNotExist()
+allauth.socialaccount.models.SocialApp.DoesNotExist
+ERROR 2025-06-16 10:42:59,212 basehttp "POST /api/auth/google/ HTTP/1.1" 500 141013
+INFO 2025-06-16 10:43:06,248 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:06,255 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:08,797 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:08,805 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:09,672 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:09,679 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:12,318 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:12,326 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:14,588 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 10:43:14,598 basehttp "GET /api/products/ HTTP/1.1" 200 676

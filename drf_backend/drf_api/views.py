@@ -86,7 +86,7 @@ def getProducts(request):
         return Response({
             'products': serializer.data,
             'timestamp': get_current_time(),
-            'current_user': request.user.username if request.user.is_authenticated else None
+            'current_user': getattr(request.user, 'username', None) if getattr(request.user, 'is_authenticated', False) else None
         })
     except Exception as e:
         return Response(
@@ -96,6 +96,7 @@ def getProducts(request):
             }, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def getProduct(request, pk):
@@ -105,7 +106,7 @@ def getProduct(request, pk):
         return Response({
             'product': serializer.data,
             'timestamp': get_current_time(),
-            'current_user': request.user.username if request.user.is_authenticated else None
+            'current_user': getattr(request.user, 'username', None) if getattr(request.user, 'is_authenticated', False) else None
         })
     except Products.DoesNotExist:
         return Response(
@@ -123,8 +124,6 @@ def getProduct(request, pk):
             }, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-
-# User Authentication Views
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
