@@ -31,6 +31,8 @@ from django.contrib.auth import get_user_model
 from google.oauth2 import id_token
 import google.auth.transport.requests  # Changed import
 import json
+from datetime import datetime
+from decimal import Decimal
 
 User = get_user_model()
 
@@ -487,130 +489,220 @@ def getProducts(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def getProduct(request, pk):
-    try:
-        # First try with _id
-        try:
-            product = Products.objects.get(_id=pk)
-        except Products.DoesNotExist:
-            # If not found, try with id
-            product = Products.objects.get(id=pk)
-        
-        serializer = ProductsSerializer(product, context={'request': request})
-        return Response({
-            'product': serializer.data,
-            'timestamp': get_current_time(),
-            'current_user': getattr(request.user, 'username', None) if getattr(request.user, 'is_authenticated', False) else None
-        })
-    except Products.DoesNotExist:
-        return Response(
-            {
-                'detail': 'Product not found',
-                'timestamp': get_current_time()
-            }, 
-            status=status.HTTP_404_NOT_FOUND
-        )
-    except Exception as e:
-        return Response(
-            {
-                'detail': str(e),
-                'timestamp': get_current_time()
-            }, 
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR
-        )
-                
-        
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def addOrderItems(request):
     user = request.user
     data = request.data
+    current_time = datetime(2025, 6, 16, 20, 33, 18)
     
-    orderItems = data['orderItems']
+    try:
+        orderItems = data.get('orderItems', [])
 
-    if not orderItems or len(orderItems) == 0:
-        return Response({'detail': 'No Order Items'}, status=status.HTTP_400_BAD_REQUEST)
+        if not orderItems:
+            return Response({
+                'detail': 'No Order Items',
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'current_user': user.username
+            }, status=status.HTTP_400_BAD_REQUEST)
 
-    # Create order
-    order = Order.objects.create(
-        user=user,
-        paymentMethod=data['paymentMethod'],
-        taxPrice=data['taxPrice'],
-        shippingPrice=data['shippingPrice'],
-        totalPrice=data['totalPrice'],
-        createdBy=data.get('createdBy', 'gps-rajput'),
-        updatedBy=data.get('updatedBy', 'gps-rajput')
-    )
+        # Calculate prices
+        itemsPrice = sum(Decimal(str(item.get('price', 0))) * Decimal(str(item.get('qty', 0))) for item in orderItems)
+        shippingPrice = Decimal('0') if itemsPrice > Decimal('1000') else Decimal('100')
+        taxPrice = Decimal('0.18') * itemsPrice
+        totalPrice = itemsPrice + shippingPrice + taxPrice
 
-    # Create shipping address
-    shipping = ShippingAddress.objects.create(
-        order=order,
-        address=data['shippingAddress']['address'],
-        city=data['shippingAddress']['city'],
-        postalCode=data['shippingAddress']['postalCode'],
-        country=data['shippingAddress']['country'],
-    )
-
-    # Create order items
-    for item in orderItems:
-        product = Products.objects.get(_id=item['product'])
-        
-        item = OrderItem.objects.create(
-            product=product,
-            order=order,
-            productname=item['productname'],
-            qty=item['qty'],
-            price=item['price'],
-            image=item['image']
+        # Create order
+        order = Order.objects.create(
+            user=user,
+            paymentMethod=data.get('paymentMethod', 'PayPal'),
+            itemsPrice=itemsPrice,
+            taxPrice=taxPrice,
+            shippingPrice=shippingPrice,
+            totalPrice=totalPrice,
+            createdAt=current_time,
+            createdBy=user.username,
+            updatedBy=user.username
         )
 
-        # Update stock
-        product.stockcount -= item.qty
-        product.save()
+        # Create shipping address
+        shipping_data = data.get('shippingAddress', {})
+        ShippingAddress.objects.create(
+            order=order,
+            address=shipping_data.get('address', ''),
+            city=shipping_data.get('city', ''),
+            postalCode=shipping_data.get('postalCode', ''),
+            country=shipping_data.get('country', ''),
+            createdAt=current_time
+        )
 
-    serializer = OrderSerializer(order, many=False)
-    return Response(serializer.data)
+        # Create order items and update stock
+        created_items = []
+        for item in orderItems:
+            product = Products.objects.get(_id=item['product'])
+            
+            if product.stockcount < item['qty']:
+                order.delete()  # Delete the order if stock is insufficient
+                return Response({
+                    'detail': f'Not enough stock for {product.productname}',
+                    'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                    'current_user': user.username
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            order_item = OrderItem.objects.create(
+                product=product,
+                order=order,
+                productname=product.productname,
+                qty=item['qty'],
+                price=product.price,
+                image=product.image,
+                createdAt=current_time
+            )
+            created_items.append(order_item)
+
+            # Update stock
+            product.stockcount -= item['qty']
+            product.save()
+
+        serializer = OrderSerializer(order, many=False)
+        return Response({
+            'order': serializer.data,
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': user.username,
+            'message': 'Order created successfully'
+        }, status=status.HTTP_201_CREATED)
+
+    except Products.DoesNotExist as e:
+        return Response({
+            'detail': 'Product not found',
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': user.username
+        }, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        # If any error occurs, delete the order if it was created
+        if 'order' in locals():
+            order.delete()
+        
+        return Response({
+            'detail': str(e),
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': user.username
+        }, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getOrderById(request, pk):
+    current_time = datetime(2025, 6, 16, 20, 33, 18)
     try:
-        order = Order.objects.get(_id=pk)
+        order = Order.objects.get(id=pk)
         
-        if order.user == request.user:
+        if order.user == request.user or request.user.is_staff:
             serializer = OrderSerializer(order, many=False)
             return Response({
                 'order': serializer.data,
-                'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S'),
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
                 'current_user': request.user.username
             })
         else:
             return Response({
                 'detail': 'Not authorized to view this order',
-                'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
-            }, status=status.HTTP_400_BAD_REQUEST)
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'current_user': request.user.username
+            }, status=status.HTTP_403_FORBIDDEN)
             
     except Order.DoesNotExist:
         return Response({
             'detail': 'Order does not exist',
-            'timestamp': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': request.user.username
         }, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getMyOrders(request):
+    current_time = datetime(2025, 6, 16, 20, 33, 18)
+    user = request.user
+    orders = Order.objects.filter(user=user).order_by('-createdAt')
+    serializer = OrderSerializer(orders, many=True)
+    return Response({
+        'orders': serializer.data,
+        'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+        'current_user': user.username
+    })
 
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def updateOrderToPaid(request, pk):
-    order = Order.objects.get(_id=pk)
+    current_time = datetime(2025, 6, 16, 20, 33, 18)
+    try:
+        order = Order.objects.get(id=pk)
+        
+        if order.user != request.user and not request.user.is_staff:
+            return Response({
+                'detail': 'Not authorized to update this order',
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'current_user': request.user.username
+            }, status=status.HTTP_403_FORBIDDEN)
 
-    order.isPaid = True
-    order.paidAt = datetime.utcnow()
-    order.updatedBy = request.user.username
-    order.save()
+        order.isPaid = True
+        order.paidAt = current_time
+        order.updatedAt = current_time
+        order.updatedBy = request.user.username
+        order.save()
 
-    return Response('Order was paid')
+        serializer = OrderSerializer(order)
+        return Response({
+            'message': 'Order was paid successfully',
+            'order': serializer.data,
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': request.user.username
+        })
+        
+    except Order.DoesNotExist:
+        return Response({
+            'detail': 'Order not found',
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': request.user.username
+        }, status=status.HTTP_404_NOT_FOUND)
 
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def updateOrderToDelivered(request, pk):
+    current_time = datetime(2025, 6, 16, 20, 33, 18)
+    try:
+        order = Order.objects.get(id=pk)
 
+        if not request.user.is_staff:
+            return Response({
+                'detail': 'Not authorized to update this order',
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'current_user': request.user.username
+            }, status=status.HTTP_403_FORBIDDEN)
+
+        order.isDelivered = True
+        order.deliveredAt = current_time
+        order.updatedAt = current_time
+        order.updatedBy = request.user.username
+        order.save()
+
+        serializer = OrderSerializer(order)
+        return Response({
+            'message': 'Order was delivered successfully',
+            'order': serializer.data,
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': request.user.username
+        })
+
+    except Order.DoesNotExist:
+        return Response({
+            'detail': 'Order not found',
+            'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'current_user': request.user.username
+        }, status=status.HTTP_404_NOT_FOUND)           
+        
+        
+        
 # Product Management Views (Admin Only)
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
