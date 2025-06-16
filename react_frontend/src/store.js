@@ -3,7 +3,11 @@ import { productDetailsReducers, productsListReducers } from './reducers/product
 import { userLoginReducer, userRegisterReducer, userVerifyReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { orderDetailsReducer } from './reducers/orderReducer';
-
+import {
+    userDetailsReducer,
+    userUpdateProfileReducer,
+  } from './reducers/userReducers';
+  
 // Get user info from localStorage
 const userInfoFromStorage = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))
@@ -49,8 +53,10 @@ const store = configureStore({
         productDetails: productDetailsReducers,
         userLogin: userLoginReducer,
         userRegister: userRegisterReducer,
-        userVerify: userVerifyReducer, // ✅ Correct position
+        userVerify: userVerifyReducer, 
         cart: cartReducer,
+        userDetails: userDetailsReducer,
+        userUpdateProfile: userUpdateProfileReducer,
     },
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
