@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { useDispatch } from 'react-redux';

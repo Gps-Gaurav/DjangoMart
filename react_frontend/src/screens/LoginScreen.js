@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback  } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,8 +39,16 @@ function LoginScreen() {
       navigate('/');
     }
   }, [userInfo, socialUser, navigate]);
+  
+  // ✅ GitHub Login Handler
+  const handleGitHubLogin = () => {
+    const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+    const redirectUri = encodeURIComponent(`${window.location.origin}/login`);
+    const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user:email`;
+    window.location.href = githubUrl;
+  };
 
-  // Handle GitHub callback
+  // ✅ GitHub Callback Handler
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const code = params.get('code');
@@ -50,11 +58,33 @@ function LoginScreen() {
     }
   }, [location.search, dispatch]);
 
-  // Initialize Google OAuth
+  // ✅ Memoized Google Callback
+  const handleGoogleCallback = useCallback(
+    async (response) => {
+      if (response?.credential) {
+        try {
+          const result = await dispatch(googleAuth(response.credential));
+          if (result?.user) {
+            localStorage.setItem('userInfo', JSON.stringify(result.user));
+            localStorage.setItem('access_token', result.tokens.access);
+            localStorage.setItem('refresh_token', result.tokens.refresh);
+            dispatch({ type: 'USER_LOGIN_SUCCESS', payload: result.user });
+            navigate('/');
+          }
+        } catch (error) {
+          console.error('Google auth error:', error);
+        }
+      }
+    },
+    [dispatch, navigate]
+  );
+
+  // ✅ Google Login Button Initialization
   useEffect(() => {
     if (window.google) {
       window.google.accounts.id.initialize({
-        client_id: "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com",
+        client_id:
+          '13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com',
         callback: handleGoogleCallback,
         auto_select: false,
         cancel_on_tap_outside: true
@@ -70,48 +100,15 @@ function LoginScreen() {
         }
       );
     }
-  }, []);
+  }, [handleGoogleCallback]);
 
-  // Handle form submission
   // Handle form submission
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
   };
-
-  // Handle Google login callback
-  const handleGoogleCallback = async (response) => {
-    if (response?.credential) {
-      try {
-        const result = await dispatch(googleAuth(response.credential));
-        if (result?.user) {
-          // Store user info in localStorage
-          localStorage.setItem('userInfo', JSON.stringify(result.user));
-          // Store tokens
-          localStorage.setItem('access_token', result.tokens.access);
-          localStorage.setItem('refresh_token', result.tokens.refresh);
-          // Update Redux state
-          dispatch({
-            type: 'USER_LOGIN_SUCCESS',
-            payload: result.user
-          });
-          // Redirect to home page
-          navigate('/');
-        }
-      } catch (error) {
-        console.error('Google auth error:', error);
-      }
-    }
-  };
   // Handle GitHub login
-  const handleGitHubLogin = () => {
-    const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-    const redirectUri = encodeURIComponent(
-      `${window.location.origin}/login`
-    );
-    const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user:email`;
-    window.location.href = githubUrl;
-  };
+ 
 
   return (
     <Row className="justify-content-md-center mt-5">
