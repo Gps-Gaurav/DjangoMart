@@ -78,7 +78,7 @@ def getRoutes(request):
 
 # Product Views
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def getProducts(request):
     try:
         products = Products.objects.all()
@@ -97,7 +97,7 @@ def getProducts(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def getProduct(request, pk):
     try:
         product = Products.objects.get(_id=pk)
