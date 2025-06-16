@@ -489,6 +489,40 @@ def getProducts(request):
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def getProduct(request, pk):
+    try:
+        # First try with _id
+        try:
+            product = Products.objects.get(_id=pk)
+        except Products.DoesNotExist:
+            # If not found, try with id
+            product = Products.objects.get(id=pk)
+        
+        serializer = ProductsSerializer(product, context={'request': request})
+        return Response({
+            'product': serializer.data,
+            'timestamp': get_current_time(),
+            'current_user': getattr(request.user, 'username', None) if getattr(request.user, 'is_authenticated', False) else None
+        })
+    except Products.DoesNotExist:
+        return Response(
+            {
+                'detail': 'Product not found',
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_404_NOT_FOUND
+        )
+    except Exception as e:
+        return Response(
+            {
+                'detail': str(e),
+                'timestamp': get_current_time()
+            }, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+        
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])

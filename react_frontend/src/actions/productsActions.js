@@ -64,7 +64,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        const response = await fetch(`/api/product/${id}`);
+        const response = await fetch(`/api/products/${id}`);
         const data = await response.json();
 
         if (!response.ok) {
