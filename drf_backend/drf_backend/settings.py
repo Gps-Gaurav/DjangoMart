@@ -164,7 +164,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+REST_AUTH = {
+    'SIGNUP_FIELDS': {
+        'username': {
+            'required': True
+        },
+        'email': {
+            'required': True
+        }
+    }
+}
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'

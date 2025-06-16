@@ -2429,3 +2429,6 @@ INFO 2025-06-16 10:43:12,318 basehttp "GET /api/products/ HTTP/1.1" 200 676
 INFO 2025-06-16 10:43:12,326 basehttp "GET /api/products/ HTTP/1.1" 200 676
 INFO 2025-06-16 10:43:14,588 basehttp "GET /api/products/ HTTP/1.1" 200 676
 INFO 2025-06-16 10:43:14,598 basehttp "GET /api/products/ HTTP/1.1" 200 676
+INFO 2025-06-16 13:17:46,647 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 13:23:11,138 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
+INFO 2025-06-16 13:23:11,614 autoreload Watching for file changes with StatReloader
