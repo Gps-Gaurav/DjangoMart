@@ -40,3 +40,12 @@
     transform: rotate(360deg);
   }
 }
+
+.text-white-hover-dark {
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.text-white-hover-dark:hover {
+  color: #212529; /* Bootstrap’s text-dark */
+}

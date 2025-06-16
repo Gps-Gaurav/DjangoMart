@@ -2920,3 +2920,41 @@ INFO 2025-06-16 15:48:06,811 autoreload /Users/gaurav/Desktop/Python Project/Dja
 INFO 2025-06-16 15:48:07,246 autoreload Watching for file changes with StatReloader
 INFO 2025-06-16 15:48:09,530 autoreload /Users/gaurav/Desktop/Python Project/DjangoMart/drf_backend/drf_backend/settings.py changed, reloading.
 INFO 2025-06-16 15:48:09,816 autoreload Watching for file changes with StatReloader
+INFO 2025-06-16 17:53:10,758 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:10,763 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:12,954 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:12,960 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:18,694 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:18,702 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:43,266 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:53:43,273 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:54:16,268 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:54:16,273 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:54:50,637 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:54:50,641 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:37,774 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:37,780 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:38,505 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:38,511 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:38,657 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:56:38,664 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:01,196 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:01,203 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:01,420 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:01,430 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:43,982 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:57:43,986 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:29,916 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:29,922 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:45,588 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:45,594 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:47,511 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 17:59:47,520 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:40,793 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:40,803 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:41,978 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:41,990 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:55,137 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:00:55,142 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:02:58,667 basehttp "GET /api/products/ HTTP/1.1" 200 679
+INFO 2025-06-16 18:02:58,674 basehttp "GET /api/products/ HTTP/1.1" 200 679

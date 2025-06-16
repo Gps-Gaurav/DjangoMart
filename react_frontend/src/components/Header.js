@@ -4,7 +4,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, Nav, Container, Form, Button, NavDropdown, InputGroup } from "react-bootstrap";
 import { logout } from '../actions/userActions'; // You'll need to create this action
-
+import '../App.css';
 const headerStyle = {
   backgroundColor: '#1a1a1a',
   padding: '15px 0',
@@ -13,7 +13,8 @@ const headerStyle = {
 
 const searchBarStyle = {
   maxWidth: '500px',
-  width: '100%'
+  width: '100%',
+  color: 'white',
 };
 
 const brandStyle = {
@@ -107,7 +108,7 @@ function Header() {
               />
               <Button 
                 variant="outline-secondary"
-                className="d-flex align-items-center"
+                className="d-flex align-items-center text-white-hover-dark"
                 type="submit"
               >
                 <i className="fas fa-search"></i>
