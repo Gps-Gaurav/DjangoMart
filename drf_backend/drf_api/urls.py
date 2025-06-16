@@ -16,9 +16,8 @@ urlpatterns = [
     path('', views.getRoutes, name="getRoutes"),
     path('login/', LoginView.as_view(), name='api-login'),
     # Product Routes
-    path('products/', views.getProducts, name="getProducts"),
-    path('product/<str:pk>/', views.getProduct, name="getProduct"),  # Added trailing slash
-    
+     path('products/', views.getProducts, name="getProducts"),
+    path('products/<int:pk>/', views.getProduct, name="getProduct"),
     # Authentication Routes
     path('users/login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('users/login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # Added token refresh route
