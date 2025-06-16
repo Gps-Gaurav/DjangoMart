@@ -4,7 +4,6 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/userActions';
 import { googleAuth, githubAuth } from '../actions/authActions';
-import { useGoogleLogin } from '@react-oauth/google';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 
@@ -32,7 +31,7 @@ function LoginScreen() {
     userInfo: socialUser,
   } = auth || {};
 
-  // ✅ Redirect after login (email or social)
+  // Handle successful login (email or social)
   useEffect(() => {
     const user = userInfo || socialUser;
     if (user && Object.keys(user).length > 0) {
@@ -41,7 +40,7 @@ function LoginScreen() {
     }
   }, [userInfo, socialUser, navigate]);
 
-  // ✅ Handle GitHub redirect callback (code in URL)
+  // Handle GitHub callback
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const code = params.get('code');
@@ -51,31 +50,65 @@ function LoginScreen() {
     }
   }, [location.search, dispatch]);
 
-  // ✅ Submit Email/Password login
-  const submitHandler = async (e) => {
+  // Initialize Google OAuth
+  useEffect(() => {
+    if (window.google) {
+      window.google.accounts.id.initialize({
+        client_id: "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com",
+        callback: handleGoogleCallback,
+        auto_select: false,
+        cancel_on_tap_outside: true
+      });
+
+      window.google.accounts.id.renderButton(
+        document.getElementById('google-login-button'),
+        {
+          theme: 'filled_black',
+          size: 'large',
+          width: '100%',
+          text: 'continue_with'
+        }
+      );
+    }
+  }, []);
+
+  // Handle form submission
+  // Handle form submission
+  const submitHandler = (e) => {
     e.preventDefault();
-    if (!email || !password) return;
-    await dispatch(login(email, password));
-    setEmail('');
-    setPassword('');
+    dispatch(login(email, password));
   };
 
-  // ✅ Google login handler
-  const googleLogin = useGoogleLogin({
-    onSuccess: async (response) => {
-      if (response?.access_token) {
-        await dispatch(googleAuth(response.access_token));
+  // Handle Google login callback
+  const handleGoogleCallback = async (response) => {
+    if (response?.credential) {
+      try {
+        const result = await dispatch(googleAuth(response.credential));
+        if (result?.user) {
+          // Store user info in localStorage
+          localStorage.setItem('userInfo', JSON.stringify(result.user));
+          // Store tokens
+          localStorage.setItem('access_token', result.tokens.access);
+          localStorage.setItem('refresh_token', result.tokens.refresh);
+          // Update Redux state
+          dispatch({
+            type: 'USER_LOGIN_SUCCESS',
+            payload: result.user
+          });
+          // Redirect to home page
+          navigate('/');
+        }
+      } catch (error) {
+        console.error('Google auth error:', error);
       }
-    },
-    onError: () => {
-      console.error('Google login failed');
-    },
-  });
-
-  // ✅ GitHub redirect to OAuth
+    }
+  };
+  // Handle GitHub login
   const handleGitHubLogin = () => {
     const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
-    const redirectUri = process.env.REACT_APP_GITHUB_REDIRECT_URI;
+    const redirectUri = encodeURIComponent(
+      `${window.location.origin}/login`
+    );
     const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user:email`;
     window.location.href = githubUrl;
   };
@@ -92,7 +125,7 @@ function LoginScreen() {
 
           {(loading || socialLoading) && <Loader />}
 
-          {/* Email/Password Login */}
+          {/* Email/Password Login Form */}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="email" className="mb-3">
               <Form.Label>Email Address</Form.Label>
@@ -133,19 +166,30 @@ function LoginScreen() {
             </div>
           </Form>
 
-          {/* Social Logins */}
+          {/* Social Login Section */}
           <hr className="my-4" />
           <div className="text-center mb-3">Or Sign in with</div>
 
-          <div className="d-flex justify-content-center gap-3">
-            <Button variant="danger" onClick={googleLogin} disabled={socialLoading}>
-              Google
-            </Button>
-            <Button variant="dark" onClick={handleGitHubLogin} disabled={socialLoading}>
-              GitHub
+          <div className="d-grid gap-3">
+            {/* Google Sign-In Button Container */}
+            <div 
+              id="google-login-button" 
+              className="d-flex justify-content-center"
+            ></div>
+
+            {/* GitHub Sign-In Button */}
+            <Button 
+              variant="dark" 
+              onClick={handleGitHubLogin} 
+              disabled={socialLoading}
+              className="w-100 py-2"
+            >
+              <i className="fab fa-github me-2"></i>
+              Continue with GitHub
             </Button>
           </div>
 
+          {/* Registration Link */}
           <Row className="py-3">
             <Col className="text-center">
               New Customer?{' '}

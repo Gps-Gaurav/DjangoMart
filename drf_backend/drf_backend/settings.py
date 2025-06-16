@@ -1,14 +1,17 @@
+
 from pathlib import Path
 from datetime import timedelta, datetime
 import os
 
 GOOGLE_CLIENT_ID = "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET = "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"
+GOOGLE_CALLBACK_URL = 'http://localhost:8000/api/auth/google/callback/'
 
-GITHUB_CLIENT_ID="Ov23liIr3kxBgSmCLRwF"
-GITHUB_CLIENT_SECRET="6fc5ce6f527848fd77042a396768a2b9be8652e1"
+GITHUB_CLIENT_ID = "Ov23liIr3kxBgSmCLRwF"
+GITHUB_CLIENT_SECRET = "6fc5ce6f527848fd77042a396768a2b9be8652e1"
+GITHUB_CALLBACK_URL = 'http://localhost:8000/api/auth/github/callback/'
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Current user and time settings
@@ -25,10 +28,39 @@ ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1','http:
 
 
 # Domain settings
+# DOMAIN = 'localhost:8000'  # or your deployed domain
 DOMAIN = 'djangomart-w4j9.onrender.com'
-FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
-# FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
+# FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
+FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
 SITE_NAME = "DjangoMart"
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_CLIENT_SECRET,
+            'key': '',
+        },
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'github': {
+        'APP': {
+            'client_id': GITHUB_CLIENT_ID,
+            'secret': GITHUB_CLIENT_SECRET,
+            'key': '',
+        },
+        'SCOPE': [
+            'user',
+            'email',
+        ],
+    }
+}
 
 # Application definition
 INSTALLED_APPS = [
@@ -202,7 +234,7 @@ MEDIA_ROOT = 'static/images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
@@ -210,7 +242,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://djangomart.netlify.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://127.0.0.1:8000",
+    "http://localhost:8000",
     
 ]
 
@@ -312,4 +344,20 @@ X_FRAME_OPTIONS = 'DENY'
 CSRF_COOKIE_SECURE = False  # Set to True in production
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = 'Lax'
-SECURE_SSL_REDIRECT = False  # Set to True in production
+SECURE_SSL_REDIRECT = False  # Set to True in production    
+
+# django-allauth settings
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+SOCIALACCOUNT_AUTO_SIGNUP = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",     
+    "http://127.0.0.1:8000",    
+]

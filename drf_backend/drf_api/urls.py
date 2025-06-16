@@ -9,13 +9,7 @@ from .views import addOrderItems, getMyOrders, getOrderById, LoginView
 from dj_rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
-from dj_rest_auth.registration.views import SocialLoginView
-
-class GoogleLogin(SocialLoginView):
-    adapter_class = GoogleOAuth2Adapter
-
-class GitHubLogin(SocialLoginView):
-    adapter_class = GitHubOAuth2Adapter
+from .views import google_auth, test_google_token,google_auth_callback
 
 urlpatterns = [
     # Basic Routes
@@ -44,6 +38,8 @@ urlpatterns = [
     path('orders/<int:pk>/', getOrderById, name='order-detail'),
     
     # Social Login Routes
-    path('auth/google/', GoogleLogin.as_view(), name='google_login'),
-    path('auth/github/', GitHubLogin.as_view(), name='github_login'),
+    path('auth/google/', google_auth, name='google_auth'),
+    path('auth/google/test/', test_google_token, name='test_google_token'),
+    path('auth/google/callback/', google_auth_callback, name='google_callback'),
+    
 ]

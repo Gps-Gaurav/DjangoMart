@@ -20,3 +20,6 @@ python-decouple
 dj-rest-auth
 django-allauth
 social-auth-app-django
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

@@ -1,17 +1,21 @@
-from rest_framework.views import APIView
 from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
 from .models import Products,Order, OrderItem
 from .serializer import ProductsSerializer, UserSerializer, UserSerializerWithToken,OrderSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.tokens import RefreshToken  # ✅ JWT tokens
+
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
-from rest_framework import status
 from datetime import datetime
 import pytz
+
 
 # For sending mails and generate token
 from django.template.loader import render_to_string
@@ -22,12 +26,200 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import View
 from django.contrib.auth import authenticate
-from rest_framework.permissions import AllowAny
-from rest_framework_simplejwt.tokens import RefreshToken  # ✅ JWT tokens
 import requests
-from django.conf import settings
-import traceback
+from django.contrib.auth import get_user_model
+from google.oauth2 import id_token
+import google.auth.transport.requests  # Changed import
+import json
 
+User = get_user_model()
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def google_auth(request):
+    """
+    Google authentication endpoint
+    """
+    try:
+        # Get the token from request
+        data = request.data
+        
+        # Check for credential in request
+        credential = data.get('credential') or data.get('id_token')
+        
+        if not credential:
+            return Response({
+                'error': 'No valid token provided',
+                'detail': 'Please provide either credential or id_token'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Create a Request object - Fixed this line
+            request_class = google.auth.transport.requests.Request()
+
+            # Verify the token
+            idinfo = id_token.verify_oauth2_token(
+                credential,
+                request_class,
+                settings.GOOGLE_CLIENT_ID
+            )
+            
+            # Print token info for debugging
+            print("Token info:", json.dumps(idinfo, indent=2))
+
+            # Verify issuer
+            if idinfo['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
+                raise ValueError('Wrong issuer.')
+
+            # Get user info from token
+            email = idinfo['email']
+            first_name = idinfo.get('given_name', '')
+            last_name = idinfo.get('family_name', '')
+            
+            # Print user info for debugging
+            print(f"User info - Email: {email}, Name: {first_name} {last_name}")
+
+            # Get or create user
+            user, created = User.objects.get_or_create(
+                email=email,
+                defaults={
+                    'username': email.split('@')[0],
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'is_active': True
+                }
+            )
+
+            if not created:
+                # Update existing user's information
+                user.first_name = first_name
+                user.last_name = last_name
+                user.save()
+
+            # Generate tokens
+            refresh = RefreshToken.for_user(user)
+            
+            return Response({
+                'status': 'success',
+                'user': {
+                    'email': user.email,
+                    'first_name': user.first_name,
+                    'last_name': user.last_name,
+                    'username': user.username
+                },
+                'tokens': {
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                }
+            })
+
+        except ValueError as e:
+            print("Token verification failed:", str(e))
+            return Response({
+                'error': 'Invalid token',
+                'detail': str(e)
+            }, status=status.HTTP_401_UNAUTHORIZED)
+
+    except Exception as e:
+        print("Authentication error:", str(e))
+        return Response({
+            'error': f'Authentication failed: {str(e)}'
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def test_google_token(request):
+    """
+    Test endpoint to verify token format and data
+    """
+    try:
+        # Print raw request data
+        print("Raw request data:", request.body)
+        print("Parsed request data:", request.data)
+        
+        # Get token from request
+        credential = request.data.get('credential')
+        
+        if not credential:
+            return Response({
+                'error': 'No credential provided',
+                'received_data': request.data
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({
+            'message': 'Token received',
+            'token_length': len(credential),
+            'token_preview': credential[:50] + '...' if credential else None,
+            'request_data': request.data
+        })
+
+    except Exception as e:
+        return Response({
+            'error': str(e),
+            'received_data': request.data
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+@api_view(['POST'])
+@permission_classes([AllowAny])
+
+
+def google_auth_callback(request):
+    """
+    Handle Google OAuth callback and create/authenticate user
+    """
+    try:
+        access_token = request.data.get('access_token')
+        if not access_token:
+            return Response({'error': 'Access token is required'}, 
+                          status=status.HTTP_400_BAD_REQUEST)
+
+        # Verify token with Google
+        google_response = requests.get(
+            'https://www.googleapis.com/oauth2/v3/userinfo',
+            headers={'Authorization': f'Bearer {access_token}'}
+        )
+        
+        if google_response.status_code != 200:
+            return Response({'error': 'Invalid token'}, 
+                          status=status.HTTP_401_UNAUTHORIZED)
+
+        google_data = google_response.json()
+
+        # Get or create user
+        email = google_data.get('email')
+        if not email:
+            return Response({'error': 'Email not provided'}, 
+                          status=status.HTTP_400_BAD_REQUEST)
+
+        user, created = User.objects.get_or_create(
+            email=email,
+            defaults={
+                'username': email,
+                'first_name': google_data.get('given_name', ''),
+                'last_name': google_data.get('family_name', ''),
+                'is_active': True,
+            }
+        )
+
+        # Generate tokens
+        refresh = RefreshToken.for_user(user)
+        
+        return Response({
+            'user': {
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+            },
+            'tokens': {
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            }
+        })
+
+    except Exception as e:
+        return Response(
+            {'error': 'Authentication failed', 'detail': str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
@@ -321,127 +513,6 @@ class ActivateAccountView(View):
                 'frontend_url': frontend_url
             }
             return render(request, "activatefail.html", context)
-
-
-
-@api_view(['POST'])
-@permission_classes([AllowAny])
-def google_auth(request):
-    try:
-        token = request.data.get('access_token')
-        if not token:
-            return Response({'error': 'Missing access token'}, status=400)
-
-        # Validate token with Google
-        google_url = f"https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={token}"
-        google_response = requests.get(google_url)
-        data = google_response.json()
-
-        if 'error' in data:
-            return Response({'error': data['error']}, status=400)
-
-        # Debug: Log Google's response (remove in production)
-        print("Google tokeninfo response:", data)
-
-        # Validate audience
-        client_id = getattr(settings, 'GOOGLE_CLIENT_ID', None)
-        if not client_id:
-            return Response({'error': 'GOOGLE_CLIENT_ID not set in settings.py'}, status=500)
-
-        if data.get('audience') != client_id:
-            return Response({'error': 'Invalid client ID (audience mismatch)'}, status=400)
-
-        email = data.get('email')
-        if not email:
-            return Response({'error': 'Email not found in token info'}, status=400)
-
-        # Create user if doesn't exist
-        user, created = User.objects.get_or_create(username=email, defaults={'email': email})
-
-        # Issue tokens
-        refresh = RefreshToken.for_user(user)
-
-        return Response({
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
-            'email': email,
-        })
-
-    except Exception as e:
-        # Log the real error
-        print("Google Auth Error:", str(e))  # Use logging in prod
-        return Response({'error': 'Something went wrong on server', 'detail': str(e)}, status=500)
-
-
-
-@api_view(['POST'])
-@permission_classes([AllowAny])
-def github_auth(request):
-    try:
-        code = request.data.get('code')
-        if not code:
-            return Response({'error': 'Missing authorization code'}, status=400)
-
-        # Step 1: Exchange code for token
-        token_response = requests.post(
-            'https://github.com/login/oauth/access_token',
-            headers={'Accept': 'application/json'},
-            data={
-                'client_id': settings.GITHUB_CLIENT_ID,
-                'client_secret': settings.GITHUB_CLIENT_SECRET,
-                'code': code,
-            }
-        )
-        token_data = token_response.json()
-        if token_response.status_code != 200:
-            return Response({'error': 'GitHub token fetch failed', 'detail': token_data}, status=token_response.status_code)
-
-        access_token = token_data.get('access_token')
-        if not access_token:
-            return Response({'error': 'No access token returned', 'detail': token_data}, status=400)
-
-        # Step 2: Get user info
-        user_response = requests.get(
-            'https://api.github.com/user',
-            headers={'Authorization': f'token {access_token}'}
-        )
-        user_data = user_response.json()
-        if user_response.status_code != 200:
-            return Response({'error': 'GitHub user fetch failed', 'detail': user_data}, status=user_response.status_code)
-
-        # Step 3: Get email
-        email_response = requests.get(
-            'https://api.github.com/user/emails',
-            headers={'Authorization': f'token {access_token}'}
-        )
-        email_data = email_response.json()
-
-        email = None
-        if isinstance(email_data, list):
-            for item in email_data:
-                if item.get('primary') and item.get('verified'):
-                    email = item.get('email')
-                    break
-
-        if not email:
-            email = user_data.get('email') or f"{user_data.get('login')}@github.com"
-
-        # Step 4: Create user
-        user = User.objects.filter(email=email).first()
-        if not user:
-            user = User.objects.create_user(username=email, email=email)
-
-        refresh = RefreshToken.for_user(user)
-        return Response({
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
-            'email': email,
-            'username': user.username,
-        })
-
-    except Exception as e:
-        return Response({'error': 'Server error', 'trace': traceback.format_exc()}, status=500)
-
 
         
 # Product Management Views (Admin Only)
