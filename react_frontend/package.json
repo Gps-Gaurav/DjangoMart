@@ -1,6 +1,6 @@
 {
   "name": "react_frontend",
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://djangomart-w4j9.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

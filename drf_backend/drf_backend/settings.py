@@ -28,10 +28,10 @@ ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1','http:
 
 
 # Domain settings
-DOMAIN = 'localhost:8000'  # or your deployed domain
-# DOMAIN = 'djangomart-w4j9.onrender.com'
-FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
-# FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
+# DOMAIN = 'localhost:8000'  # or your deployed domain
+DOMAIN = 'https://djangomart-w4j9.onrender.com'
+# FRONTEND_URL = "http://localhost:3000"  # or your deployed URL
+FRONTEND_URL = "https://djangomart.netlify.app"  # or your deployed URL
 SITE_NAME = "DjangoMart"
 
 SOCIALACCOUNT_PROVIDERS = {
