@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { register } from '../actions/userActions';
 import { GoogleLogin } from '@react-oauth/google';
-import { githubAuth } from '../actions/authActions';
+import { googleAuth, githubAuth } from '../actions/authActions';
 
 const formStyle = {
     backgroundColor: '#2a2a2a',
@@ -24,6 +24,7 @@ function SignupScreen() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const userRegister = useSelector((state) => state.userRegister);
     const { loading, error, success } = userRegister;
@@ -41,11 +42,17 @@ function SignupScreen() {
     }, [success, navigate]);
 
     useEffect(() => {
+        if (window.google && window.google.accounts && window.google.accounts.id) {
+            window.google.accounts.id.disableAutoSelect();
+          }
+          
         if (userInfo || isAuthenticated) {
+
             navigate('/');
         }
     }, [userInfo, isAuthenticated, navigate]);
 
+    // Fixed: Only register on signup form submit
     const submitHandler = (e) => {
         e.preventDefault();
         setMessage('');
@@ -56,19 +63,46 @@ function SignupScreen() {
         }
     };
 
-    const handleGoogleSuccess = (response) => {
-        if (response.credential) {
-            dispatch(githubAuth(response.credential)); // For Google login
-        }
-    };
-
-    const handleGoogleError = () => {
-        console.error('Google login failed');
-    };
-
     const handleGitHubLogin = () => {
-        window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&redirect_uri=${window.location.origin}/github-callback`;
+        const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+        const redirectUri = encodeURIComponent(`${window.location.origin}/login`);
+        const githubUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user:email`;
+        window.location.href = githubUrl;
     };
+
+    // ✅ GitHub Callback Handler
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const code = params.get('code');
+        if (code) {
+            dispatch(githubAuth(code));
+        }
+    }, [location.search, dispatch]);
+
+    // ✅ Memoized Google Callback
+    const handleGoogleSuccess = useCallback(
+        async (response) => {
+            if (response?.credential) {
+                try {
+                    const result = await dispatch(googleAuth(response.credential));
+                    if (result?.user) {
+                        localStorage.setItem('userInfo', JSON.stringify(result.user));
+                        localStorage.setItem('access_token', result.tokens.access);
+                        localStorage.setItem('refresh_token', result.tokens.refresh);
+                        dispatch({ type: 'USER_LOGIN_SUCCESS', payload: result.user });
+                        navigate('/');
+                    }
+                } catch (error) {
+                    setMessage('Google authentication failed');
+                }
+            }
+        },
+        [dispatch, navigate]
+    );
+
+    const handleGoogleError = useCallback(() => {
+        setMessage('Google authentication failed');
+    }, []);
 
     return (
         <Row className="justify-content-md-center mt-5">

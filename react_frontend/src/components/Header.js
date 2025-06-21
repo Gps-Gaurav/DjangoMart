@@ -58,9 +58,23 @@ function Header() {
   };
 
   const handleLogout = () => {
+    // Remove all stored info
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+  
+    // Clear Redux
     dispatch(logout());
+  
+    // ✅ Disable Google's auto-login session
+    if (window.google?.accounts?.id) {
+      window.google.accounts.id.disableAutoSelect();
+    }
+  
+    // Navigate to login
     navigate('/login');
   };
+  
 
   const currentTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 

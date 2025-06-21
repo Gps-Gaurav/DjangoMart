@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useCallback  } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../actions/userActions';
-import { googleAuth, githubAuth } from '../actions/authActions';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
+import React, { useState, useEffect, useCallback } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Form, Button, Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../actions/userActions";
+import { googleAuth, githubAuth } from "../actions/authActions";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
 
 const loginFormStyle = {
-  backgroundColor: '#2a2a2a',
-  padding: '2rem',
-  borderRadius: '10px',
-  color: '#fff',
+  backgroundColor: "#2a2a2a",
+  padding: "2rem",
+  borderRadius: "10px",
+  color: "#fff",
 };
 
 function LoginScreen() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,11 +35,11 @@ function LoginScreen() {
   useEffect(() => {
     const user = userInfo || socialUser;
     if (user && Object.keys(user).length > 0) {
-      localStorage.removeItem('tempUserInfo');
-      navigate('/');
+      localStorage.removeItem("tempUserInfo");
+      navigate("/");
     }
   }, [userInfo, socialUser, navigate]);
-  
+
   // ✅ GitHub Login Handler
   const handleGitHubLogin = () => {
     const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
@@ -51,7 +51,7 @@ function LoginScreen() {
   // ✅ GitHub Callback Handler
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const code = params.get('code');
+    const code = params.get("code");
 
     if (code) {
       dispatch(githubAuth(code));
@@ -65,14 +65,14 @@ function LoginScreen() {
         try {
           const result = await dispatch(googleAuth(response.credential));
           if (result?.user) {
-            localStorage.setItem('userInfo', JSON.stringify(result.user));
-            localStorage.setItem('access_token', result.tokens.access);
-            localStorage.setItem('refresh_token', result.tokens.refresh);
-            dispatch({ type: 'USER_LOGIN_SUCCESS', payload: result.user });
-            navigate('/');
+            localStorage.setItem("userInfo", JSON.stringify(result.user));
+            localStorage.setItem("access_token", result.tokens.access);
+            localStorage.setItem("refresh_token", result.tokens.refresh);
+            dispatch({ type: "USER_LOGIN_SUCCESS", payload: result.user });
+            navigate("/");
           }
         } catch (error) {
-          console.error('Google auth error:', error);
+          console.error("Google auth error:", error);
         }
       }
     },
@@ -84,19 +84,20 @@ function LoginScreen() {
     if (window.google) {
       window.google.accounts.id.initialize({
         client_id:
-          '13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com',
+          "13550565736-r30nr250r4mdu91rgdlfrjpsrhaeuiu6.apps.googleusercontent.com",
         callback: handleGoogleCallback,
         auto_select: false,
-        cancel_on_tap_outside: true
+        cancel_on_tap_outside: true,
       });
 
       window.google.accounts.id.renderButton(
-        document.getElementById('google-login-button'),
+        document.getElementById("google-login-button"),
         {
-          theme: 'filled_black',
-          size: 'large',
-          width: '100%',
-          text: 'continue_with'
+          theme: "filled_black",
+          width: '100%',       
+          shape: 'rectangular',
+          size: "large",
+          text: "continue_with",
         }
       );
     }
@@ -108,7 +109,6 @@ function LoginScreen() {
     dispatch(login(email, password));
   };
   // Handle GitHub login
- 
 
   return (
     <Row className="justify-content-md-center mt-5">
@@ -158,7 +158,7 @@ function LoginScreen() {
                 className="py-2"
                 disabled={loading || socialLoading || !email || !password}
               >
-                {loading ? 'Signing In...' : 'Sign In'}
+                {loading ? "Signing In..." : "Sign In"}
               </Button>
             </div>
           </Form>
@@ -168,20 +168,17 @@ function LoginScreen() {
           <div className="text-center mb-3">Or Sign in with</div>
 
           <div className="d-grid gap-3">
-            {/* Google Sign-In Button Container */}
-            <div 
-              id="google-login-button" 
+            <div
+              id="google-login-button"
               className="d-flex justify-content-center"
             ></div>
 
-            {/* GitHub Sign-In Button */}
-            <Button 
-              variant="dark" 
-              onClick={handleGitHubLogin} 
+            <Button
+              className="w-100 oauth-button d-flex align-items-center justify-content-center"
+              onClick={handleGitHubLogin}
               disabled={socialLoading}
-              className="w-100 py-2"
             >
-              <i className="fab fa-github me-2"></i>
+              <i className="fab fa-github me-2 fs-5"></i>
               Continue with GitHub
             </Button>
           </div>
@@ -189,7 +186,7 @@ function LoginScreen() {
           {/* Registration Link */}
           <Row className="py-3">
             <Col className="text-center">
-              New Customer?{' '}
+              New Customer?{" "}
               <Link to="/signup" className="text-primary">
                 Register here
               </Link>
