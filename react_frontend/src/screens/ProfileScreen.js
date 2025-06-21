@@ -25,20 +25,25 @@ const ProfileScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  // Effect 1: Fetch user details ONCE (no infinite loop)
   useEffect(() => {
     if (!userInfo) {
       window.location.href = '/login';
-    } else {
-      if (!user || !user.firstName) {
-        dispatch(getUserDetails('profile'));
-      } else {
-        setFirstName(user.firstName);
-        setLastName(user.lastName);
-        setEmail(user.email);
-        setPreviewAvatar(user.avatar);
-      }
+    } else if (!user || user.email !== userInfo.email) {
+      dispatch(getUserDetails('profile'));
     }
-  }, [dispatch, userInfo, user]);
+    // eslint-disable-next-line
+  }, [dispatch, userInfo]); // No "user" here!
+
+  // Effect 2: Update local state WHENEVER user changes
+  useEffect(() => {
+    if (user) {
+      setFirstName(user.firstName || '');
+      setLastName(user.lastName || '');
+      setEmail(user.email || '');
+      setPreviewAvatar(user.avatar || null);
+    }
+  }, [user]);
 
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
@@ -112,7 +117,7 @@ const ProfileScreen = () => {
               />
               <h2 className="mt-2">My Profile</h2>
               <p className="text-muted">
-                Last updated: {moment(user?.updatedAt).format('MMMM DD, YYYY')}
+                Last updated: {user?.updatedAt ? moment(user?.updatedAt).format('MMMM DD, YYYY') : '—'}
               </p>
             </div>
 
@@ -222,7 +227,7 @@ const ProfileScreen = () => {
                 <Col md={6}>
                   <p>
                     <strong>Member Since:</strong>{' '}
-                    {moment(user?.createdAt).format('MMMM DD, YYYY')}
+                    {user?.createdAt ? moment(user?.createdAt).format('MMMM DD, YYYY') : '—'}
                   </p>
                   <p>
                     <strong>Account Status:</strong>{' '}
