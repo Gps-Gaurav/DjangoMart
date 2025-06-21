@@ -41,6 +41,8 @@ function Header() {
   // Get user info from Redux store
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
+  console.log("userInfo in Header:", userInfo);
+
 
   // Get cart items count from Redux store
   const cart = useSelector(state => state.cart);
@@ -134,9 +136,9 @@ function Header() {
               <NavDropdown 
                 title={
                   <span>
-                    <i className="fas fa-user-circle me-1"></i>
-                    {userInfo.name}
-                  </span>
+                  <i className="fas fa-user-circle me-1"></i>
+                  {userInfo?.name || `${userInfo?.first_name || ''} ${userInfo?.last_name || ''}`.trim() || userInfo?.username || 'User'}
+                </span>
                 } 
                 id="basic-nav-dropdown"
                 align="end"

@@ -9,7 +9,7 @@ import {
 import axios from 'axios';
 
 // Base URL - make sure this matches your backend URL
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'djangomart-w4j9.onrender.com/api';
 
 // Google Authentication
 export const googleAuth = (credential) => async (dispatch) => {
@@ -23,26 +23,37 @@ export const googleAuth = (credential) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      '/api/auth/google/',
+      'https://djangomart-w4j9.onrender.com/api/auth/google/',
       { credential },
       config
     );
 
-    // Dispatch success with the full response
-    dispatch({
-      type: GOOGLE_AUTH_SUCCESS,
-      payload: data
-    });
+    // ✅ Build a clean, consistent user object
+    const userInfo = {
+      name: data.user.name || data.user.full_name || data.user.username || 'Guest',
+      email: data.user.email,
+      image: data.user.picture || null,
+      token: data.tokens.access,
+      isGoogle: true
+    };
 
-    // Store user info and tokens
-    localStorage.setItem('userInfo', JSON.stringify(data.user));
+    // ✅ Save to localStorage
+    localStorage.setItem('userInfo', JSON.stringify(userInfo));
     localStorage.setItem('access_token', data.tokens.access);
     localStorage.setItem('refresh_token', data.tokens.refresh);
 
-    // Also dispatch USER_LOGIN_SUCCESS to update the login state
+    // ✅ Dispatch Redux actions
+    dispatch({
+      type: GOOGLE_AUTH_SUCCESS,
+      payload: {
+        user: userInfo,
+        tokens: data.tokens
+      }
+    });
+
     dispatch({
       type: 'USER_LOGIN_SUCCESS',
-      payload: data.user
+      payload: userInfo
     });
 
     return data;
@@ -51,9 +62,7 @@ export const googleAuth = (credential) => async (dispatch) => {
     dispatch({
       type: GOOGLE_AUTH_FAIL,
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message
+        error.response?.data?.message || error.message || 'Google authentication failed'
     });
     throw error;
   }
