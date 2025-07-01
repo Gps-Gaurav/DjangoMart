@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: djangomart
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      mkdir -p logs
+    startCommand: gunicorn drf_backend.wsgi:application \
+      --bind 0.0.0.0:8000 \
+      --workers 3 \
+      --worker-class sync \
+      --worker-connections 1000 \
+      --timeout 30 \
+      --keep-alive 2 \
+      --access-logfile logs/access.log \
+      --error-logfile logs/error.log \
+      --log-level info \
+      --proc-name djangomart
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: booking_project.settings
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: PYTHON_VERSION
+        value: 3.10

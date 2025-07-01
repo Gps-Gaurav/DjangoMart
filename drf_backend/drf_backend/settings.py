@@ -22,7 +22,7 @@ CURRENT_TIME_UTC = '2025-06-08 22:59:32'
 SECRET_KEY = 'django-insecure-yh4c(0zq3-f0lm4aeon%de)ko&ea)cm_bk1-(g*f+du6e8o*=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1','http://localhost:3000']
 
@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     
     # Third party apps
+    'drf_yasg',
     'rest_framework',
     'corsheaders',
     'rest_framework_simplejwt',
