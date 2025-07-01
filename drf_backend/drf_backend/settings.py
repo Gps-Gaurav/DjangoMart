@@ -22,7 +22,7 @@ CURRENT_TIME_UTC = '2025-06-08 22:59:32'
 SECRET_KEY = 'django-insecure-yh4c(0zq3-f0lm4aeon%de)ko&ea)cm_bk1-(g*f+du6e8o*=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['djangomart-w4j9.onrender.com', 'localhost', '127.0.0.1','http://localhost:3000']
 
@@ -103,6 +103,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Should be at the top
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'allauth.account.middleware.AccountMiddleware',
@@ -224,12 +225,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files settings
-STATIC_URL = 'static/'
-MEDIA_URL = '/images/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_ROOT = 'static/images'
+# ✅ Static files (CSS, JavaScript, etc.)
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Only for development
+STATIC_ROOT = BASE_DIR / 'staticfiles'    # For production collectstatic
 
+# ✅ Media files (user uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
