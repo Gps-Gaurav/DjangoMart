@@ -19290,3 +19290,9 @@ INFO 2025-07-29 18:01:15,739 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 19303
 INFO 2025-07-29 18:01:15,757 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-07-29 18:01:15,758 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
 INFO 2025-07-29 18:01:15,820 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-07-29 18:05:00,542 basehttp "GET /api/products/ HTTP/1.1" 200 1954
+INFO 2025-07-29 18:05:00,551 basehttp "GET /api/products/ HTTP/1.1" 200 1954
+INFO 2025-07-29 18:05:00,556 basehttp "GET /media/products/induction.jpg HTTP/1.1" 304 0
+INFO 2025-07-29 18:05:00,558 basehttp "GET /media/products/sony.png HTTP/1.1" 304 0
+INFO 2025-07-29 18:05:00,558 basehttp "GET /media/products/printer.jpg HTTP/1.1" 304 0
+INFO 2025-07-29 18:05:00,558 basehttp "GET /media/products/display.webp HTTP/1.1" 304 0

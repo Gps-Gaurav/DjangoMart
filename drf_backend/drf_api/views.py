@@ -29,7 +29,7 @@ from django.contrib.auth import authenticate
 import requests
 from django.contrib.auth import get_user_model
 from google.oauth2 import id_token
-import google.auth.transport.requests  # Changed import
+import google.auth.transport.requests
 import json
 from datetime import datetime
 from decimal import Decimal
@@ -39,9 +39,7 @@ User = get_user_model()
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def google_auth(request):
-    """
-    Google authentication endpoint
-    """
+  
     try:
         # Get the token from request
         data = request.data
@@ -446,7 +444,7 @@ class ActivateAccountView(View):
                     'timestamp': get_current_time(),
                     'username': user.username,
                     'site_name': site_name,
-                    'frontend_url': frontend_url,  # 👈 passed to template
+                    'frontend_url': frontend_url,  # passed to template
                 }
                 return render(request, "activatesuccess.html", context)
             else:

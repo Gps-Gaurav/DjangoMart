@@ -226,12 +226,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# ✅ Static files (CSS, JavaScript, etc.)
+#  Static files (CSS, JavaScript, etc.)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  # Only for development
 STATIC_ROOT = BASE_DIR / 'staticfiles'    # For production collectstatic
 
-# ✅ Media files (user uploads)
+# Media files (user uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
